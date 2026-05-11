@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidPost(data) {
+      return data.title is string && data.title.size() > 0 &&
+             data.content is string && data.content.size() > 0 &&
+             data.category is string &&
+             data.author is string &&
+             data.date is string;
+    }
+
+    match /posts/{postId} {
+      // Allow public read for all posts
+      allow get, list: if true;
+      
+      // Writes are handled by the server (Admin SDK) or restricted to authorized users.
+      // For now, only allow reads from the client while the server handles writes.
+      allow create, update, delete: if false; 
+    }
+  }
+}
