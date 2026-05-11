@@ -177,27 +177,43 @@ export function AdminPanel({ user, onLogin, onPostCreated }: AdminPanelProps) {
             AI 생성 지침 (애드센스 최적화)
           </h4>
           <ul className="text-sm text-gray-500 space-y-2 font-medium">
-            <li>• 실전 팁 및 체크리스트가 포함된 1,500자 이상의 풍부한 분량 (공백 제외)</li>
-            <li>• 가독성을 높이는 H2, H3 헤더 구조화 및 짧은 단락 구성</li>
-            <li>• 자연스러운 키워드 배치 및 포스팅 마지막 해시태그 삽입</li>
+            <li>• 실전 팁 및 체크리스트가 포함된 1,500자~2,000자 이상의 압도적 분량 (공백 제외)</li>
+            <li>• 전문적인 5개 이상의 섹션 구성 (H2, H3 헤더 구조화)</li>
+            <li>• 자연스러운 키워드 배치 및 포스팅 마지막 해시태그 10개 삽입</li>
             <li>• AdSense 광고 배치를 위한 효과적인 레이아웃 구조 활용</li>
           </ul>
         </div>
 
-        <div className="mt-6 p-6 bg-indigo-50/50 rounded-2xl border border-indigo-100">
-          <h4 className="font-bold text-indigo-900 mb-3 flex items-center gap-2">
-            <LinkIcon className="w-4 h-4" />
-            Blog Studio 연동 정보
+        <div className="mt-6 p-8 bg-indigo-900 rounded-3xl text-white shadow-xl shadow-indigo-100">
+          <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <Rocket className="w-6 h-6 text-indigo-300" />
+            Blog Studio 리얼타임 연동 정원
           </h4>
-          <div className="space-y-4 text-sm">
-            <div className="bg-white p-3 rounded-xl border border-indigo-100">
-              <p className="text-xs text-indigo-400 font-bold uppercase mb-1">API Endpoint</p>
-              <code className="text-indigo-700 break-all">{window.location.origin}/api/posts</code>
+          <p className="text-indigo-200 text-sm mb-6 leading-relaxed">
+            외부 서비스(Blog Studio 등)에서 이 블로그로 포스팅을 직접 발행할 수 있도록 고출력 API 엔드포인트가 활성화되었습니다. 
+            아래 정보를 연동 설정에 입력하세요.
+          </p>
+          
+          <div className="space-y-4">
+            <div className="bg-indigo-950/50 p-4 rounded-2xl border border-indigo-700/50">
+              <p className="text-[10px] text-indigo-400 font-bold uppercase tracking-widest mb-1">API Endpoint URL</p>
+              <div className="flex items-center justify-between gap-4">
+                <code className="text-indigo-100 text-sm break-all font-mono">
+                  {window.location.origin}/api/posts
+                </code>
+                <Button size="xs" variant="outline" className="border-indigo-700 text-indigo-300 hover:bg-indigo-800" onClick={() => navigator.clipboard.writeText(`${window.location.origin}/api/posts`)}>
+                  복사
+                </Button>
+              </div>
             </div>
-            <p className="text-gray-500 leading-relaxed">
-              외부 서비스(Blog Studio 등)에서 위 엔드포인트로 포스팅을 직접 발행할 수 있도록 설정되었습니다. 
-              API 키가 설정된 경우 헤더에 <code className="bg-indigo-100 px-1 rounded text-indigo-700">x-api-key</code>를 포함하세요.
-            </p>
+
+            <div className="flex items-start gap-3 text-xs text-indigo-300 bg-indigo-800/30 p-4 rounded-xl">
+              <ExternalLink className="w-4 h-4 shrink-0" />
+              <p>
+                <strong>중요:</strong> 도메인 연결 후에는 해당 도메인 주소로 엔드포인트를 업데이트하세요. 
+                헤더에 <code className="bg-indigo-950 px-1 rounded text-white">x-api-key</code>를 포함하여 보안 통신을 권장합니다.
+              </p>
+            </div>
           </div>
         </div>
       </div>
