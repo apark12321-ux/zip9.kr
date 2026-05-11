@@ -9,6 +9,7 @@ export interface Post {
   date: string;
   image: string;
   readTime: string;
+  hashtags?: string[];
 }
 
 export type Category = Post["category"];

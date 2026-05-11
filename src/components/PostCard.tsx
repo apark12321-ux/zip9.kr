@@ -48,6 +48,15 @@ export function PostCard({ post, onClick }: PostCardProps) {
           <p className="text-sm text-gray-500 line-clamp-3 leading-relaxed">
             {post.excerpt}
           </p>
+          {post.hashtags && post.hashtags.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-1">
+              {post.hashtags.map(tag => (
+                <span key={tag} className="text-[10px] bg-gray-100 text-gray-400 px-1.5 py-0.5 rounded italic">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
           <div className="mt-4 flex items-center gap-2 pt-4 border-t">
             <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
               <User className="w-3 h-3 text-gray-500" />
