@@ -184,34 +184,34 @@ export function AdminPanel({ user, onLogin, onPostCreated }: AdminPanelProps) {
           </ul>
         </div>
 
-        <div className="mt-6 p-8 bg-indigo-900 rounded-3xl text-white shadow-xl shadow-indigo-100">
+        <div className="mt-6 p-8 bg-blue-900 rounded-3xl text-white shadow-xl shadow-blue-100">
           <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <Rocket className="w-6 h-6 text-indigo-300" />
-            Blog Studio 리얼타임 연동 정원
+            <Rocket className="w-6 h-6 text-blue-300" />
+            Blog Studio 리얼타임 연동 (Vercel 최적화)
           </h4>
-          <p className="text-indigo-200 text-sm mb-6 leading-relaxed">
-            외부 서비스(Blog Studio 등)에서 이 블로그로 포스팅을 직접 발행할 수 있도록 고출력 API 엔드포인트가 활성화되었습니다. 
-            아래 정보를 연동 설정에 입력하세요.
+          <p className="text-blue-200 text-sm mb-6 leading-relaxed">
+            Vercel 배포 시, 아래 엔드포인트를 통해 Blog Studio에서 포스팅을 직접 발행할 수 있습니다. 
+            Vercel에서 설정한 본인의 커스텀 도메인 주소로 연동하세요.
           </p>
           
           <div className="space-y-4">
-            <div className="bg-indigo-950/50 p-4 rounded-2xl border border-indigo-700/50">
-              <p className="text-[10px] text-indigo-400 font-bold uppercase tracking-widest mb-1">API Endpoint URL</p>
+            <div className="bg-blue-950/50 p-4 rounded-2xl border border-blue-700/50">
+              <p className="text-[10px] text-blue-400 font-bold uppercase tracking-widest mb-1">Vercel API Endpoint URL</p>
               <div className="flex items-center justify-between gap-4">
-                <code className="text-indigo-100 text-sm break-all font-mono">
-                  {window.location.origin}/api/posts
+                <code className="text-blue-100 text-sm break-all font-mono">
+                  https://[본인-도메인]/api/posts
                 </code>
-                <Button size="xs" variant="outline" className="border-indigo-700 text-indigo-300 hover:bg-indigo-800" onClick={() => navigator.clipboard.writeText(`${window.location.origin}/api/posts`)}>
+                <Button size="xs" variant="outline" className="border-blue-700 text-blue-300 hover:bg-blue-800" onClick={() => navigator.clipboard.writeText(`https://${window.location.hostname}/api/posts`)}>
                   복사
                 </Button>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 text-xs text-indigo-300 bg-indigo-800/30 p-4 rounded-xl">
+            <div className="flex items-start gap-3 text-xs text-blue-300 bg-blue-800/30 p-4 rounded-xl">
               <ExternalLink className="w-4 h-4 shrink-0" />
               <p>
-                <strong>중요:</strong> 도메인 연결 후에는 해당 도메인 주소로 엔드포인트를 업데이트하세요. 
-                헤더에 <code className="bg-indigo-950 px-1 rounded text-white">x-api-key</code>를 포함하여 보안 통신을 권장합니다.
+                <strong>Vercel 도메인 연결 방법:</strong> Vercel 대시보드 프로젝트 설정의 <strong>Domains</strong> 메뉴에서 본인의 도메인을 추가하고 DNS 설정을 완료하세요. 
+                그 후 위 주소를 Blog Studio에 입력하면 즉시 연동됩니다.
               </p>
             </div>
           </div>
