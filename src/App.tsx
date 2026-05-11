@@ -145,12 +145,15 @@ export default function App() {
                   transition={{ delay: 0.4 }}
                   className="relative"
                 >
-                  <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-indigo-100 border-8 border-white">
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-indigo-100 border-8 border-white bg-gray-100">
                     <img 
-                      src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" 
+                      src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=1200" 
                       alt="Modern House" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1554435493-93422e8220c8?auto=format&fit=crop&q=80&w=1200";
+                      }}
                     />
                   </div>
                   {/* Decorative element */}
@@ -175,6 +178,7 @@ export default function App() {
               key="about-page"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">하우징허브(HousingHub) 소개</h1>
@@ -200,6 +204,7 @@ export default function App() {
               key="privacy-page"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">개인정보 처리방침 (Privacy Policy)</h1>
@@ -232,7 +237,7 @@ export default function App() {
               key="post-detail"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
+              exit={{ opacity: 0 }}
               className="max-w-4xl mx-auto px-4 py-20"
             >
               <div className="mb-12">
@@ -244,7 +249,6 @@ export default function App() {
                   ← 목록으로 돌아가기
                 </Button>
                 
-                {/* Post Header */}
                 <div className="flex gap-2 mb-6">
                   <Badge className="bg-indigo-600 border-none">{currentPost.category}</Badge>
                 </div>
@@ -276,6 +280,9 @@ export default function App() {
                   alt={currentPost.title}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1200";
+                  }}
                 />
               </div>
 
@@ -304,66 +311,68 @@ export default function App() {
               </div>
             </motion.article>
           ) : (
-            <motion.section
-              key="post-list"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-            >
-              <div 
-            className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12 shadow-sm p-4 bg-gray-50/50 rounded-2xl"
-          >
-            <div className="md:max-w-md">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2 font-display">
-                {currentPage === 'home' ? '최근 게시물' : currentPage.replace('category-', '') + ' 정보'}
-              </h2>
-              <p className="text-gray-500 font-medium leading-normal">
-                부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.
-              </p>
-            </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide">
-                  <Button 
-                    variant={currentPage === "home" ? "default" : "outline"}
-                    className="rounded-full whitespace-nowrap"
-                    onClick={() => handleNavigate("home")}
-                  >
-                    전체보기
-                  </Button>
-                  {CATEGORIES.map(cat => (
+            (currentPage === "home" || currentPage.startsWith("category-")) && (
+              <motion.section
+                key="post-list"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+              >
+                <div 
+                  className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12 shadow-sm p-4 bg-gray-50/50 rounded-2xl"
+                >
+                  <div className="md:max-w-md">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2 font-display">
+                      {currentPage === 'home' ? '최근 게시물' : currentPage.replace('category-', '') + ' 정보'}
+                    </h2>
+                    <p className="text-gray-500 font-medium leading-normal">
+                      부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide">
                     <Button 
-                      key={cat}
-                      variant={currentPage === `category-${cat}` ? "default" : "outline"}
+                      variant={currentPage === "home" ? "default" : "outline"}
                       className="rounded-full whitespace-nowrap"
-                      onClick={() => handleNavigate(`category-${cat}`)}
+                      onClick={() => handleNavigate("home")}
                     >
-                      {cat}
+                      전체보기
                     </Button>
-                  ))}
+                    {CATEGORIES.map(cat => (
+                      <Button 
+                        key={cat}
+                        variant={currentPage === `category-${cat}` ? "default" : "outline"}
+                        className="rounded-full whitespace-nowrap"
+                        onClick={() => handleNavigate(`category-${cat}`)}
+                      >
+                        {cat}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {filteredPosts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredPosts.map((post, idx) => (
-                    <motion.div
-                      key={post.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.1 }}
-                    >
-                      <PostCard post={post} onClick={(id) => handleNavigate(`post-${id}`)} />
-                    </motion.div>
-                  ))}
-                </div>
-              ) : (
-                <div className="py-40 text-center bg-gray-50 rounded-3xl border-2 border-dashed">
-                  <LayoutDashboard className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                  <p className="text-xl font-bold text-gray-400">검색 결과가 없습니다.</p>
-                  <Button variant="link" className="mt-2 text-indigo-600" onClick={() => {setSearchQuery(""); handleNavigate("home");}}>모든 글 보기</Button>
-                </div>
-              )}
-            </motion.section>
+                {filteredPosts.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredPosts.map((post, idx) => (
+                      <motion.div
+                        key={post.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                      >
+                        <PostCard post={post} onClick={(id) => handleNavigate(`post-${id}`)} />
+                      </motion.div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="py-40 text-center bg-gray-50 rounded-3xl border-2 border-dashed">
+                    <LayoutDashboard className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-xl font-bold text-gray-400">검색 결과가 없습니다.</p>
+                    <Button variant="link" className="mt-2 text-indigo-600" onClick={() => {setSearchQuery(""); handleNavigate("home");}}>모든 글 보기</Button>
+                  </div>
+                )}
+              </motion.section>
+            )
           )}
         </AnimatePresence>
       </main>

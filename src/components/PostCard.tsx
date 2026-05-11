@@ -31,6 +31,9 @@ export function PostCard({ post, onClick }: PostCardProps) {
             alt={post.title}
             referrerPolicy="no-referrer"
             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800";
+            }}
           />
           <div className="absolute top-4 left-4">
             <Badge className="bg-indigo-600 hover:bg-indigo-700 border-none px-3 py-1 text-xs font-semibold">

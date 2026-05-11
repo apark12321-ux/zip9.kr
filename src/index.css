@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -35,38 +36,6 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-@layer base {
-  body {
-    @apply bg-white text-gray-900 antialiased font-sans;
-  }
-}
-
-/* Custom Content Styles */
-.prose h2 {
-  @apply text-3xl font-bold mt-12 mb-6 text-gray-900 font-display;
-}
-
-.prose h3 {
-  @apply text-xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-indigo-600 pl-4;
-}
-
-.prose p {
-  @apply text-lg leading-relaxed text-gray-600 mb-6;
-}
-
-.prose ul {
-  @apply list-disc pl-6 mb-6 space-y-2;
-}
-
-.prose li {
-  @apply text-lg text-gray-600;
-}
-
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
-
 :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
@@ -94,40 +63,60 @@
     --radius: 0.625rem;
 }
 
-.dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
-    @apply bg-background text-foreground;
-    }
-  html {
-    @apply font-sans;
-    }
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+}
+
+/* Custom Content Styles */
+.prose .toc {
+  @apply bg-gray-50 border border-gray-200 rounded-xl p-6 mb-10;
+}
+
+.prose .toc p {
+  @apply mb-3 font-bold text-gray-900 border-b border-gray-200 pb-2;
+}
+
+.prose .toc ul {
+  @apply list-none pl-0 mb-0 space-y-1;
+}
+
+.prose .toc li a {
+  @apply text-indigo-600 hover:text-indigo-800 transition-colors text-base font-medium no-underline;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold mt-12 mb-6 text-gray-900 font-display tracking-tight leading-tight;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold mt-10 mb-5 text-gray-900 border-l-4 border-indigo-600 pl-4 tracking-tight;
+}
+
+.prose h4 {
+  @apply text-xl font-bold mt-8 mb-4 text-gray-800 tracking-tight;
+}
+
+.prose p {
+  @apply text-lg leading-8 text-gray-600 mb-8 whitespace-pre-line;
+}
+
+.prose p strong {
+  @apply text-gray-900 font-semibold;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-8 space-y-3;
+}
+
+.prose li {
+  @apply text-lg text-gray-600 leading-8;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-6 italic text-gray-700 my-8;
 }

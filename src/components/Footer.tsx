@@ -83,16 +83,17 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mb-2">
-                <span className="text-[11px] text-gray-400">운영: 알고파트너스</span>
-                <span className="text-[11px] text-gray-400">대표자: 박성준</span>
-                <span className="text-[11px] text-gray-400">사업자등록번호: 312-81-XXXXX</span>
+                <span className="text-[11px] text-gray-400">운영: 하우징허브(HousingHub)</span>
+                <span className="text-[11px] text-gray-400">대표: 박성준 (편집책임자)</span>
+                <span className="text-[11px] text-gray-400">이메일: apark12321@gmail.com</span>
+                <span className="text-[11px] text-gray-400">개인 블로그/정보 서비스 (사업자 등록 준비 중)</span>
               </div>
               <p className="text-[10px] text-gray-400 tracking-tight">
                 &copy; {currentYear} HousingHub. Smart Housing Life Guide. All rights reserved.
               </p>
             </div>
             <div className="flex items-center gap-6">
-              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("privacy")}>개인정보처리방침</span>
+              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-bold border-b border-indigo-200" onClick={() => onNavigate("privacy")}>개인정보처리방침</span>
               <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("privacy")}>이용약관</span>
             </div>
           </div>
