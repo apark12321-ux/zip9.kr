@@ -14,6 +14,7 @@ import { Badge } from "./components/ui/badge";
 import { auth, db } from "./lib/firebase";
 import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { calculateReadTime } from "./lib/utils";
 
 type Page = "home" | "about" | "privacy" | `category-${string}` | `post-${string}`;
 
@@ -53,7 +54,8 @@ export default function App() {
         combined.push(mock);
       }
     });
-    return combined;
+    // Sort all posts by date descending
+    return combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [realPosts]);
 
   const filteredPosts = useMemo(() => {
@@ -257,7 +259,7 @@ export default function App() {
                     <div>
                       <p className="font-bold text-gray-900">{currentPost.author}</p>
                       <p className="text-sm text-gray-500">
-                        {currentPost.date.replace(/-/g, ". ")} · {currentPost.readTime} 읽기
+                        {currentPost.date.replace(/-/g, ". ")} · {calculateReadTime(currentPost.content)} 읽기
                       </p>
                     </div>
                   </div>

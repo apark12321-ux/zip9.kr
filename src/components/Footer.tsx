@@ -14,67 +14,86 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           <div className="col-span-1 md:col-span-5">
             <div className="flex items-center gap-2 mb-6 cursor-pointer" onClick={() => onNavigate("home")}>
-              <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center shadow-lg shadow-indigo-200">
                 <Home className="text-white w-5 h-5" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-gray-900 font-display">
-                하우징허브 (HousingHub)
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight text-gray-900 font-display leading-none">
+                  하우징허브
+                </span>
+                <span className="text-[10px] text-indigo-600 font-bold tracking-widest uppercase mt-0.5">Housing Hub</span>
+              </div>
             </div>
-            <p className="text-sm text-gray-500 leading-relaxed font-medium mb-6">
-              하우징허브는 복잡하고 어려운 부동산 정보를 누구나 쉽게 이해할 수 있도록 정리해 드리는 디지털 주거 가이드입니다. 
-              최신 청약 정책, 전월세 계약 노하우, 정부 대출 상품 정보를 가장 정확하고 빠르게 전달하는 것을 목표로 합니다.
-              회원가입 없이 모든 정보는 무료로 제공됩니다.
+            <p className="text-sm text-gray-500 leading-relaxed mb-6 font-normal">
+              하우징허브는 복잡한 대한민국 부동산 정책과 금융 정보를 누구나 쉽게 이해할 수 있도록 돕는 디지털 가이드입니다. 
+              올바른 정보가 주거 안정을 만든다는 믿음으로, 검증된 데이터 기반의 콘텐츠를 제작합니다.
             </p>
-            <div className="flex flex-wrap gap-4 text-xs text-gray-400 font-medium">
-              <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> apark12321@gmail.com</span>
-              <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> 서울특별시 강남구 테헤란로</span>
+            <div className="space-y-3 text-xs text-gray-400">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-gray-300 shrink-0 mt-0.5" />
+                <span>인천광역시 서구 청라커낼로 270, 커낼힐스빌</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-gray-300 shrink-0" />
+                <a href="mailto:apark12321@gmail.com" className="hover:text-indigo-600 transition-colors">apark12321@gmail.com</a>
+              </div>
             </div>
           </div>
           
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-sm text-gray-900 mb-6 uppercase tracking-wider">주요 카테고리</h4>
-            <ul className="space-y-3">
-              <li><button onClick={() => onNavigate("category-청약/분양")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">청약/분양 가이드</button></li>
-              <li><button onClick={() => onNavigate("category-전월세")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">전월세 계약 팁</button></li>
-              <li><button onClick={() => onNavigate("category-이사/인테리어")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">이사/인테리어</button></li>
-              <li><button onClick={() => onNavigate("category-대출/금융")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">주거 대출/금융</button></li>
+            <h4 className="font-bold text-sm text-gray-900 mb-6 relative inline-block">
+              지식 저장소
+              <span className="absolute -bottom-1 left-0 w-4 h-0.5 bg-indigo-600 rounded-full"></span>
+            </h4>
+            <ul className="space-y-2.5">
+              <li><button onClick={() => onNavigate("category-청약/분양")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">청약·분양 전략</button></li>
+              <li><button onClick={() => onNavigate("category-전월세")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">전월세 계약 노하우</button></li>
+              <li><button onClick={() => onNavigate("category-이사/인테리어")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">이사·인테리어 가이드</button></li>
+              <li><button onClick={() => onNavigate("category-대출/금융")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">금융·대출 솔루션</button></li>
             </ul>
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-sm text-gray-900 mb-6 uppercase tracking-wider">서비스 정보</h4>
-            <ul className="space-y-3">
-              <li><button onClick={() => onNavigate("about")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">하우징허브 소개</button></li>
-              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">이용 약관</button></li>
-              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">개인정보 처리방침</button></li>
+            <h4 className="font-bold text-sm text-gray-900 mb-6 relative inline-block">
+              커뮤니티
+              <span className="absolute -bottom-1 left-0 w-4 h-0.5 bg-indigo-600 rounded-full"></span>
+            </h4>
+            <ul className="space-y-2.5">
+              <li><button onClick={() => onNavigate("about")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">하우징허브 소개</button></li>
+              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">제휴 및 비즈니스 문의</button></li>
+              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">공지사항</button></li>
             </ul>
           </div>
 
           <div className="col-span-1 md:col-span-3">
-            <h4 className="font-bold text-sm text-gray-900 mb-6 uppercase tracking-wider">면책 고지</h4>
-            <p className="text-[11px] text-gray-400 leading-relaxed font-normal">
-              본 사이트에서 제공하는 모든 정보는 일반적인 정보 제공만을 목적으로 하며, 법적인 권고나 자문을 대신할 수 없습니다. 
-              정확한 정보 전달을 위해 노력하고 있으나, 실제 계약이나 청약 신청 전에는 반드시 관련 법규 및 공식 기관(청약홈, 주택도시기금 등)의 공지사항을 재확인하시기 바랍니다. 
-              본 사이트의 정보를 신뢰하여 발생한 결과에 대해 운영진은 어떠한 책임도 지지 않습니다.
-            </p>
+            <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+              <h4 className="font-bold text-sm text-gray-900 mb-3 flex items-center gap-2">
+                <Globe className="w-4 h-4 text-indigo-600" />
+                면책 공고 (Legal Disclaimer)
+              </h4>
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                하우징허브의 모든 콘텐츠는 정보 전달을 목적으로 하며, 실제 의사 결정 시에는 반드시 해당 분야 전문가와의 상담 또는 공공기관의 공식 자료를 확인하시기 바랍니다. 
+                정보의 오류로 인한 이용자의 손실에 대해 당사는 법적 책임을 지지 않습니다.
+              </p>
+            </div>
           </div>
         </div>
         
-        <div className="border-t pt-8">
+        <div className="border-t border-gray-100 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <p className="text-[10px] text-gray-400 font-medium mb-1 capitalize">
-                하우징허브 | 운영: 알고파트너스 | 대표메일: apark12321@gmail.com
-              </p>
-              <p className="text-[10px] text-gray-400 font-medium tracking-tight">
-                &copy; {currentYear} HousingHub. Built for smart housing life. All rights reserved.
+              <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mb-2">
+                <span className="text-[11px] text-gray-400">운영: 알고파트너스</span>
+                <span className="text-[11px] text-gray-400">대표자: 박성준</span>
+                <span className="text-[11px] text-gray-400">사업자등록번호: 312-81-XXXXX</span>
+              </div>
+              <p className="text-[10px] text-gray-400 tracking-tight">
+                &copy; {currentYear} HousingHub. Smart Housing Life Guide. All rights reserved.
               </p>
             </div>
-            <div className="flex items-center gap-5">
-              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-600 font-semibold" onClick={() => onNavigate("privacy")}>Privacy Policy</span>
-              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-600 font-semibold" onClick={() => onNavigate("privacy")}>Terms of Service</span>
-              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-600 font-semibold">Cookie Settings</span>
+            <div className="flex items-center gap-6">
+              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("privacy")}>개인정보처리방침</span>
+              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("privacy")}>이용약관</span>
             </div>
           </div>
         </div>

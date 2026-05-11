@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Clock, User, Calendar } from "lucide-react";
 import { motion } from "motion/react";
+import { calculateReadTime } from "../lib/utils";
 
 interface PostCardProps {
   post: Post;
@@ -11,6 +12,8 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, onClick }: PostCardProps) {
+  const dynamicReadTime = calculateReadTime(post.content);
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -38,7 +41,7 @@ export function PostCard({ post, onClick }: PostCardProps) {
         <CardHeader className="p-6 pb-2">
           <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
             <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
-            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {dynamicReadTime}</span>
           </div>
           <h3 className="text-xl font-bold leading-tight group-hover:text-indigo-600 transition-colors text-gray-900 line-clamp-2">
             {post.title}
