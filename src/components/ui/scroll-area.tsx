@@ -1,26 +1,22 @@
 import * as React from "react"
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
-function ScrollArea({
-  className,
-  children,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      data-slot="scroll-area"
-      className={cn("relative overflow-auto", className)}
-      {...props}
-    >
-      <div className="size-full rounded-[inherit] outline-none">
-        {children}
-      </div>
+const ScrollArea = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("relative overflow-hidden", className)}
+    {...props}
+  >
+    <div className="h-full w-full overflow-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+      {children}
     </div>
-  )
-}
+  </div>
+))
+ScrollArea.displayName = "ScrollArea"
 
-function ScrollBar() {
-  return null;
-}
+const ScrollBar = () => null
 
 export { ScrollArea, ScrollBar }
