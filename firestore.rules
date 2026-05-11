@@ -21,9 +21,9 @@ service cloud.firestore {
       // Allow public read for all posts
       allow get, list: if true;
       
-      // Writes are handled by the server (Admin SDK) or restricted to authorized users.
-      // For now, only allow reads from the client while the server handles writes.
-      allow create, update, delete: if false; 
+      // Allow authenticated users to create posts for this demo
+      allow create: if isSignedIn() && isValidPost(request.resource.data);
+      allow update, delete: if false; 
     }
   }
 }

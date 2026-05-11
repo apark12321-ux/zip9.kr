@@ -43,11 +43,15 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <button onClick={() => onNavigate("category-청약/분양")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">청약/분양</button>
             <button onClick={() => onNavigate("category-전월세")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">전월세</button>
             <button onClick={() => onNavigate("category-이사/인테리어")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">이사/인테리어</button>
             <button onClick={() => onNavigate("category-대출/금융")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">대출/금융</button>
+            <button onClick={() => onNavigate("admin")} className="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full hover:bg-indigo-100 transition-colors flex items-center gap-1.5">
+              <LayoutDashboard className="w-3.5 h-3.5" />
+              AI 에디터
+            </button>
           </div>
 
           <div className="flex items-center gap-2">
@@ -80,6 +84,10 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
               <button onClick={() => { onNavigate("category-전월세"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">전월세</button>
               <button onClick={() => { onNavigate("category-이사/인테리어"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">이사/인테리어</button>
               <button onClick={() => { onNavigate("category-대출/금융"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">대출/금융</button>
+              <button onClick={() => { onNavigate("admin"); setIsMobileMenuOpen(false); }} className="text-lg font-bold text-indigo-600 text-left flex items-center gap-2">
+                <LayoutDashboard className="w-5 h-5" />
+                AI 에디터 (포스팅 발행)
+              </button>
               <div className="pt-4 border-t">
                 <Input 
                   className="bg-gray-100" 

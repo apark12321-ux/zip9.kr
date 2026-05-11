@@ -5,21 +5,31 @@ import { Footer } from "./components/Footer";
 import { PostCard } from "./components/PostCard";
 import { MOCK_POSTS, CATEGORIES } from "./constants";
 import { Post } from "./types";
-import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard } from "lucide-react";
+import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard, Settings } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Separator } from "./components/ui/separator";
 import { Badge } from "./components/ui/badge";
-import { db } from "./lib/firebase";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import { auth, db } from "./lib/firebase";
+import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from "firebase/firestore";
+import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { AdminPanel } from "./components/AdminPanel";
 
-type Page = "home" | "about" | "privacy" | `category-${string}` | `post-${string}`;
+type Page = "home" | "about" | "privacy" | "admin" | `category-${string}` | `post-${string}`;
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
   const [searchQuery, setSearchQuery] = useState("");
   const [realPosts, setRealPosts] = useState<Post[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const unsubscribeAuth = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+    });
+    return () => unsubscribeAuth();
+  }, []);
 
   useEffect(() => {
     const q = query(collection(db, "posts"), orderBy("date", "desc"));
@@ -198,6 +208,14 @@ export default function App() {
             </motion.div>
           )}
 
+          {currentPage === "admin" && (
+            <AdminPanel 
+              user={user} 
+              onLogin={() => signInWithPopup(auth, new GoogleAuthProvider())} 
+              onPostCreated={() => handleNavigate("home")} 
+            />
+          )}
+
           {currentPost ? (
             <motion.article
               key="post-detail"
@@ -214,6 +232,12 @@ export default function App() {
                 >
                   ← 목록으로 돌아가기
                 </Button>
+                
+                {/* Ad Slot - Top */}
+                <div className="w-full h-32 bg-gray-50 rounded-2xl mb-8 flex items-center justify-center border-2 border-dashed border-gray-200">
+                  <p className="text-gray-400 text-sm font-medium">광고 영역 (Ads by AdSense)</p>
+                </div>
+
                 <div className="flex gap-2 mb-6">
                   <Badge className="bg-indigo-600 border-none">{currentPost.category}</Badge>
                 </div>
@@ -252,6 +276,11 @@ export default function App() {
                 className="prose prose-indigo prose-lg max-w-none text-gray-700 leading-relaxed space-y-6"
                 dangerouslySetInnerHTML={{ __html: currentPost.content }}
               />
+
+              {/* Ad Slot - Middle */}
+              <div className="my-12 w-full h-64 bg-gray-50 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-200">
+                <p className="text-gray-400 text-sm font-medium">중간 광고 영역 (In-feed Ads)</p>
+              </div>
               
               <div className="mt-20 p-8 bg-indigo-50 rounded-3xl">
                 <h4 className="text-xl font-bold mb-4">도움이 되셨나요?</h4>
