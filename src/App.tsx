@@ -14,9 +14,8 @@ import { Badge } from "./components/ui/badge";
 import { auth, db } from "./lib/firebase";
 import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { AdminPanel } from "./components/AdminPanel";
 
-type Page = "home" | "about" | "privacy" | "admin" | `category-${string}` | `post-${string}`;
+type Page = "home" | "about" | "privacy" | `category-${string}` | `post-${string}`;
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -206,14 +205,6 @@ export default function App() {
               <h2>제3조 (쿠키의 사용 및 거부)</h2>
               <p>사용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.</p>
             </motion.div>
-          )}
-
-          {currentPage === "admin" && (
-            <AdminPanel 
-              user={user} 
-              onLogin={() => signInWithPopup(auth, new GoogleAuthProvider())} 
-              onPostCreated={() => handleNavigate("home")} 
-            />
           )}
 
           {currentPost ? (
