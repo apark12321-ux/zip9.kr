@@ -16,7 +16,7 @@ import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from 
 import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { calculateReadTime, slugify, stripHtml } from "./lib/utils";
 
-type Page = "home" | "about" | "privacy" | `category-${string}` | `post-${string}`;
+type Page = "home" | "about" | "privacy" | "partnership" | "announcement" | "terms" | `category-${string}` | `post-${string}`;
 
 const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
@@ -30,6 +30,9 @@ function pageFromUrl(): Page {
   if (path === "/" || path === "") return "home";
   if (path === "/about") return "about";
   if (path === "/privacy") return "privacy";
+  if (path === "/partnership") return "partnership";
+  if (path === "/announcement") return "announcement";
+  if (path === "/terms") return "terms";
   const catMatch = path.match(/^\/category\/(.+)$/);
   if (catMatch) return `category-${decodeURIComponent(catMatch[1])}` as Page;
   const postMatch = path.match(/^\/post\/(.+)$/);
@@ -42,6 +45,9 @@ function urlFromPage(page: Page, posts: Post[]): string {
   if (page === "home") return "/";
   if (page === "about") return "/about";
   if (page === "privacy") return "/privacy";
+  if (page === "partnership") return "/partnership";
+  if (page === "announcement") return "/announcement";
+  if (page === "terms") return "/terms";
   if (page.startsWith("category-")) {
     return `/category/${encodeURIComponent(page.replace("category-", ""))}`;
   }
@@ -232,6 +238,18 @@ export default function App() {
       title = `개인정보 처리방침 | ${SITE_NAME}`;
       description = `${SITE_NAME}의 개인정보 수집 및 이용에 관한 안내입니다.`;
       canonical = `${SITE_URL}/privacy`;
+    } else if (currentPage === "partnership") {
+      title = `제휴 및 비즈니스 문의 | ${SITE_NAME}`;
+      description = `${SITE_NAME}와 광고, 콘텐츠 협업, 파트너십 문의를 위한 안내 페이지입니다.`;
+      canonical = `${SITE_URL}/partnership`;
+    } else if (currentPage === "announcement") {
+      title = `공지사항 | ${SITE_NAME}`;
+      description = `${SITE_NAME}의 서비스 운영 관련 공지사항을 안내합니다.`;
+      canonical = `${SITE_URL}/announcement`;
+    } else if (currentPage === "terms") {
+      title = `이용약관 | ${SITE_NAME}`;
+      description = `${SITE_NAME} 서비스 이용에 관한 약관입니다.`;
+      canonical = `${SITE_URL}/terms`;
     } else if (currentPage.startsWith("category-")) {
       const cat = currentPage.replace("category-", "");
       title = `${cat} 정보 | ${SITE_NAME}`;
@@ -414,6 +432,157 @@ export default function App() {
 
               <h2>4. 개인정보의 보호 및 관리</h2>
               <p>본 사이트는 수집된 개인정보를 법령에 따르지 않고는 제3자에게 제공하거나 공개하지 않습니다. 개인정보 보호와 관련한 문의사항은 apark12321@gmail.com으로 연락 주시기 바랍니다.</p>
+            </motion.div>
+          )}
+
+          {currentPage === "partnership" && (
+            <motion.div
+              key="partnership-page"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
+            >
+              <h1 className="font-display">제휴 및 비즈니스 문의</h1>
+              <p className="lead">
+                하우징허브는 부동산, 금융, 인테리어, 이사 등 주거 생활 전반에 관심 있는 양질의 독자들과 만나는 콘텐츠 플랫폼입니다.
+                건강한 정보 생태계를 함께 만들어갈 파트너를 기다립니다.
+              </p>
+
+              <h2>제휴 가능 분야</h2>
+              <ul>
+                <li><strong>콘텐츠 협업:</strong> 부동산·금융 전문가의 칼럼 기고, 인터뷰, 공동 기획 콘텐츠</li>
+                <li><strong>서비스/상품 리뷰:</strong> 주거 관련 서비스(중개·인테리어·청소·이사 등) 또는 금융 상품의 객관적 리뷰</li>
+                <li><strong>광고 및 브랜디드 콘텐츠:</strong> 배너 광고, 협찬 콘텐츠 (광고 표기 의무 준수)</li>
+                <li><strong>데이터/리서치 협업:</strong> 주거·부동산 관련 통계 및 리포트 공동 제작</li>
+              </ul>
+
+              <h2>제안 시 안내사항</h2>
+              <p>아래 정보를 포함해 이메일로 보내주시면, 영업일 기준 3일 이내에 검토 후 회신 드리겠습니다.</p>
+              <ul>
+                <li>회사/기관명 및 담당자 성함, 직책</li>
+                <li>제안 분야 및 간단한 제안 개요</li>
+                <li>희망 진행 일정 및 예산 (해당하는 경우)</li>
+                <li>회사 소개 자료 또는 관련 링크</li>
+              </ul>
+
+              <h2>광고 관련 원칙</h2>
+              <p>
+                하우징허브는 독자의 신뢰를 가장 큰 자산으로 여깁니다. 광고나 협찬 콘텐츠는 반드시 그 사실을 명확히 표기하며,
+                사실과 다른 과장된 내용이나 독자에게 손해를 끼칠 수 있는 상품은 게재하지 않습니다.
+              </p>
+
+              <h2>문의 채널</h2>
+              <p>
+                <strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a><br />
+                <strong>제목 형식 권장:</strong> [제휴문의] 회사명 - 제안 분야
+              </p>
+            </motion.div>
+          )}
+
+          {currentPage === "announcement" && (
+            <motion.div
+              key="announcement-page"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
+            >
+              <h1 className="font-display">공지사항</h1>
+              <p className="lead">하우징허브의 서비스 운영과 관련된 소식을 안내드립니다.</p>
+
+              <div className="not-prose space-y-6 mt-8">
+                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">서비스</span>
+                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">하우징허브 정식 오픈 안내</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    안녕하세요, 하우징허브입니다. 복잡한 주거 정보를 누구나 쉽게 이해할 수 있도록 돕고자 하는 마음으로
+                    서비스를 정식 오픈하게 되었습니다. 청약, 전월세, 대출, 이사·인테리어 네 가지 카테고리를 중심으로
+                    실용적이고 검증된 콘텐츠를 꾸준히 발행해 나가겠습니다.
+                  </p>
+                </article>
+
+                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold text-gray-700 bg-gray-100 px-2 py-1 rounded">정책</span>
+                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">콘텐츠 작성 및 인용 원칙</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    하우징허브의 모든 콘텐츠는 공공기관 발표 자료, 법령, 검증된 데이터에 기반해 작성됩니다.
+                    외부 자료를 인용할 경우 출처를 명시하며, 정책이나 법령 변경 시 가능한 한 빠르게 본문을 업데이트합니다.
+                    독자분들이 보다 안심하고 정보를 활용하실 수 있도록 노력하겠습니다.
+                  </p>
+                </article>
+
+                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">독자</span>
+                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">독자 의견 및 제보 환영</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    다루어 주었으면 하는 주제, 본문 내용 정정 요청, 또는 직접 경험한 주거 관련 사례 제보는 언제든
+                    <a href="mailto:apark12321@gmail.com" className="text-indigo-600 hover:underline ml-1">apark12321@gmail.com</a>으로 보내주세요.
+                    한 분 한 분의 의견이 더 나은 콘텐츠를 만드는 토대가 됩니다.
+                  </p>
+                </article>
+              </div>
+            </motion.div>
+          )}
+
+          {currentPage === "terms" && (
+            <motion.div
+              key="terms-page"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
+            >
+              <h1 className="font-display">이용약관</h1>
+              <p>본 약관은 하우징허브(이하 "사이트")가 제공하는 콘텐츠 및 부가 서비스(이하 "서비스")의 이용과 관련하여 사이트와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+              <h2>제1조 (목적)</h2>
+              <p>이 약관은 이용자가 사이트에서 제공하는 서비스를 이용함에 있어 필요한 사항을 규정합니다.</p>
+
+              <h2>제2조 (용어의 정의)</h2>
+              <ul>
+                <li><strong>"사이트"</strong>란 하우징허브(https://zip9.kr)를 의미합니다.</li>
+                <li><strong>"이용자"</strong>란 사이트에 접속하여 서비스를 이용하는 모든 자를 말합니다.</li>
+                <li><strong>"콘텐츠"</strong>란 사이트가 게재하는 모든 텍스트, 이미지, 데이터, 영상 등을 의미합니다.</li>
+              </ul>
+
+              <h2>제3조 (약관의 효력 및 변경)</h2>
+              <p>이 약관은 사이트에 게시함으로써 효력이 발생하며, 사이트는 합리적인 사유가 발생할 경우 관련 법령을 위반하지 않는 범위에서 약관을 변경할 수 있습니다. 변경된 약관은 사이트에 공지함으로써 효력이 발생합니다.</p>
+
+              <h2>제4조 (서비스의 제공 및 변경)</h2>
+              <p>사이트는 청약·분양, 전월세, 이사·인테리어, 대출·금융 등 주거 생활과 관련된 정보 콘텐츠를 제공합니다. 사이트는 운영상·기술상 필요한 경우 제공하는 서비스의 내용을 변경할 수 있습니다.</p>
+
+              <h2>제5조 (이용자의 의무)</h2>
+              <p>이용자는 다음 행위를 하여서는 안 됩니다.</p>
+              <ul>
+                <li>사이트가 게시한 콘텐츠를 사전 동의 없이 상업적 목적으로 복제·재배포하는 행위</li>
+                <li>사이트의 운영을 방해하거나 시스템에 무단으로 접근하는 행위</li>
+                <li>타인의 명예를 훼손하거나 권리를 침해하는 행위</li>
+                <li>관련 법령 및 본 약관에 위배되는 그 밖의 행위</li>
+              </ul>
+
+              <h2>제6조 (콘텐츠의 저작권)</h2>
+              <p>사이트가 작성한 모든 콘텐츠의 저작권은 하우징허브에 귀속됩니다. 이용자는 사이트의 사전 서면 동의 없이 콘텐츠를 영리 목적으로 이용하거나 제3자에게 이용하게 할 수 없습니다. 단, 출처를 명시한 비영리적·개인적 인용은 허용됩니다.</p>
+
+              <h2>제7조 (책임의 제한)</h2>
+              <p>사이트가 제공하는 정보는 일반적인 안내를 목적으로 하며, 특정 개인의 의사 결정에 대한 법률·세무·금융 자문이 아닙니다. 이용자가 사이트의 정보를 활용하여 내린 결정으로 인해 발생한 손실에 대해 사이트는 법적 책임을 지지 않으며, 중요한 의사 결정 시에는 반드시 해당 분야의 전문가 및 공공기관의 공식 자료를 함께 확인하실 것을 권장합니다.</p>
+
+              <h2>제8조 (광고)</h2>
+              <p>사이트는 서비스 운영을 위해 Google AdSense 등 제3자 광고를 게재할 수 있습니다. 광고의 내용 및 그로 인한 거래에 대한 책임은 해당 광고주에게 있으며, 사이트는 이에 대해 책임지지 않습니다.</p>
+
+              <h2>제9조 (준거법 및 관할)</h2>
+              <p>이 약관과 관련된 분쟁은 대한민국 법령에 따르며, 분쟁이 발생할 경우 민사소송법상의 관할 법원을 따릅니다.</p>
+
+              <p className="text-sm text-gray-500 mt-12">시행일: 2026년 5월 12일</p>
             </motion.div>
           )}
 

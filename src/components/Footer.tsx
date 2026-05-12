@@ -55,13 +55,13 @@ export function Footer({ onNavigate }: FooterProps) {
 
           <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-sm text-gray-900 mb-6 relative inline-block">
-              커뮤니티
+              고객지원
               <span className="absolute -bottom-1 left-0 w-4 h-0.5 bg-indigo-600 rounded-full"></span>
             </h4>
             <ul className="space-y-2.5">
               <li><button onClick={() => onNavigate("about")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">하우징허브 소개</button></li>
-              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">제휴 및 비즈니스 문의</button></li>
-              <li><button onClick={() => onNavigate("privacy")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">공지사항</button></li>
+              <li><button onClick={() => onNavigate("announcement")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">공지사항</button></li>
+              <li><button onClick={() => onNavigate("partnership")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">제휴 및 비즈니스 문의</button></li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="flex items-center gap-6">
               <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-bold border-b border-indigo-200" onClick={() => onNavigate("privacy")}>개인정보처리방침</span>
-              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("privacy")}>이용약관</span>
+              <span className="text-[11px] text-gray-500 cursor-pointer hover:text-indigo-700 transition-colors font-medium border-b border-transparent hover:border-indigo-200" onClick={() => onNavigate("terms")}>이용약관</span>
             </div>
           </div>
         </div>
