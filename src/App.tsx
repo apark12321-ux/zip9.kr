@@ -14,15 +14,124 @@ import { Badge } from "./components/ui/badge";
 import { auth, db } from "./lib/firebase";
 import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { calculateReadTime } from "./lib/utils";
+import { calculateReadTime, slugify, stripHtml } from "./lib/utils";
 
 type Page = "home" | "about" | "privacy" | `category-${string}` | `post-${string}`;
 
+const SITE_URL = "https://zip9.kr";
+const SITE_NAME = "하우징허브";
+const DEFAULT_TITLE = "하우징허브 - 대한민국 최고의 부동산 & 주거 정보 가이드";
+const DEFAULT_DESCRIPTION = "청약 정보, 전월세 계약 팁, 담보대출 가이드 등 실용적인 주거 정보를 제공하는 하우징허브입니다.";
+
+// URL → Page 상태
+function pageFromUrl(): Page {
+  if (typeof window === "undefined") return "home";
+  const path = window.location.pathname;
+  if (path === "/" || path === "") return "home";
+  if (path === "/about") return "about";
+  if (path === "/privacy") return "privacy";
+  const catMatch = path.match(/^\/category\/(.+)$/);
+  if (catMatch) return `category-${decodeURIComponent(catMatch[1])}` as Page;
+  const postMatch = path.match(/^\/post\/(.+)$/);
+  if (postMatch) return `post-${decodeURIComponent(postMatch[1])}` as Page;
+  return "home";
+}
+
+// Page → URL 경로 (게시물은 slug 우선, fallback은 id)
+function urlFromPage(page: Page, posts: Post[]): string {
+  if (page === "home") return "/";
+  if (page === "about") return "/about";
+  if (page === "privacy") return "/privacy";
+  if (page.startsWith("category-")) {
+    return `/category/${encodeURIComponent(page.replace("category-", ""))}`;
+  }
+  if (page.startsWith("post-")) {
+    const key = page.replace("post-", "");
+    // key가 id 형태로 들어왔으면 slug로 변환
+    const post = posts.find(p => p.id === key || slugify(p.title) === key);
+    if (post) {
+      const slug = slugify(post.title) || post.id;
+      return `/post/${slug}`;
+    }
+    return `/post/${encodeURIComponent(key)}`;
+  }
+  return "/";
+}
+
+// 메타태그/canonical/JSON-LD를 head에 반영
+function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${name}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function setCanonical(url: string) {
+  let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", "canonical");
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", url);
+}
+
+function setArticleJsonLd(post: Post | null) {
+  const id = "article-jsonld";
+  let el = document.getElementById(id) as HTMLScriptElement | null;
+  if (!post) {
+    if (el) el.remove();
+    return;
+  }
+  if (!el) {
+    el = document.createElement("script");
+    el.id = id;
+    el.type = "application/ld+json";
+    document.head.appendChild(el);
+  }
+  const slug = slugify(post.title) || post.id;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": [post.image],
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": { "@type": "Person", "name": post.author || "하우징허브 편집팀" },
+    "publisher": {
+      "@type": "Organization",
+      "name": SITE_NAME,
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/post/${slug}`
+    },
+    "articleSection": post.category,
+    "inLanguage": "ko-KR"
+  };
+  el.textContent = JSON.stringify(data);
+}
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>(() => pageFromUrl());
   const [searchQuery, setSearchQuery] = useState("");
   const [realPosts, setRealPosts] = useState<Post[]>([]);
   const [user, setUser] = useState<User | null>(null);
+
+  // 브라우저 뒤로/앞으로 가기 처리
+  useEffect(() => {
+    const onPopState = () => {
+      setCurrentPage(pageFromUrl());
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (u) => {
@@ -78,14 +187,90 @@ export default function App() {
 
   const currentPost = useMemo(() => {
     if (currentPage.startsWith("post-")) {
-      const id = currentPage.replace("post-", "");
-      return allPosts.find(p => p.id === id);
+      const key = currentPage.replace("post-", "");
+      // slug 우선 매칭, 없으면 id로 fallback (백워드 호환)
+      return (
+        allPosts.find(p => slugify(p.title) === key) ||
+        allPosts.find(p => p.id === key) ||
+        null
+      );
     }
     return null;
   }, [currentPage, allPosts]);
 
+  // 게시물을 찾은 경우, URL이 id로 되어 있다면 slug 형태로 정리(replaceState).
+  // 검색엔진/공유 시 깔끔한 URL 유지를 위함.
+  useEffect(() => {
+    if (!currentPost) return;
+    const slug = slugify(currentPost.title) || currentPost.id;
+    const desired = `/post/${slug}`;
+    if (window.location.pathname !== desired) {
+      window.history.replaceState({}, "", desired);
+    }
+  }, [currentPost]);
+
+  // SEO 메타태그/canonical/JSON-LD 동기화
+  useEffect(() => {
+    let title = DEFAULT_TITLE;
+    let description = DEFAULT_DESCRIPTION;
+    let canonical = `${SITE_URL}/`;
+    let ogType: "website" | "article" = "website";
+    let ogImage: string | null = null;
+
+    if (currentPost) {
+      const slug = slugify(currentPost.title) || currentPost.id;
+      title = `${currentPost.title} | ${SITE_NAME}`;
+      description = currentPost.excerpt || stripHtml(currentPost.content).slice(0, 155);
+      canonical = `${SITE_URL}/post/${slug}`;
+      ogType = "article";
+      ogImage = currentPost.image;
+    } else if (currentPage === "about") {
+      title = `소개 | ${SITE_NAME}`;
+      description = `${SITE_NAME}는 실용적이고 정확한 주거 정보를 전해드리는 미디어입니다.`;
+      canonical = `${SITE_URL}/about`;
+    } else if (currentPage === "privacy") {
+      title = `개인정보 처리방침 | ${SITE_NAME}`;
+      description = `${SITE_NAME}의 개인정보 수집 및 이용에 관한 안내입니다.`;
+      canonical = `${SITE_URL}/privacy`;
+    } else if (currentPage.startsWith("category-")) {
+      const cat = currentPage.replace("category-", "");
+      title = `${cat} 정보 | ${SITE_NAME}`;
+      description = `${cat} 관련 주거 정보와 가이드를 모았습니다.`;
+      canonical = `${SITE_URL}/category/${encodeURIComponent(cat)}`;
+    }
+
+    document.title = title;
+    setMeta("description", description);
+    setCanonical(canonical);
+
+    // Open Graph
+    setMeta("og:type", ogType, "property");
+    setMeta("og:title", title, "property");
+    setMeta("og:description", description, "property");
+    setMeta("og:url", canonical, "property");
+    setMeta("og:site_name", SITE_NAME, "property");
+    setMeta("og:locale", "ko_KR", "property");
+    if (ogImage) {
+      setMeta("og:image", ogImage, "property");
+      setMeta("twitter:image", ogImage);
+    }
+
+    // Twitter
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
+
+    // Article JSON-LD (게시물 페이지에만)
+    setArticleJsonLd(currentPost);
+  }, [currentPage, currentPost]);
+
   const handleNavigate = (page: string) => {
-    setCurrentPage(page as Page);
+    const nextPage = page as Page;
+    const nextUrl = urlFromPage(nextPage, allPosts);
+    if (window.location.pathname !== nextUrl) {
+      window.history.pushState({}, "", nextUrl);
+    }
+    setCurrentPage(nextPage);
     window.scrollTo(0, 0);
   };
 
