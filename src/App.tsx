@@ -301,14 +301,7 @@ export default function App() {
                 </div>
               )}
 
-              <div className="mt-20 p-8 bg-indigo-50 rounded-3xl">
-                <h4 className="text-xl font-bold mb-4">도움이 되셨나요?</h4>
-                <p className="text-gray-600 mb-6 font-medium">더 많은 정보를 원하시면 뉴스레터를 구독하세요.</p>
-                <div className="flex gap-2">
-                  <input className="flex-1 px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-indigo-600 shadow-sm" placeholder="이메일을 입력하세요" />
-                  <Button className="bg-indigo-600 hover:bg-indigo-700 rounded-xl px-6 font-bold">구독하기</Button>
-                </div>
-              </div>
+
             </motion.article>
           ) : (
             (currentPage === "home" || currentPage.startsWith("category-")) && (
