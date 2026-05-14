@@ -623,7 +623,7 @@ export const MOCK_POSTS = [
       <p>또한 결혼 전 잠시 보유했다 처분한 주택, 부모 명의로 단독 등기되어 있던 시기의 동거 주택 등도 무주택 요건에 영향을 줄 수 있으므로 등기 이력을 꼼꼼히 확인해야 합니다. 위장 이혼이나 위장 분가 등 자격을 부정하게 취득하는 행위는 적발 시 당첨 취소뿐 아니라 향후 10년간 청약 자격이 박탈되며 형사처벌까지 받을 수 있는 중대한 사안입니다. 합법적인 범위 내에서 본인에게 가장 유리한 트랙을 선택하는 지혜가 필요합니다.</p>
     `,
     category: "청약/분양",
-    author: "김주택",
+    author: "하우징허브 편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -685,7 +685,7 @@ export const MOCK_POSTS = [
       <p>셋째, <strong>무순위 청약(이른바 '줍줍')</strong>은 일반 청약에서 미계약 물량을 추첨으로 재공급하는 제도로 청약통장도 필요 없고 가점도 보지 않습니다. 넷째, <strong>공공분양 일반공급</strong>은 가점이 아닌 저축 총액 기준이므로 청약통장 납입을 꾸준히 한 분에게 유리합니다. 가점이 낮다고 포기하지 마시고, 본인 상황에 맞는 대안 트랙을 적극 발굴하시기 바랍니다.</p>
     `,
     category: "청약/분양",
-    author: "김주택",
+    author: "하우징허브 편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -746,7 +746,7 @@ export const MOCK_POSTS = [
       <p>최근 분양 시장은 공공분양 비중이 확대되는 추세이며, 신혼희망타운·뉴홈 등 다양한 공공분양 브랜드가 신설되고 있습니다. 반면 민간분양은 분양가 상승과 미분양 우려가 공존하는 상황으로, 단지별 옥석 가리기가 더욱 중요해지고 있습니다. <strong>본인 상황에 맞는 전략을 정한 후, 매월 LH 청약센터와 청약홈을 모니터링하는 꾸준함이 결국 당첨으로 이어집니다.</strong></p>
     `,
     category: "청약/분양",
-    author: "박분양",
+    author: "하우징허브 편집팀",
     date: "2026-04-30",
     image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -801,7 +801,7 @@ export const MOCK_POSTS = [
       <p>홈택스(hometax.go.kr)에서 본인이 직접 신고할 수도 있지만, 분양권 양도는 보유 기간·중과세·필요경비 등 변수가 많아 세무사 위임이 안전합니다. 세무사 수수료(통상 30~50만 원)는 절감 가능한 세금에 비해 매우 적은 비용입니다. <strong>※ 본 글은 일반 정보 제공 목적이며 실제 세무 처리는 반드시 세무 전문가의 상담을 통해 진행하시기 바랍니다.</strong></p>
     `,
     category: "청약/분양",
-    author: "이세무",
+    author: "하우징허브 편집팀",
     date: "2026-05-07",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -865,7 +865,7 @@ export const MOCK_POSTS = [
       <p>가입 조건은 주택 가격 대비 보증금 비율 80% 이하, 등기부상 선순위 채권이 일정 기준 이하 등이 있습니다. 가입 가능 여부를 보증 신청 시점에 미리 확인하는 것이 중요하며, 가입이 거절되는 매물은 자체적으로 위험 신호로 받아들이고 계약을 재고하시기 바랍니다. <strong>"보증보험에 가입할 수 없는 집은 살지 않는다"</strong>를 철칙으로 삼으시면 전세 사기로부터 안전합니다.</p>
     `,
     category: "전월세",
-    author: "박보증",
+    author: "하우징허브 편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -929,7 +929,7 @@ export const MOCK_POSTS = [
       <p>"전세 보증금이 사라질 위험은요?" 이것이 전세의 가장 큰 단점입니다. <strong>전세보증금반환보증(HUG·SGI)에 반드시 가입</strong>하여 위험을 차단해야 합니다. 보증료는 보증금의 0.1~0.2%로 매우 저렴합니다. "반전세는 어떤 사람에게 좋나요?" 자금 일부는 운용하고 일부는 부담을 줄이고 싶은 분에게 적합합니다. 중도적 선택이지만 자금 효율이 가장 떨어질 수도 있으니 명확한 목적이 있을 때 선택하시기 바랍니다.</p>
     `,
     category: "전월세",
-    author: "최주거",
+    author: "하우징허브 편집팀",
     date: "2026-04-30",
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1005,7 +1005,7 @@ export const MOCK_POSTS = [
       <p>임대차 3법은 어느 한쪽만을 일방적으로 보호하는 법이 아니라, 양 당사자의 권리와 의무를 균형 있게 규율하는 제도입니다. 정확히 이해하고 활용하면 분쟁 없는 안정적인 임대차 관계를 만들 수 있습니다.</p>
     `,
     category: "전월세",
-    author: "박보증",
+    author: "하우징허브 편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1069,7 +1069,7 @@ export const MOCK_POSTS = [
       <p>특히 ①번 보증보험 가입은 보증금의 0.1~0.2% 비용으로 보증금 전액을 보호받을 수 있는 가장 강력한 안전장치입니다. 향후 어떤 분쟁이 생겨도 보증기관이 먼저 지급하고 임대인에게 구상권을 행사하므로 임차인은 안전합니다. 가입을 망설일 이유가 전혀 없습니다.</p>
     `,
     category: "전월세",
-    author: "이법무",
+    author: "하우징허브 편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1133,7 +1133,7 @@ export const MOCK_POSTS = [
       <p>이사화물배상책임보험에 가입된 업체는 파손·분실 시 보험금 청구가 가능합니다. 보험 적용을 받기 위해서는 ① 이사 직후 즉시 파손 확인 ② 사진·동영상 증거 확보 ③ 인수증에 파손 사실 기재 ④ 7일 이내 신고가 필요합니다. <strong>이사 당일 짐을 받자마자 박스를 열어 주요 물건 상태를 확인하는 것</strong>이 분쟁 예방의 핵심입니다. 작업자가 가기 전에 모든 짐의 상태를 확인하시기 바랍니다.</p>
     `,
     category: "이사/인테리어",
-    author: "정이사",
+    author: "하우징허브 편집팀",
     date: "2026-04-29",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1197,7 +1197,7 @@ export const MOCK_POSTS = [
       <p>"전세보증보험에 가입되어 있으면 어떻게 하나요?" HUG나 SGI 보증에 가입되어 있다면 보증기관에 보증금 반환 청구를 하는 것이 가장 빠릅니다. 보증기관이 임차인에게 먼저 보증금을 지급하고 임대인에게 구상권을 행사합니다. 이때도 임차권등기는 필요하므로 함께 진행하시면 됩니다. <strong>임차권등기 + 보증보험 청구 + 내용증명 + 임대차분쟁조정 신청</strong>을 동시에 진행하는 것이 가장 빠른 회수 전략입니다. 어렵게 모은 보증금을 지키려면 적극적인 권리 행사가 필수입니다.</p>
     `,
     category: "이사/인테리어",
-    author: "이법무",
+    author: "하우징허브 편집팀",
     date: "2026-05-05",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1263,7 +1263,7 @@ export const MOCK_POSTS = [
       <p>합계 100만 원으로 분위기가 완전히 다른 공간을 만들 수 있습니다. 한꺼번에 모두 사기보다는 <strong>한 달에 한 카테고리씩 단계적으로 채워가는 것</strong>이 만족도가 높습니다. 우선순위는 ① 도배·시트지 ② 조명 ③ 침구 ④ 수납 ⑤ 디테일 순서를 추천드립니다. 작은 공간일수록 정성껏 꾸민 흔적이 빛납니다.</p>
     `,
     category: "이사/인테리어",
-    author: "한인테리어",
+    author: "하우징허브 편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1339,7 +1339,7 @@ export const MOCK_POSTS = [
       <p>이 체크리스트만 따라가면 보증금을 지키는 모든 법적 장치를 빠짐없이 챙길 수 있습니다. <strong>전입신고와 확정일자는 보증금 보호의 알파이자 오메가</strong>이므로, 단 하루도 미루지 마시기 바랍니다.</p>
     `,
     category: "이사/인테리어",
-    author: "박보증",
+    author: "하우징허브 편집팀",
     date: "2026-05-04",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1423,7 +1423,7 @@ export const MOCK_POSTS = [
       <p>본인 소득이 낮고 무주택 기간이 길다면 디딤돌이, 소득이 약간 높지만 안정적 상품을 원한다면 보금자리론이, 신생아가 있다면 신생아 특례대출이 가장 유리합니다. <strong>여러 상품을 동시에 검토해 가장 좋은 조건을 비교 선택하는 것이 합리적</strong>입니다. 각 상품의 자세한 자격은 주택도시기금과 한국주택금융공사 사이트에서 직접 확인 가능합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청은 반드시 금융기관 상담을 통해 진행하시기 바랍니다.</p>
     `,
     category: "대출/금융",
-    author: "이금융",
+    author: "하우징허브 편집팀",
     date: "2026-05-03",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1507,7 +1507,7 @@ export const MOCK_POSTS = [
       <p>특히 ③번 자녀 상속 문제는 가족 갈등의 원인이 될 수 있으므로, <strong>가입 전 가족 모두와 충분히 상의</strong>하는 것이 중요합니다. 자녀가 부모의 주택연금 가입에 반대하더라도, 본인의 노후가 가장 우선이라는 인식의 변화가 필요합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 가입 시에는 한국주택금융공사 또는 전문 상담을 받으시기 바랍니다.</p>
     `,
     category: "대출/금융",
-    author: "이금융",
+    author: "하우징허브 편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1581,7 +1581,7 @@ export const MOCK_POSTS = [
       <p>특히 ⑤ 반전세 전환은 한도가 부족한 가구에게 매우 현실적인 대안입니다. 예를 들어 전세 3억이 필요한데 한도가 2.5억뿐이라면, 보증금 2억 + 월세 30만 원의 반전세로 전환하면 한도 내에서 해결 가능합니다. <strong>현재 자금 상황에 맞는 합리적 선택이 무리한 대출보다 안전</strong>합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청 시에는 반드시 금융기관과 충분히 상담하시기 바랍니다.</p>
     `,
     category: "대출/금융",
-    author: "이금융",
+    author: "하우징허브 편집팀",
     date: "2026-05-01",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1666,7 +1666,7 @@ export const MOCK_POSTS = [
       <p>주의할 점은 <strong>두 상품 모두 자녀 출산 또는 입양 후 1년 이내 신청</strong>이 원칙이라는 것입니다. 자녀가 어릴 때 신청하는 것이 가장 유리하며, 자녀가 성장한 후에는 자격을 잃을 수 있으므로 적시 신청이 매우 중요합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청은 반드시 금융기관 상담을 통해 진행하시기 바랍니다.</p>
     `,
     category: "대출/금융",
-    author: "이금융",
+    author: "하우징허브 편집팀",
     date: "2026-05-06",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1742,7 +1742,7 @@ export const MOCK_POSTS = [
       <p>대출을 빨리 갚는 것이 항상 옳은 것은 아닙니다. <strong>대출 금리보다 더 높은 수익률로 자금을 운용할 수 있다면 대출 유지가 합리적</strong>입니다. 본인의 투자 수익률, 향후 자금 수요, 심리적 부담 등을 종합 고려해 최적 시점을 결정하시기 바랍니다. ※ 본 글은 일반 정보 제공 목적이며 실제 상환 결정 시 반드시 거래 은행과 상담하시기 바랍니다.</p>
     `,
     category: "대출/금융",
-    author: "이금융",
+    author: "하우징허브 편집팀",
     date: "2026-05-10",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1804,7 +1804,7 @@ export const MOCK_POSTS = [
       <p>합계 <strong>월 3~6만 원 절감이 충분히 가능</strong>하며, 연간 환산 시 40~70만 원입니다. 한 번에 모든 방법을 실천하기 어렵다면, 가장 효과 큰 항목(전기 누진제, 난방)부터 시작해 점진적으로 확대하시기 바랍니다. 관리비 절감은 단순한 절약이 아닌, 합리적인 에너지 사용 습관을 만드는 과정이며 환경에도 기여하는 일입니다.</p>
     `,
     category: "이사/인테리어",
-    author: "한인테리어",
+    author: "하우징허브 편집팀",
     date: "2026-04-29",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
