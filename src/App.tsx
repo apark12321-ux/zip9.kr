@@ -110,7 +110,9 @@ function setArticleJsonLd(post: Post | null) {
     "author": { "@type": "Person", "name": post.author || "하우징허브 편집팀" },
     "publisher": {
       "@type": "Organization",
-      "name": SITE_NAME,
+      "name": "알고파트너스",
+      "alternateName": SITE_NAME,
+      "url": SITE_URL,
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
     },
     "mainEntityOfPage": {
@@ -399,6 +401,15 @@ export default function App() {
               </ul>
 
               <p>하우징허브는 항상 사용자의 관점에서 가장 필요하고 유익한 정보를 전달하기 위해 끊임없이 연구하고 소통하겠습니다.</p>
+
+              <h2>운영 정보</h2>
+              <ul>
+                <li><strong>운영 주체:</strong> 알고파트너스</li>
+                <li><strong>대표자:</strong> 박예준</li>
+                <li><strong>문의 이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
+                <li><strong>사이트 URL:</strong> <a href="https://zip9.kr" target="_blank" rel="noopener noreferrer">https://zip9.kr</a></li>
+              </ul>
+              <p>제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
             </motion.div>
           )}
 
@@ -431,7 +442,19 @@ export default function App() {
               <p>본 사이트는 제3자 광고 업체인 Google이 제공하는 광고 서비스를 이용합니다. Google은 사용자가 본 사이트 또는 다른 웹사이트를 방문한 기록을 바탕으로 사용자에게 최적화된 광고를 게재하기 위해 쿠키를 사용합니다. 사용자는 <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener noreferrer">Google 광고 설정</a>을 방문하여 맞춤형 광고를 해제할 수 있습니다.</p>
 
               <h2>4. 개인정보의 보호 및 관리</h2>
-              <p>본 사이트는 수집된 개인정보를 법령에 따르지 않고는 제3자에게 제공하거나 공개하지 않습니다. 개인정보 보호와 관련한 문의사항은 apark12321@gmail.com으로 연락 주시기 바랍니다.</p>
+              <p>본 사이트는 수집된 개인정보를 법령에 따르지 않고는 제3자에게 제공하거나 공개하지 않습니다. 개인정보 보호와 관련한 문의사항은 아래 개인정보 보호책임자에게 연락 주시기 바랍니다.</p>
+
+              <h2>5. 개인정보 보호책임자</h2>
+              <ul>
+                <li><strong>운영 주체:</strong> 알고파트너스</li>
+                <li><strong>대표자(개인정보 보호책임자):</strong> 박예준</li>
+                <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
+              </ul>
+              <p>이용자는 본 사이트의 서비스를 이용하면서 발생한 모든 개인정보 관련 문의, 불만 처리, 피해 구제 등을 위 책임자에게 문의할 수 있으며, 본 사이트는 이용자의 문의에 대해 신속하고 충분한 답변을 드리겠습니다.</p>
+
+              <h2>6. 처리방침의 변경</h2>
+              <p>본 개인정보 처리방침은 법령·정책 또는 보안 기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시 사이트 내 공지사항을 통해 사전에 고지할 것입니다.</p>
+              <p className="text-sm text-gray-500 mt-8">시행일: 2026년 5월 12일</p>
             </motion.div>
           )}
 
@@ -550,7 +573,8 @@ export default function App() {
 
               <h2>제2조 (용어의 정의)</h2>
               <ul>
-                <li><strong>"사이트"</strong>란 하우징허브(https://zip9.kr)를 의미합니다.</li>
+                <li><strong>"사이트"</strong>란 알고파트너스(대표 박예준)가 운영하는 하우징허브(https://zip9.kr)를 의미합니다.</li>
+                <li><strong>"운영자"</strong>란 본 사이트를 운영하는 알고파트너스를 의미합니다.</li>
                 <li><strong>"이용자"</strong>란 사이트에 접속하여 서비스를 이용하는 모든 자를 말합니다.</li>
                 <li><strong>"콘텐츠"</strong>란 사이트가 게재하는 모든 텍스트, 이미지, 데이터, 영상 등을 의미합니다.</li>
               </ul>
@@ -571,7 +595,7 @@ export default function App() {
               </ul>
 
               <h2>제6조 (콘텐츠의 저작권)</h2>
-              <p>사이트가 작성한 모든 콘텐츠의 저작권은 하우징허브에 귀속됩니다. 이용자는 사이트의 사전 서면 동의 없이 콘텐츠를 영리 목적으로 이용하거나 제3자에게 이용하게 할 수 없습니다. 단, 출처를 명시한 비영리적·개인적 인용은 허용됩니다.</p>
+              <p>사이트가 작성한 모든 콘텐츠의 저작권은 운영자인 알고파트너스에 귀속됩니다. 이용자는 운영자의 사전 서면 동의 없이 콘텐츠를 영리 목적으로 이용하거나 제3자에게 이용하게 할 수 없습니다. 단, 출처를 명시한 비영리적·개인적 인용은 허용됩니다.</p>
 
               <h2>제7조 (책임의 제한)</h2>
               <p>사이트가 제공하는 정보는 일반적인 안내를 목적으로 하며, 특정 개인의 의사 결정에 대한 법률·세무·금융 자문이 아닙니다. 이용자가 사이트의 정보를 활용하여 내린 결정으로 인해 발생한 손실에 대해 사이트는 법적 책임을 지지 않으며, 중요한 의사 결정 시에는 반드시 해당 분야의 전문가 및 공공기관의 공식 자료를 함께 확인하실 것을 권장합니다.</p>
@@ -581,6 +605,14 @@ export default function App() {
 
               <h2>제9조 (준거법 및 관할)</h2>
               <p>이 약관과 관련된 분쟁은 대한민국 법령에 따르며, 분쟁이 발생할 경우 민사소송법상의 관할 법원을 따릅니다.</p>
+
+              <h2>제10조 (운영자 정보)</h2>
+              <ul>
+                <li><strong>운영 주체:</strong> 알고파트너스</li>
+                <li><strong>대표자:</strong> 박예준</li>
+                <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
+                <li><strong>사이트:</strong> https://zip9.kr</li>
+              </ul>
 
               <p className="text-sm text-gray-500 mt-12">시행일: 2026년 5월 12일</p>
             </motion.div>

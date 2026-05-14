@@ -83,7 +83,7 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mb-2">
-                <span className="text-[11px] text-gray-400">운영: 하우징허브(HousingHub)</span>
+                <span className="text-[11px] text-gray-400">운영: 알고파트너스 / 대표: 박예준</span>
                 <span className="text-[11px] text-gray-400">대표: 박성준 (편집책임자)</span>
                 <span className="text-[11px] text-gray-400">이메일: apark12321@gmail.com</span>
                 <span className="text-[11px] text-gray-400">개인 블로그/정보 서비스 (사업자 등록 준비 중)</span>
