@@ -1,5 +1,5 @@
 
-import { Home, Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Home, Mail, Globe } from "lucide-react";
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -29,10 +29,6 @@ export function Footer({ onNavigate }: FooterProps) {
               올바른 정보가 주거 안정을 만든다는 믿음으로, 검증된 데이터 기반의 콘텐츠를 제작합니다.
             </p>
             <div className="space-y-3 text-xs text-gray-400">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-gray-300 shrink-0 mt-0.5" />
-                <span>인천광역시 서구 청라커낼로 270, 커낼힐스빌</span>
-              </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gray-300 shrink-0" />
                 <a href="mailto:apark12321@gmail.com" className="hover:text-indigo-600 transition-colors">apark12321@gmail.com</a>
@@ -72,8 +68,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 면책 공고 (Legal Disclaimer)
               </h4>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                하우징허브의 모든 콘텐츠는 정보 전달을 목적으로 하며, 실제 의사 결정 시에는 반드시 해당 분야 전문가와의 상담 또는 공공기관의 공식 자료를 확인하시기 바랍니다. 
-                정보의 오류로 인한 이용자의 손실에 대해 당사는 법적 책임을 지지 않습니다.
+                하우징허브의 모든 콘텐츠는 일반 정보 제공을 목적으로 합니다. 청약, 임대차, 세무, 금융 관련 의사 결정 시에는 반드시 해당 분야 전문가 또는 공공기관의 공식 자료를 함께 확인하시기 바랍니다.
               </p>
             </div>
           </div>
