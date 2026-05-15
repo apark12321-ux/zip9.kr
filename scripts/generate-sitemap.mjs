@@ -23,7 +23,7 @@ function slugify(title) {
     .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
     .replace(/-+/g, "-")
     .replace(/^-+|-+$/g, "")
-    .slice(0, 80)
+    .slice(0, 25)
     .replace(/-+$/g, "");
 }
 
