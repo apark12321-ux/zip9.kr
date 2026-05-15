@@ -45,10 +45,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   };
 
   const postId = slug || generateSlug(title) || `post-${Date.now()}`;
-  const validCategories = ["청약/분양", "전월세", "이사/인테리어", "대출/금융"];
+  const validCategories = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
   let finalCategory = category;
   if (!validCategories.includes(category)) {
-    finalCategory = "청약/분양";
+    finalCategory = "청약-분양";
   }
 
   const bodyContent = typeof content === 'string' ? content : content.body;

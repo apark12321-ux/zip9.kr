@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const DIST = resolve(ROOT, "dist");
 const SITE_URL = "https://zip9.kr";
-const CATEGORIES = ["청약/분양", "전월세", "이사/인테리어", "대출/금융"];
+const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
 
 function slugify(title) {
   if (!title) return "";

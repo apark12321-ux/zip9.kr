@@ -18,7 +18,7 @@ const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
 const DEFAULT_TITLE = "하우징허브 - 대한민국 최고의 부동산 & 주거 정보 가이드";
 const DEFAULT_DESCRIPTION = "청약 정보, 전월세 계약 팁, 담보대출 가이드 등 실용적인 주거 정보를 제공하는 하우징허브입니다.";
-const CATEGORIES = ["청약/분양", "전월세", "이사/인테리어", "대출/금융"];
+const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
 
 function slugify(title) {
   if (!title) return "";
@@ -324,7 +324,7 @@ function main() {
       url: `${SITE_URL}/about`,
       body: buildStaticPageBody(
         `${SITE_NAME} 소개`,
-        `<p>${SITE_NAME}는 청약·분양, 전월세, 이사·인테리어, 대출·금융 등 주거 생활 전반의 정보를 다루는 미디어입니다. 운영: 알고파트너스 / 대표: 박예준 / 문의: apark12321@gmail.com</p>`
+        `<p>${SITE_NAME}는 청약-분양, 전월세, 이사-인테리어, 대출-금융 등 주거 생활 전반의 정보를 다루는 미디어입니다. 운영: 알고파트너스 / 대표: 박예준 / 문의: apark12321@gmail.com</p>`
       ),
     },
     {

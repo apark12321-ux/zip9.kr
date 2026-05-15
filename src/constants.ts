@@ -1,5 +1,5 @@
 
-export const CATEGORIES = ["청약/분양", "전월세", "이사/인테리어", "대출/금융"] as const;
+export const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"] as const;
 
 export const MOCK_POSTS = [
   {
@@ -60,7 +60,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 안내를 목적으로 한다. 실제 청약 결정은 청약홈 공고와 공공기관 자료를 우선 확인해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-11</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-11",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
@@ -122,10 +122,10 @@ export const MOCK_POSTS = [
 
       <h3>마치며: 내 집 마련은 정보력과 실천력의 합작품입니다</h3>
       <p>부동산 가격이 요동치고 금리가 높아도 국가가 제공하는 공공의 기회는 늘 존재합니다. 뉴:홈은 당신의 주거 안정을 위한 가장 강력하고 저렴한 티켓입니다. 단순히 뉴스를 보고 넘어가는 것이 아니라, 직접 청약 홈 사이트를 방문해 공고문을 꼼꼼히 읽고 본인의 자격을 능숙하게 확인하는 습관을 기르세요. 오늘의 꼼꼼한 기록과 준비가 훗날 여러분의 아늑한 보금자리가 될 것입니다. 하우징허브는 여러분이 뉴:홈의 최종 당첨자가 되어 웃으며 입주하는 그날까지 가장 정확하고 방대한 정보로 함께하겠습니다.</p>
-      <p class="text-sm text-gray-500 mt-8">※ 본 글은 청약·분양에 관한 일반 정보다. 본인 자격 판단과 실제 신청은 청약홈에서 사전 진단 후 진행해야 한다.</p>
+      <p class="text-sm text-gray-500 mt-8">※ 본 글은 청약-분양에 관한 일반 정보다. 본인 자격 판단과 실제 신청은 청약홈에서 사전 진단 후 진행해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-08</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-08",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
@@ -177,7 +177,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 안내를 목적으로 한다. 실제 청약 결정은 청약홈 공고와 공공기관 자료를 우선 확인해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-09</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
@@ -382,7 +382,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글의 내용은 참고용이에요. 실제 이사 견적과 인테리어 비용은 업체별·지역별로 차이가 크니까 최소 3곳 이상 비교해보시기를 권해드려요.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-11</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-11",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
@@ -427,7 +427,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 안내고요. 업체별로 서비스 차이가 크니까 견적 비교와 후기 확인은 꼭 직접 해보시기 바랍니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-09</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
@@ -479,7 +479,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 안내거든요. 업체 선택이나 분쟁 발생 시에는 한국소비자원(1372)이나 관련 전문가와 상담하시는 게 좋겠습니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-11</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-11",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6958?auto=format&fit=crop&q=80&w=800",
@@ -544,7 +544,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 금융 관련 일반 안내를 위한 것입니다. 대출 가능 한도와 금리는 본인 신용 상태에 따라 달라지므로, 실제 신청 전 시중 금융기관과 충분히 상담하시기를 권해 드립니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-12</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=800",
@@ -595,7 +595,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 금융 관련 일반 정보를 다룹니다. 개인의 신용 상태와 자금 계획에 따라 실제 적용 조건이 달라지므로 시중 금융기관 상담을 권해 드립니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-08</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-08",
     image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=800",
@@ -642,7 +642,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 금융 관련 일반 안내를 위한 것입니다. 대출 가능 한도와 금리는 본인 신용 상태에 따라 달라지므로, 실제 신청 전 시중 금융기관과 충분히 상담하시기를 권해 드립니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-06</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-06",
     image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
@@ -707,7 +707,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 청약 제도와 정책은 자주 개편된다. 본 글은 일반 안내이며 실제 신청 전 청약홈과 관할 기관에서 최신 요건을 다시 확인해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-04-28</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
@@ -771,7 +771,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 안내를 목적으로 한다. 실제 청약 결정은 청약홈 공고와 공공기관 자료를 우선 확인해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-02</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
@@ -834,7 +834,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 청약 제도와 정책은 자주 개편된다. 본 글은 일반 안내이며 실제 신청 전 청약홈과 관할 기관에서 최신 요건을 다시 확인해야 한다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-04-30</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-04-30",
     image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800",
@@ -890,7 +890,7 @@ export const MOCK_POSTS = [
       <p><a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer">홈택스</a>에서 본인이 직접 신고할 수도 있지만, 분양권 양도는 보유 기간·중과세·필요경비 등 변수가 많아 세무사 위임이 안전합니다. 세무사 수수료(통상 30~50만 원)는 절감 가능한 세금에 비해 매우 적은 비용입니다. <strong>※ 본 글은 일반 정보 제공 목적이며 실제 세무 처리는 반드시 세무 전문가의 상담을 통해 진행하검토해야 한다.</strong></p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-07</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-07",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
@@ -1232,7 +1232,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 가이드입니다. 분쟁이 생기면 한국소비자원이나 관할 지자체에 도움을 요청하시면 됩니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-04-29</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-04-29",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
@@ -1298,7 +1298,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 안내고요. 업체별로 서비스 차이가 크니까 견적 비교와 후기 확인은 꼭 직접 해보시기 바랍니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-05</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-05",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
@@ -1366,7 +1366,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 가이드입니다. 분쟁이 생기면 한국소비자원이나 관할 지자체에 도움을 요청하시면 됩니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-09</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
@@ -1444,7 +1444,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 안내거든요. 업체 선택이나 분쟁 발생 시에는 한국소비자원(1372)이나 관련 전문가와 상담하시는 게 좋겠습니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-04</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-04",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
@@ -1529,7 +1529,7 @@ export const MOCK_POSTS = [
       <p>본인 소득이 낮고 무주택 기간이 길다면 디딤돌이 소득이 약간 높지만 안정적 상품을 원한다면 보금자리론이 신생아가 있다면 신생아 특례대출이 가장 유리합니다. <strong>여러 상품을 동시에 검토해 가장 좋은 조건을 비교 선택하는 것이 합리적</strong>입니다. 각 상품의 자세한 자격은 주택도시기금과 한국주택금융공사 사이트에서 직접 확인 가능합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청은 반드시 금융기관 상담을 통해 진행하시는 게 좋습니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-03</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-03",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
@@ -1614,7 +1614,7 @@ export const MOCK_POSTS = [
       <p>특히 (다)번 자녀 상속 문제는 가족 갈등의 원인이 될 수 있으므로, <strong>가입 전 가족 모두와 충분히 상의</strong>하는 것이 중요합니다. 자녀가 부모의 주택연금 가입에 반대하더라도, 본인의 노후가 가장 우선이라는 인식의 변화가 필요합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 가입 시에는 한국주택금융공사 또는 전문 상담을 받으시는 것을 권합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
@@ -1689,7 +1689,7 @@ export const MOCK_POSTS = [
       <p>특히 (마) 반전세 전환은 한도가 부족한 가구에게 매우 현실적인 대안입니다. 예를 들어 전세 3억이 필요한데 한도가 2.5억뿐이라면, 보증금 2억 + 월세 30만 원의 반전세로 전환하면 한도 내에서 해결 가능합니다. <strong>현재 자금 상황에 맞는 합리적 선택이 무리한 대출보다 안전</strong>합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청 시에는 반드시 금융기관과 충분히 상담하시는 게 좋습니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-04</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-04",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
@@ -1775,7 +1775,7 @@ export const MOCK_POSTS = [
       <p>주의할 점은 <strong>두 상품 모두 자녀 출산 또는 입양 후 1년 이내 신청</strong>이 원칙이라는 것입니다. 자녀가 어릴 때 신청하는 것이 가장 유리하며, 자녀가 성장한 후에는 자격을 잃을 수 있으므로 적시 신청이 매우 중요합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청은 반드시 금융기관 상담을 통해 진행하검토하시기 바랍니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-06</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-06",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
@@ -1852,7 +1852,7 @@ export const MOCK_POSTS = [
       <p>대출을 빨리 갚는 것이 항상 옳은 것은 아닙니다. <strong>대출 금리보다 더 높은 수익률로 자금을 운용할 수 있다면 대출 유지가 합리적</strong>입니다. 본인의 투자 수익률, 향후 자금 수요, 심리적 부담 등을 종합 고려해 최적 시점을 결정하시기 바랍니다. ※ 본 글은 일반 정보 제공 목적이며 실제 상환 결정 시 반드시 거래 은행과 상담하셔야 합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-12</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
@@ -1916,7 +1916,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 가이드입니다. 분쟁이 생기면 한국소비자원이나 관할 지자체에 도움을 요청하시면 됩니다.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-02</p>
     `,
-    category: "이사/인테리어",
+    category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
@@ -1981,7 +1981,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 정보 제공이 목적이며 청약 가점·자격·일정은 변경될 수 있다. 최종 신청 전 공공기관 공식 공고를 우선 참고해야 한다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-13</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-13",
     image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800",
@@ -2052,7 +2052,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 제공이 목적이며 개인의 재무 결정에 대한 자문이 아닙니다. 대출과 세무 관련 결정은 전문가의 상담을 거치시기 바랍니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-13</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-13",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
@@ -2193,7 +2193,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 금융 관련 일반 안내를 위한 것입니다. 대출 가능 한도와 금리는 본인 신용 상태에 따라 달라지므로, 실제 신청 전 시중 금융기관과 충분히 상담하시기를 권해 드립니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
-    category: "대출/금융",
+    category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
@@ -2263,7 +2263,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 정보 제공이 목적이며 청약 가점·자격·일정은 변경될 수 있다. 최종 신청 전 공공기관 공식 공고를 우선 참고해야 한다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
-    category: "청약/분양",
+    category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",

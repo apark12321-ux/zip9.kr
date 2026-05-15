@@ -42,10 +42,10 @@ export function Footer({ onNavigate }: FooterProps) {
               <span className="absolute -bottom-1 left-0 w-4 h-0.5 bg-indigo-600 rounded-full"></span>
             </h4>
             <ul className="space-y-2.5">
-              <li><button onClick={() => onNavigate("category-청약/분양")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">청약·분양 전략</button></li>
+              <li><button onClick={() => onNavigate("category-청약-분양")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">청약-분양 전략</button></li>
               <li><button onClick={() => onNavigate("category-전월세")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">전월세 계약 노하우</button></li>
-              <li><button onClick={() => onNavigate("category-이사/인테리어")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">이사·인테리어 가이드</button></li>
-              <li><button onClick={() => onNavigate("category-대출/금융")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">금융·대출 솔루션</button></li>
+              <li><button onClick={() => onNavigate("category-이사-인테리어")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">이사-인테리어 가이드</button></li>
+              <li><button onClick={() => onNavigate("category-대출-금융")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">금융·대출 솔루션</button></li>
             </ul>
           </div>
 

@@ -44,10 +44,10 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
           </div>
 
           <div className="hidden md:flex items-center gap-6">
-            <button onClick={() => onNavigate("category-청약/분양")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">청약/분양</button>
+            <button onClick={() => onNavigate("category-청약-분양")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">청약-분양</button>
             <button onClick={() => onNavigate("category-전월세")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">전월세</button>
-            <button onClick={() => onNavigate("category-이사/인테리어")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">이사/인테리어</button>
-            <button onClick={() => onNavigate("category-대출/금융")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">대출/금융</button>
+            <button onClick={() => onNavigate("category-이사-인테리어")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">이사-인테리어</button>
+            <button onClick={() => onNavigate("category-대출-금융")} className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">대출-금융</button>
           </div>
 
           <div className="flex items-center gap-2">
@@ -76,10 +76,10 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
             className="md:hidden bg-white border-b absolute top-full left-0 right-0 shadow-lg"
           >
             <div className="px-4 py-6 flex flex-col gap-4">
-              <button onClick={() => { onNavigate("category-청약/분양"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">청약/분양</button>
+              <button onClick={() => { onNavigate("category-청약-분양"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">청약-분양</button>
               <button onClick={() => { onNavigate("category-전월세"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">전월세</button>
-              <button onClick={() => { onNavigate("category-이사/인테리어"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">이사/인테리어</button>
-              <button onClick={() => { onNavigate("category-대출/금융"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">대출/금융</button>
+              <button onClick={() => { onNavigate("category-이사-인테리어"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">이사-인테리어</button>
+              <button onClick={() => { onNavigate("category-대출-금융"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">대출-금융</button>
               <div className="pt-4 border-t">
                 <Input 
                   className="bg-gray-100" 
