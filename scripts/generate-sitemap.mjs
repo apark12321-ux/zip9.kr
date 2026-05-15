@@ -92,7 +92,36 @@ function buildSitemap(posts) {
 }
 
 function buildRobots() {
-  return `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  return `# 하우징허브 robots.txt
+# Site: ${SITE_URL}
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Google AdSense 크롤러 명시 허용
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
+
+# 일반 검색 봇
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Daum
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
 }
 
 function main() {

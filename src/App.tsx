@@ -125,6 +125,47 @@ function setArticleJsonLd(post: Post | null) {
   el.textContent = JSON.stringify(data);
 }
 
+function setBreadcrumbJsonLd(post: Post | null) {
+  const id = "breadcrumb-jsonld";
+  let el = document.getElementById(id) as HTMLScriptElement | null;
+  if (!post) {
+    if (el) el.remove();
+    return;
+  }
+  if (!el) {
+    el = document.createElement("script");
+    el.id = id;
+    el.type = "application/ld+json";
+    document.head.appendChild(el);
+  }
+  const slug = slugify(post.title) || post.id;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": SITE_URL + "/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": post.category,
+        "item": `${SITE_URL}/category/${encodeURIComponent(post.category)}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `${SITE_URL}/post/${slug}`
+      }
+    ]
+  };
+  el.textContent = JSON.stringify(data);
+}
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(() => pageFromUrl());
   const [searchQuery, setSearchQuery] = useState("");
@@ -254,8 +295,14 @@ export default function App() {
       canonical = `${SITE_URL}/terms`;
     } else if (currentPage.startsWith("category-")) {
       const cat = currentPage.replace("category-", "");
-      title = `${cat} 정보 | ${SITE_NAME}`;
-      description = `${cat} 관련 주거 정보와 가이드를 모았습니다.`;
+      const catDescriptions: Record<string, string> = {
+        "청약/분양": "청약 가점 계산, 특별공급 자격, 신혼희망타운, 분양권 양도세, 공공분양 vs 민간분양 등 청약·분양 실무 정보를 정리한 카테고리입니다.",
+        "전월세": "전세 사기 예방, 임대차 3법 해설, 보증금 반환 절차, 전월세 신고제, 임차권등기명령 등 임대차 관련 주거 정보를 모았습니다.",
+        "이사/인테리어": "이사 견적 비교, 입주청소 노하우, 원룸·오피스텔 셀프 인테리어, 관리비 절감 등 주거 생활 실용 가이드를 제공합니다.",
+        "대출/금융": "디딤돌·보금자리·신생아 특례대출 비교, 주택연금 활용법, 전세대출 한도 확대, 양도세 중과 등 주택 금융 정보를 다룹니다.",
+      };
+      title = `${cat} 카테고리 | ${SITE_NAME}`;
+      description = catDescriptions[cat] || `${cat} 관련 주거 정보와 가이드를 모았습니다.`;
       canonical = `${SITE_URL}/category/${encodeURIComponent(cat)}`;
     }
 
@@ -282,6 +329,7 @@ export default function App() {
 
     // Article JSON-LD (게시물 페이지에만)
     setArticleJsonLd(currentPost);
+    setBreadcrumbJsonLd(currentPost);
   }, [currentPage, currentPost]);
 
   const handleNavigate = (page: string) => {
@@ -655,6 +703,19 @@ export default function App() {
               className="max-w-4xl mx-auto px-4 py-20"
             >
               <div className="mb-12">
+                <nav aria-label="breadcrumb" className="mb-6 text-sm text-gray-500">
+                  <ol className="flex flex-wrap items-center gap-2">
+                    <li>
+                      <button onClick={() => handleNavigate("home")} className="hover:text-indigo-600 transition-colors">홈</button>
+                    </li>
+                    <li aria-hidden="true" className="text-gray-300">›</li>
+                    <li>
+                      <button onClick={() => handleNavigate(`category-${currentPost.category}`)} className="hover:text-indigo-600 transition-colors">{currentPost.category}</button>
+                    </li>
+                    <li aria-hidden="true" className="text-gray-300">›</li>
+                    <li className="text-gray-700 font-medium truncate max-w-xs" aria-current="page">{currentPost.title}</li>
+                  </ol>
+                </nav>
                 <Button 
                   variant="ghost" 
                   className="mb-8 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
@@ -715,6 +776,37 @@ export default function App() {
                 </div>
               )}
 
+              {/* 관련 글 섹션 - 같은 카테고리의 다른 글 3개 */}
+              {(() => {
+                const related = allPosts
+                  .filter(p => p.category === currentPost.category && p.id !== currentPost.id)
+                  .sort(() => Math.random() - 0.5)
+                  .slice(0, 3);
+                if (related.length === 0) return null;
+                return (
+                  <aside className="mt-16 pt-12 border-t border-gray-200" aria-label="관련 글">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 font-display">
+                      <span className="text-indigo-600">{currentPost.category}</span> 관련 글 더보기
+                    </h2>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {related.map(p => (
+                        <button
+                          key={p.id}
+                          onClick={() => handleNavigate(`post-${p.id}`)}
+                          className="text-left group bg-white border border-gray-100 rounded-2xl p-5 hover:border-indigo-200 hover:shadow-md transition-all"
+                        >
+                          <Badge className="bg-indigo-50 text-indigo-700 border-none mb-3">{p.category}</Badge>
+                          <h3 className="font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2 leading-snug">
+                            {p.title}
+                          </h3>
+                          <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed">{p.excerpt}</p>
+                          <p className="text-xs text-gray-400 mt-3">{p.date.replace(/-/g, ". ")} · {calculateReadTime(p.content)} 읽기</p>
+                        </button>
+                      ))}
+                    </div>
+                  </aside>
+                );
+              })()}
 
             </motion.article>
           ) : (
@@ -730,13 +822,30 @@ export default function App() {
                   className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12 shadow-sm p-4 bg-gray-50/50 rounded-2xl"
                 >
                   <div className="md:max-w-md">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2 font-display">
-                      {currentPage === 'home' ? '최근 게시물' : currentPage.replace('category-', '') + ' 정보'}
-                    </h2>
-                    <p className="text-gray-500 font-medium leading-normal">
-                      부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.
-                    </p>
-                  </div>
+                  {(() => {
+                    const categoryName = currentPage === 'home' ? '' : currentPage.replace('category-', '');
+                    const isCategory = currentPage.startsWith('category-');
+                    const title = isCategory ? `${categoryName} 카테고리` : '최근 게시물';
+                    const desc = isCategory
+                      ? ({
+                          "청약/분양": "청약 가점, 특별공급, 분양권 세금, 공공분양과 민간분양 등 청약·분양 전 과정에서 필요한 실무 정보를 정리했습니다.",
+                          "전월세": "전세 사기 예방, 임대차 3법, 보증금 반환, 전월세 신고제 등 임차인과 임대인 모두에게 필요한 임대차 실무를 안내합니다.",
+                          "이사/인테리어": "이사 견적 비교, 입주청소, 원룸 인테리어, 관리비 절감 등 주거 생활을 편리하게 만드는 실용 가이드입니다.",
+                          "대출/금융": "디딤돌·보금자리·신생아 특례 등 정책 대출과 주택연금, 전세대출 한도 확대 전략, 양도세·취득세 등 주택 금융 정보를 다룹니다.",
+                        } as Record<string, string>)[categoryName] || '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.'
+                      : '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.';
+                    return (
+                      <>
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2 font-display">
+                          {title}
+                        </h2>
+                        <p className="text-gray-500 font-medium leading-normal">
+                          {desc}
+                        </p>
+                      </>
+                    );
+                  })()}
+                </div>
                   <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide">
                     <Button 
                       variant={currentPage === "home" ? "default" : "outline"}
