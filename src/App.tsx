@@ -743,8 +743,47 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="icon" className="rounded-full"><Share2 className="w-4 h-4" /></Button>
-                    <Button variant="outline" size="icon" className="rounded-full"><Printer className="w-4 h-4" /></Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                      title="공유"
+                      aria-label="이 글 공유하기"
+                      onClick={async () => {
+                        const shareData = {
+                          title: currentPost.title,
+                          text: currentPost.excerpt || currentPost.title,
+                          url: window.location.href,
+                        };
+                        try {
+                          if (typeof navigator !== "undefined" && (navigator as any).share) {
+                            await (navigator as any).share(shareData);
+                            return;
+                          }
+                        } catch (err) {
+                          // 사용자 취소 등은 무시
+                        }
+                        try {
+                          await navigator.clipboard.writeText(window.location.href);
+                          alert("주소를 클립보드에 복사했습니다.");
+                        } catch {
+                          // 폴백: 마지막 수단으로 prompt
+                          window.prompt("이 글 주소를 복사하세요:", window.location.href);
+                        }
+                      }}
+                    >
+                      <Share2 className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                      title="인쇄"
+                      aria-label="이 글 인쇄하기"
+                      onClick={() => window.print()}
+                    >
+                      <Printer className="w-4 h-4" />
+                    </Button>
                   </div>
                 </div>
               </div>
