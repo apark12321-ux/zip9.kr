@@ -1,29 +1,18 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // 기본 정책: 모든 작업 차단
     match /{document=**} {
       allow read, write: if false;
     }
 
-    function isSignedIn() {
-      return request.auth != null;
-    }
-
-    function isValidPost(data) {
-      return data.title is string && data.title.size() > 0 &&
-             data.content is string && data.content.size() > 0 &&
-             data.category is string &&
-             data.author is string &&
-             data.date is string;
-    }
-
+    // posts 컬렉션: 공개 읽기만 허용, 쓰기는 모두 차단
+    // 외부 자동 발행을 차단하기 위해 모든 쓰기 권한 제거
+    // (사이트는 src/constants.ts의 정적 데이터를 사용)
     match /posts/{postId} {
-      // Allow public read for all posts
       allow get, list: if true;
-      
-      // Allow authenticated users to create posts for this demo
-      allow create: if isSignedIn() && isValidPost(request.resource.data);
-      allow update, delete: if false; 
+      allow create, update, delete: if false;
     }
   }
 }
