@@ -2529,10 +2529,10 @@ export const MOCK_POSTS = [
       <h3 id="section2">2. 인터넷등기소로 1분 만에 발급받는 법</h3>
       <p>발급 절차는 정말 간단해요. <a href="https://www.iros.go.kr" target="_blank" rel="noopener noreferrer">인터넷등기소</a> 접속 후 다음 순서대로 진행하시면 됩니다.</p>
       <ul>
-        <li><strong>① 인터넷등기소 메인 → 부동산등기 → 열람 발급</strong>: 회원가입 없이도 비회원으로 조회 가능</li>
-        <li><strong>② 주소 또는 부동산 고유번호로 검색</strong>: 본인 거주 주소 입력</li>
-        <li><strong>③ 열람용/발급용 선택</strong>: 본인 확인용이면 열람용으로 충분 (열람 700원, 발급 1,000원)</li>
-        <li><strong>④ 결제 후 PDF 다운로드</strong>: 신용카드 또는 계좌이체</li>
+        <li><strong>인터넷등기소 메인 → 부동산등기 → 열람 발급</strong>: 회원가입 없이도 비회원으로 조회 가능</li>
+        <li><strong>주소 또는 부동산 고유번호로 검색</strong>: 본인 거주 주소 입력</li>
+        <li><strong>열람용/발급용 선택</strong>: 본인 확인용이면 열람용으로 충분 (열람 700원, 발급 1,000원)</li>
+        <li><strong>결제 후 PDF 다운로드</strong>: 신용카드 또는 계좌이체</li>
       </ul>
       <p>모바일 앱으로도 가능하고, 1분이면 끝나는 절차예요. 비용도 1,000원 안쪽이라 부담이 거의 없습니다. 발급받은 PDF는 매년 같은 날짜에 다시 떼서 비교할 수 있도록 저장해두시면 좋아요.</p>
 
