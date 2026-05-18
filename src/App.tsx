@@ -113,7 +113,9 @@ function setArticleJsonLd(post: Post | null) {
       "name": "알고파트너스",
       "alternateName": SITE_NAME,
       "url": SITE_URL,
-      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` },
+      "taxID": "450-07-03104",
+      "foundingDate": "2025-03-01"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -482,10 +484,14 @@ export default function App() {
               <ul>
                 <li><strong>운영 주체:</strong> 알고파트너스</li>
                 <li><strong>대표자:</strong> 박예준</li>
+                <li><strong>사업자등록번호:</strong> 450-07-03104</li>
+                <li><strong>개업일:</strong> 2025년 3월 1일</li>
+                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업, 전자상거래 소매 중개업</li>
+                <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
                 <li><strong>문의 이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>사이트 URL:</strong> <a href="https://zip9.kr" target="_blank" rel="noopener noreferrer">https://zip9.kr</a></li>
               </ul>
-              <p>제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
+              <p>하우징허브는 알고파트너스(서인천세무서 사업자등록번호 450-07-03104)가 운영하는 디지털 미디어입니다. 제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
             </motion.div>
           )}
 
@@ -497,139 +503,200 @@ export default function App() {
               exit={{ opacity: 0 }}
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
-              <h1 className="font-display">개인정보 처리방침 (Privacy Policy)</h1>
-              <p>하우징허브(이하 '본 사이트')는 「개인정보 보호법」 등 관련 법령에 따라 사용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같은 처리방침을 수립·공개합니다.</p>
-              
-              <h2>1. 개인정보의 수집 및 이용 목적</h2>
-              <p>본 사이트는 별도의 회원가입 없이 콘텐츠를 이용할 수 있습니다. 수집되는 정보는 다음과 같은 목적으로 이용됩니다.</p>
+              <h1 className="font-display">개인정보 처리방침</h1>
+              <p>알고파트너스(이하 '회사')는 「개인정보 보호법」 등 관련 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다. 이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 본 처리방침을 수립·공개합니다.</p>
+
+              <p className="text-sm text-gray-500">본 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.</p>
+              <ol className="text-sm text-gray-600">
+                <li>개인정보의 처리 목적</li>
+                <li>처리하는 개인정보의 항목 및 수집 방법</li>
+                <li>개인정보의 처리 및 보유 기간</li>
+                <li>개인정보 처리의 위탁에 관한 사항</li>
+                <li>개인정보의 제3자 제공에 관한 사항</li>
+                <li>정보주체와 법정대리인의 권리·의무 및 그 행사 방법</li>
+                <li>개인정보 자동 수집 장치(쿠키)의 설치·운영 및 거부</li>
+                <li>광고 게재 및 제3자 광고 서비스</li>
+                <li>개인정보의 안전성 확보 조치</li>
+                <li>개인정보 보호책임자 및 담당자</li>
+                <li>개인정보 열람 청구</li>
+                <li>권익 침해 구제 방법</li>
+                <li>고지의 의무</li>
+              </ol>
+
+              <h2>1. 개인정보의 처리 목적</h2>
+              <p>회사는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행합니다.</p>
               <ul>
-                <li>서비스 이용에 따른 통계 분석 및 서비스 개선</li>
-                <li>구글 애드센스(Google AdSense) 등 광고 서비스 제공 및 최적화</li>
+                <li><strong>웹사이트 운영 및 통계 분석:</strong> 방문자 통계 집계, 콘텐츠 인기도 분석, 서비스 개선</li>
+                <li><strong>문의 응대:</strong> 이메일로 접수된 문의·정정 요청·제보에 대한 회신</li>
+                <li><strong>광고 게재 및 효과 측정:</strong> Google AdSense를 통한 맞춤형 광고 게재 및 광고 성과 측정</li>
+                <li><strong>법령상 의무 이행:</strong> 관계 법령에 따른 기록 보존 및 분쟁 대응</li>
               </ul>
 
-              <h2>2. 자동 수집되는 개인정보 및 거부 방법</h2>
-              <p>본 사이트는 사용자에게 맞춤형 서비스를 제공하기 위해 '쿠키(cookie)' 등 접속 정보를 자동으로 수집할 수 있습니다. 쿠키는 웹사이트를 운영하는 데 이용되는 서버가 사용자의 브라우저에 보내는 아주 작은 텍스트 파일로 사용자의 컴퓨터 하드디스크에 저장됩니다.</p>
+              <h2>2. 처리하는 개인정보의 항목 및 수집 방법</h2>
+              <p>① 회사는 회원가입 절차 없이 콘텐츠를 제공하므로 식별 가능한 개인정보를 직접 수집하지 않습니다. 다만 다음의 정보가 자동으로 수집되거나, 사용자가 직접 제공하는 경우에 한해 수집됩니다.</p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>구분</th>
+                    <th>수집 항목</th>
+                    <th>수집 시점</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>자동 수집</td>
+                    <td>IP 주소, 브라우저 종류 및 버전, OS 정보, 방문 일시, 방문 페이지, 접속 경로(referrer), 쿠키</td>
+                    <td>웹사이트 접속 시</td>
+                  </tr>
+                  <tr>
+                    <td>이용자 제공</td>
+                    <td>이메일 주소(문의자가 직접 기재한 경우), 문의 내용</td>
+                    <td>이메일 문의 시</td>
+                  </tr>
+                  <tr>
+                    <td>제3자 도구</td>
+                    <td>Google Analytics 통계 데이터, Google AdSense 광고 식별자</td>
+                    <td>웹사이트 접속 시</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>② 수집 방법: 웹사이트 접속 시 자동 수집, 사용자가 이메일로 직접 발송, Google이 제공하는 분석·광고 도구를 통한 수집</p>
+
+              <h2>3. 개인정보의 처리 및 보유 기간</h2>
+              <p>회사는 법령에 따른 개인정보 보유·이용 기간 또는 정보주체로부터 동의받은 개인정보 보유·이용 기간 내에서 개인정보를 처리·보유합니다. 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
               <ul>
-                <li><strong>이용 목적:</strong> 사용자의 접속 빈도, 방문 시간 분석, 관심 분야 파악 및 맞춤형 광고 제공</li>
-                <li><strong>거부 방법:</strong> 사용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 웹 브라우저의 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.</li>
+                <li><strong>접속 로그 및 IP 정보:</strong> 「통신비밀보호법」에 따라 3개월간 보관</li>
+                <li><strong>이메일 문의 내용:</strong> 회신 완료 후 1년 보관 후 파기 (분쟁 대응 목적)</li>
+                <li><strong>쿠키 정보:</strong> 브라우저 설정에 따라 사용자가 임의로 삭제 가능, 미삭제 시 최대 2년</li>
+                <li><strong>광고 식별자:</strong> Google AdSense의 정책에 따라 보관 (Google 개인정보처리방침 참조)</li>
               </ul>
+              <p>법령에서 정한 별도의 보존 의무가 있는 경우(예: 「전자상거래 등에서의 소비자보호에 관한 법률」 표시·광고 기록 6개월, 계약·청약 철회 기록 5년 등), 회사는 해당 기간 동안 정보를 안전하게 보관한 후 지체 없이 파기합니다.</p>
 
-              <h2>3. 제3자 광고 서비스 이용 (Google AdSense)</h2>
-              <p>본 사이트는 제3자 광고 업체인 Google이 제공하는 광고 서비스를 이용합니다. Google은 사용자가 본 사이트 또는 다른 웹사이트를 방문한 기록을 바탕으로 사용자에게 최적화된 광고를 게재하기 위해 쿠키를 사용합니다. 사용자는 <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener noreferrer">Google 광고 설정</a>을 방문하여 맞춤형 광고를 해제할 수 있습니다.</p>
+              <h2>4. 개인정보 처리의 위탁에 관한 사항</h2>
+              <p>회사는 원활한 서비스 운영을 위하여 다음과 같이 일부 업무를 외부 전문업체에 위탁하고 있습니다. 위탁 계약 시 「개인정보 보호법」 제26조에 따라 개인정보의 안전한 처리에 관한 사항을 명시하고 있습니다.</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>수탁자</th>
+                    <th>위탁 업무 내용</th>
+                    <th>개인정보 보유·이용 기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vercel Inc.</td>
+                    <td>웹사이트 호스팅 및 콘텐츠 전송망(CDN) 운영</td>
+                    <td>위탁계약 종료 시까지</td>
+                  </tr>
+                  <tr>
+                    <td>Google LLC</td>
+                    <td>웹 분석(Google Analytics), 광고 게재(Google AdSense)</td>
+                    <td>Google 정책에 따름</td>
+                  </tr>
+                  <tr>
+                    <td>Google Firebase</td>
+                    <td>데이터베이스 및 인증 서비스</td>
+                    <td>위탁계약 종료 시까지</td>
+                  </tr>
+                </tbody>
+              </table>
 
-              <h2>4. 개인정보의 보호 및 관리</h2>
-              <p>본 사이트는 수집된 개인정보를 법령에 따르지 않고는 제3자에게 제공하거나 공개하지 않습니다. 개인정보 보호와 관련한 문의사항은 아래 개인정보 보호책임자에게 연락 주시기 바랍니다.</p>
-
-              <h2>5. 개인정보 보호책임자</h2>
+              <h2>5. 개인정보의 제3자 제공에 관한 사항</h2>
+              <p>① 회사는 정보주체의 개인정보를 원칙적으로 제3자에게 제공하지 않습니다. 다만 다음의 경우에 한해 예외적으로 제공할 수 있습니다.</p>
               <ul>
-                <li><strong>운영 주체:</strong> 알고파트너스</li>
-                <li><strong>대표자(개인정보 보호책임자):</strong> 박예준</li>
+                <li>정보주체로부터 별도의 동의를 받은 경우</li>
+                <li>다른 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</li>
+                <li>법원의 재판 업무 수행을 위하여 제공하는 경우</li>
+                <li>범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우</li>
+                <li>명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우</li>
+              </ul>
+              <p>② 본 사이트는 Google AdSense를 통해 광고를 게재하며, Google은 광고 게재를 위해 사용자의 쿠키 정보 등을 활용할 수 있습니다. 자세한 사항은 본 처리방침 제8조 '광고 게재 및 제3자 광고 서비스'를 참고하시기 바랍니다.</p>
+
+              <h2>6. 정보주체와 법정대리인의 권리·의무 및 그 행사 방법</h2>
+              <p>① 정보주체는 회사에 대해 언제든지 다음의 권리를 행사할 수 있습니다.</p>
+              <ul>
+                <li>개인정보 열람 요구</li>
+                <li>개인정보 정정·삭제 요구</li>
+                <li>개인정보 처리 정지 요구</li>
+                <li>동의 철회 요구</li>
+              </ul>
+              <p>② 위 권리 행사는 회사에 대해 이메일(<a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a>)을 통하여 하실 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
+              <p>③ 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여서도 하실 수 있습니다. 이 경우 위임장을 제출하셔야 합니다.</p>
+              <p>④ 만 14세 미만 아동의 개인정보는 수집하지 않습니다.</p>
+
+              <h2>7. 개인정보 자동 수집 장치(쿠키)의 설치·운영 및 거부</h2>
+              <p>① 회사는 이용자에게 개별적인 맞춤 서비스를 제공하기 위해 이용 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다.</p>
+              <p>② 쿠키는 웹사이트를 운영하는 데 이용되는 서버가 이용자의 브라우저에 보내는 소량의 정보이며 이용자의 PC 또는 모바일 기기 내에 저장됩니다.</p>
+              <ol>
+                <li><strong>쿠키의 사용 목적:</strong> 방문자 통계 집계, 콘텐츠 추천 최적화, 광고 게재 최적화, 서비스 개선</li>
+                <li><strong>쿠키의 설치·운영 및 거부:</strong> 이용자는 브라우저 설정을 통해 쿠키 저장을 거부하거나 삭제할 수 있습니다.
+                  <ul>
+                    <li>Chrome: 설정 → 개인정보 보호 및 보안 → 쿠키 및 기타 사이트 데이터</li>
+                    <li>Safari: 환경설정 → 개인정보 보호 → 쿠키 및 웹 사이트 데이터</li>
+                    <li>Edge: 설정 → 쿠키 및 사이트 권한 → 쿠키 및 사이트 데이터</li>
+                  </ul>
+                </li>
+                <li><strong>쿠키 거부 시 영향:</strong> 쿠키 저장을 거부할 경우 일부 맞춤 서비스 이용에 어려움이 있을 수 있습니다.</li>
+              </ol>
+
+              <h2>8. 광고 게재 및 제3자 광고 서비스</h2>
+              <p>① 본 사이트는 Google LLC의 광고 서비스인 Google AdSense를 통해 광고를 게재합니다.</p>
+              <p>② Google AdSense는 사용자의 이전 사이트 방문 정보를 토대로 사용자의 관심에 맞는 광고를 게재하기 위해 쿠키 및 광고 식별자를 사용합니다. 이 과정에서 수집되는 정보는 Google의 개인정보처리방침에 따라 관리됩니다.</p>
+              <p>③ 사용자는 다음 경로를 통해 맞춤 광고를 거부하실 수 있습니다.</p>
+              <ul>
+                <li><a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google 광고 설정 페이지</a>에서 맞춤 광고 비활성화</li>
+                <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google 광고 정책</a> 확인</li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a> 확인</li>
+              </ul>
+              <p>④ 본 사이트는 광고 클릭이나 광고를 통한 거래에 대해 직접적인 책임을 지지 않으며, 광고주와의 거래에서 발생한 손해는 해당 광고주에게 문의하시기 바랍니다.</p>
+
+              <h2>9. 개인정보의 안전성 확보 조치</h2>
+              <p>회사는 개인정보의 안전성 확보를 위하여 다음과 같은 조치를 취하고 있습니다.</p>
+              <ol>
+                <li><strong>관리적 조치:</strong> 개인정보 취급 직원의 최소화, 정기적인 자체 점검, 내부 관리 계획 수립·시행</li>
+                <li><strong>기술적 조치:</strong> SSL/TLS 암호화 통신(HTTPS) 적용, 접근 권한 관리, 보안 프로그램 설치 및 주기적 갱신</li>
+                <li><strong>물리적 조치:</strong> 신뢰할 수 있는 클라우드 서비스(Vercel, Google Cloud)를 통한 데이터 보관, 접근 통제 시스템 운영</li>
+              </ol>
+
+              <h2>10. 개인정보 보호책임자 및 담당자</h2>
+              <p>회사는 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+              <ul>
+                <li><strong>개인정보 보호책임자:</strong> 박예준 (알고파트너스 대표)</li>
+                <li><strong>연락처:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
+                <li><strong>접수 시간:</strong> 평일 오전 9시 ~ 오후 6시 (주말·공휴일 제외)</li>
+              </ul>
+              <p>정보주체는 회사의 서비스를 이용하면서 발생한 모든 개인정보 보호 관련 문의, 불만 처리, 피해 구제 등에 관한 사항을 위 책임자에게 문의하실 수 있습니다. 회사는 정보주체의 문의에 대해 지체 없이 답변 및 처리할 것입니다.</p>
+
+              <h2>11. 개인정보 열람 청구</h2>
+              <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. 회사는 정보주체의 개인정보 열람 청구가 신속하게 처리되도록 노력하겠습니다.</p>
+              <ul>
+                <li><strong>부서명:</strong> 알고파트너스 고객 응대팀</li>
+                <li><strong>담당자:</strong> 박예준</li>
                 <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
               </ul>
-              <p>이용자는 본 사이트의 서비스를 이용하면서 발생한 모든 개인정보 관련 문의, 불만 처리, 피해 구제 등을 위 책임자에게 문의할 수 있으며, 본 사이트는 이용자의 문의에 대해 신속하고 충분한 답변을 드리겠습니다.</p>
 
-              <h2>6. 처리방침의 변경</h2>
-              <p>본 개인정보 처리방침은 법령·정책 또는 보안 기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시 사이트 내 공지사항을 통해 사전에 고지할 것입니다.</p>
-              <p className="text-sm text-gray-500 mt-8">시행일: 2026년 5월 12일</p>
-            </motion.div>
-          )}
-
-          {currentPage === "partnership" && (
-            <motion.div
-              key="partnership-page"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
-            >
-              <h1 className="font-display">제휴 및 비즈니스 문의</h1>
-              <p className="lead">
-                하우징허브는 부동산, 금융, 인테리어, 이사 등 주거 생활 전반에 관심 있는 양질의 독자들과 만나는 콘텐츠 플랫폼입니다.
-                건강한 정보 생태계를 함께 만들어갈 파트너를 기다립니다.
-              </p>
-
-              <h2>제휴 가능 분야</h2>
+              <h2>12. 권익 침해 구제 방법</h2>
+              <p>정보주체는 개인정보 침해로 인한 신고, 상담이 필요한 경우 아래 기관에 도움을 요청하실 수 있습니다.</p>
               <ul>
-                <li><strong>콘텐츠 협업:</strong> 부동산·금융 전문가의 칼럼 기고, 인터뷰, 공동 기획 콘텐츠</li>
-                <li><strong>서비스/상품 리뷰:</strong> 주거 관련 서비스(중개·인테리어·청소·이사 등) 또는 금융 상품의 객관적 리뷰</li>
-                <li><strong>광고 및 브랜디드 콘텐츠:</strong> 배너 광고, 협찬 콘텐츠 (광고 표기 의무 준수)</li>
-                <li><strong>데이터/리서치 협업:</strong> 주거·부동산 관련 통계 및 리포트 공동 제작</li>
+                <li><strong>개인정보분쟁조정위원회:</strong> (국번 없이) 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener noreferrer">www.kopico.go.kr</a></li>
+                <li><strong>개인정보침해 신고센터:</strong> (국번 없이) 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener noreferrer">privacy.kisa.or.kr</a></li>
+                <li><strong>대검찰청 사이버수사과:</strong> (국번 없이) 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener noreferrer">www.spo.go.kr</a></li>
+                <li><strong>경찰청 사이버수사국:</strong> (국번 없이) 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener noreferrer">ecrm.cyber.go.kr</a></li>
               </ul>
 
-              <h2>제안 시 안내사항</h2>
-              <p>아래 정보를 포함해 이메일로 보내주시면, 영업일 기준 3일 이내에 검토 후 회신 드리겠습니다.</p>
-              <ul>
-                <li>회사/기관명 및 담당자 성함, 직책</li>
-                <li>제안 분야 및 간단한 제안 개요</li>
-                <li>희망 진행 일정 및 예산 (해당하는 경우)</li>
-                <li>회사 소개 자료 또는 관련 링크</li>
-              </ul>
+              <h2>13. 고지의 의무</h2>
+              <p>본 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경 내용의 추가, 삭제, 정정이 있는 경우 변경 사항의 시행 7일 전부터 공지사항 또는 본 페이지를 통하여 고지할 것입니다.</p>
+              <p>다만, 이용자 권리에 중대한 변경이 발생할 때에는 최소 30일 전에 공지합니다.</p>
 
-              <h2>광고 관련 원칙</h2>
-              <p>
-                하우징허브는 독자의 신뢰를 가장 큰 자산으로 여깁니다. 광고나 협찬 콘텐츠는 반드시 그 사실을 명확히 표기하며,
-                사실과 다른 과장된 내용이나 독자에게 손해를 끼칠 수 있는 상품은 게재하지 않습니다.
-              </p>
-
-              <h2>문의 채널</h2>
-              <p>
-                <strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a><br />
-                <strong>제목 형식 권장:</strong> [제휴문의] 회사명 - 제안 분야
-              </p>
-            </motion.div>
-          )}
-
-          {currentPage === "announcement" && (
-            <motion.div
-              key="announcement-page"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
-            >
-              <h1 className="font-display">공지사항</h1>
-              <p className="lead">하우징허브의 서비스 운영과 관련된 소식을 안내드립니다.</p>
-
-              <div className="not-prose space-y-6 mt-8">
-                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">서비스</span>
-                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
-                  </div>
-                  <h3 className="font-bold text-lg text-gray-900 mb-2">하우징허브 정식 오픈 안내</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    안녕하세요, 하우징허브입니다. 복잡한 주거 정보를 누구나 쉽게 이해할 수 있도록 돕고자 하는 마음으로
-                    서비스를 정식 오픈하게 되었습니다. 청약, 전월세, 대출, 이사-인테리어 네 가지 카테고리를 중심으로
-                    실용적이고 검증된 콘텐츠를 꾸준히 발행해 나가겠습니다.
-                  </p>
-                </article>
-
-                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold text-gray-700 bg-gray-100 px-2 py-1 rounded">정책</span>
-                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
-                  </div>
-                  <h3 className="font-bold text-lg text-gray-900 mb-2">콘텐츠 작성 및 인용 원칙</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    하우징허브의 모든 콘텐츠는 공공기관 발표 자료, 법령, 검증된 데이터에 기반해 작성됩니다.
-                    외부 자료를 인용할 경우 출처를 명시하며, 정책이나 법령 변경 시 가능한 한 빠르게 본문을 업데이트합니다.
-                    독자분들이 보다 안심하고 정보를 활용하실 수 있도록 노력하겠습니다.
-                  </p>
-                </article>
-
-                <article className="border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 transition-colors">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">독자</span>
-                    <time className="text-xs text-gray-500">2026. 05. 12.</time>
-                  </div>
-                  <h3 className="font-bold text-lg text-gray-900 mb-2">독자 의견 및 제보 환영</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    다루어 주었으면 하는 주제, 본문 내용 정정 요청, 또는 직접 경험한 주거 관련 사례 제보는 언제든
-                    <a href="mailto:apark12321@gmail.com" className="text-indigo-600 hover:underline ml-1">apark12321@gmail.com</a>으로 보내주세요.
-                    한 분 한 분의 의견이 더 나은 콘텐츠를 만드는 토대가 됩니다.
-                  </p>
-                </article>
-              </div>
+              <hr />
+              <p className="text-sm text-gray-500"><strong>운영 주체:</strong> 알고파트너스 (대표: 박예준)</p>
+              <p className="text-sm text-gray-500"><strong>사업자등록번호:</strong> 450-07-03104</p>
+              <p className="text-sm text-gray-500"><strong>주소:</strong> 인천광역시 서구 청라커낼로 270</p>
+              <p className="text-sm text-gray-500"><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></p>
+              <p className="text-sm text-gray-500"><strong>공고일자:</strong> 2026년 5월 18일</p>
+              <p className="text-sm text-gray-500"><strong>시행일자:</strong> 2026년 5월 18일</p>
             </motion.div>
           )}
 
@@ -686,11 +753,14 @@ export default function App() {
               <ul>
                 <li><strong>운영 주체:</strong> 알고파트너스</li>
                 <li><strong>대표자:</strong> 박예준</li>
+                <li><strong>사업자등록번호:</strong> 450-07-03104</li>
+                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업</li>
+                <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
                 <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>사이트:</strong> https://zip9.kr</li>
               </ul>
 
-              <p className="text-sm text-gray-500 mt-12">시행일: 2026년 5월 12일</p>
+              <p className="text-sm text-gray-500 mt-12">공고일자: 2026년 5월 18일 · 시행일자: 2026년 5월 18일</p>
             </motion.div>
           )}
 
