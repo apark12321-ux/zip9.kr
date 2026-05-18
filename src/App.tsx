@@ -525,6 +525,7 @@ export default function App() {
                 <li><strong>운영 주체:</strong> 알고파트너스</li>
                 <li><strong>대표자:</strong> 박예준</li>
                 <li><strong>사업자등록번호:</strong> 450-07-03104</li>
+                <li><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</li>
                 <li><strong>개업일:</strong> 2025년 3월 1일</li>
                 <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업, 전자상거래 소매 중개업</li>
                 <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
@@ -737,6 +738,7 @@ export default function App() {
               <hr />
               <p className="text-sm text-gray-500"><strong>운영 주체:</strong> 알고파트너스 (대표: 박예준)</p>
               <p className="text-sm text-gray-500"><strong>사업자등록번호:</strong> 450-07-03104</p>
+              <p className="text-sm text-gray-500"><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</p>
               <p className="text-sm text-gray-500"><strong>주소:</strong> 인천광역시 서구 청라커낼로 270</p>
               <p className="text-sm text-gray-500"><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></p>
               <p className="text-sm text-gray-500"><strong>공고일자:</strong> 2026년 4월 28일</p>
@@ -798,6 +800,7 @@ export default function App() {
                 <li><strong>운영 주체:</strong> 알고파트너스</li>
                 <li><strong>대표자:</strong> 박예준</li>
                 <li><strong>사업자등록번호:</strong> 450-07-03104</li>
+                <li><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</li>
                 <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업</li>
                 <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
                 <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
@@ -881,6 +884,7 @@ export default function App() {
                 <li>운영 주체: 알고파트너스</li>
                 <li>대표자: 박예준</li>
                 <li>사업자등록번호: 450-07-03104</li>
+                <li>통신판매업 신고번호: 제2025-인천서구-3321호</li>
                 <li>사업장 주소: 인천광역시 서구 청라커낼로 270</li>
                 <li>이메일: <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
               </ul>
