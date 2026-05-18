@@ -356,10 +356,10 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+              className="relative py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white -z-10" />
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -368,11 +368,11 @@ export default function App() {
                   <Badge variant="outline" className="mb-4 border-indigo-200 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase">
                     부동산 기초 정보 가이드
                   </Badge>
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6 font-display">
+                  <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-6 font-display break-keep">
                     나에게 맞는 <br />
                     <span className="text-indigo-600">안전한 주거 생활</span>
                   </h1>
-                  <p className="text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
                     청약 제도부터 임대차 계약 시 주의 사항까지, 실생활에 필요한 주거 관련 정보를 정리해 드립니다. 복잡한 용어를 사례 중심으로 풀이합니다.
                   </p>
                   <div className="flex flex-wrap gap-4">
@@ -880,7 +880,7 @@ export default function App() {
                 <div className="flex gap-2 mb-6">
                   <Badge className="bg-indigo-600 border-none">{currentPost.category}</Badge>
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 text-gray-900 border-l-4 border-indigo-600 pl-6">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight mb-6 text-gray-900 border-l-4 border-indigo-600 pl-4 sm:pl-6 break-keep">
                   {currentPost.title}
                 </h1>
                 <div className="flex items-center justify-between py-6 border-y border-gray-100">

@@ -38,7 +38,7 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
             <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
               <Home className="text-white w-6 h-6" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900 hidden sm:block">
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-gray-900">
               하우징허브
             </span>
           </div>
