@@ -768,6 +768,85 @@ export default function App() {
             </motion.div>
           )}
 
+          {currentPage === "announcement" && (
+            <motion.div
+              key="announcement-page"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
+            >
+              <h1 className="font-display">공지사항</h1>
+              <p>하우징허브 운영에 관한 안내 사항을 공지합니다.</p>
+
+              <h2>2026년 5월 18일</h2>
+              <h3>운영 주체 정보 명시화 및 개인정보처리방침 개정</h3>
+              <p>독자 여러분께 더 투명한 정보를 제공하고자 운영 주체인 알고파트너스의 사업자 정보(사업자등록번호 450-07-03104, 대표자 박예준)를 사이트 전반에 명시하였습니다. 또한 「개인정보 보호법」 제30조에 따른 개인정보처리방침을 13개 섹션으로 전면 개정하여 공개하였습니다. 새 처리방침은 동일자로 시행됩니다.</p>
+
+              <h2>2026년 5월 12일</h2>
+              <h3>토지거래허가구역 실거주 유예 확대 등 신규 정책 안내 강화</h3>
+              <p>국토교통부의 토지거래허가구역 실거주 의무 유예 확대 발표에 맞춰 관련 안내 콘텐츠를 신속히 보강하였습니다. 무주택 실수요자가 알아야 할 핵심 변화를 청약-분양 카테고리에서 확인하실 수 있습니다.</p>
+
+              <h2>2026년 4월 28일</h2>
+              <h3>하우징허브 정식 오픈</h3>
+              <p>대한민국 1인 가구·청년·실수요자를 위한 주거 정보 가이드 사이트 '하우징허브'(zip9.kr)를 정식 오픈하였습니다. 청약-분양, 전월세, 이사-인테리어, 대출-금융 4개 카테고리에 걸쳐 실용적인 정보를 차근차근 쌓아갈 계획입니다.</p>
+
+              <hr />
+              <h2>운영 안내</h2>
+              <p>본 공지사항은 사이트 운영 정책, 콘텐츠 정책, 법령 준수와 관련된 주요 변경 사항을 안내합니다. 중요 사항이 발생할 때마다 본 페이지를 통해 우선 안내드리며, 개인정보 처리에 관한 변경은 별도로 <button onClick={() => handleNavigate("privacy")} className="text-indigo-600 hover:underline">개인정보처리방침</button>을 통해 고지합니다.</p>
+              <p>사이트 운영 관련 의견이나 제보는 언제든 <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a>으로 보내주세요.</p>
+            </motion.div>
+          )}
+
+          {currentPage === "partnership" && (
+            <motion.div
+              key="partnership-page"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
+            >
+              <h1 className="font-display">제휴 및 비즈니스 문의</h1>
+              <p>하우징허브는 부동산·주거 분야의 양질의 정보 콘텐츠를 제공하는 미디어입니다. 독자 여러분과 업계 파트너 여러분의 다양한 제안을 환영합니다.</p>
+
+              <h2>제휴 가능 영역</h2>
+              <ul>
+                <li><strong>콘텐츠 협업:</strong> 부동산·금융·주거 관련 전문가의 인사이트 기고, 인터뷰 협업</li>
+                <li><strong>광고·홍보:</strong> 부동산 관련 서비스, 금융상품, 주거 서비스의 홍보 협업</li>
+                <li><strong>데이터·서비스 협업:</strong> 부동산 시세 정보, 임대차 통계, 청약 정보 등의 데이터 제공·교환</li>
+                <li><strong>이벤트·세미나:</strong> 주거 관련 오프라인·온라인 행사 공동 운영</li>
+              </ul>
+
+              <h2>제휴 검토 기준</h2>
+              <p>하우징허브는 독자에게 정확하고 유용한 정보를 제공한다는 원칙을 최우선으로 합니다. 따라서 다음 기준에 부합하는 제휴만 검토합니다.</p>
+              <ul>
+                <li>법령을 준수하는 적법한 서비스·상품일 것</li>
+                <li>독자의 권익을 침해하지 않을 것</li>
+                <li>부풀려진 약속이나 허위·과장 표현이 없을 것</li>
+                <li>편집 독립성을 침해하지 않을 것</li>
+              </ul>
+
+              <h2>문의 방법</h2>
+              <p>제휴를 희망하시는 분은 아래 이메일로 다음 사항을 포함하여 보내주시기 바랍니다.</p>
+              <ul>
+                <li>회사명·기관명 및 담당자 정보</li>
+                <li>제휴 분야와 구체적인 제안 내용</li>
+                <li>희망 일정 및 예산 범위(해당 시)</li>
+              </ul>
+              <p>이메일: <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></p>
+              <p>영업일 기준 3일 이내에 회신드리며, 제안 내용에 따라 비대면 미팅 또는 추가 자료를 요청드릴 수 있습니다.</p>
+
+              <h2>운영 정보</h2>
+              <ul>
+                <li>운영 주체: 알고파트너스</li>
+                <li>대표자: 박예준</li>
+                <li>사업자등록번호: 450-07-03104</li>
+                <li>사업장 주소: 인천광역시 서구 청라커낼로 270</li>
+                <li>이메일: <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
+              </ul>
+            </motion.div>
+          )}
+
           {currentPost ? (
             <motion.article
               key="post-detail"
