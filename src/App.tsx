@@ -170,19 +170,59 @@ function setBreadcrumbJsonLd(post: Post | null) {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(() => pageFromUrl());
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(() => {
+    if (typeof window === "undefined") return "";
+    const params = new URLSearchParams(window.location.search);
+    return params.get("q") || "";
+  });
   const [realPosts, setRealPosts] = useState<Post[]>([]);
   const [user, setUser] = useState<User | null>(null);
 
-  // 브라우저 뒤로/앞으로 가기 처리
+  // 브라우저 뒤로/앞으로 가기 처리 (검색어도 함께 복원)
   useEffect(() => {
     const onPopState = () => {
       setCurrentPage(pageFromUrl());
+      const params = new URLSearchParams(window.location.search);
+      setSearchQuery(params.get("q") || "");
       window.scrollTo(0, 0);
     };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
+
+  // 검색어 변경 시 URL 동기화 (디바운스 적용 — 타이핑 중에는 history 누적 방지)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const currentQ = params.get("q") || "";
+    if (currentQ === searchQuery) return;
+
+    // 빈 검색어로 바뀐 경우는 즉시 (검색 닫기 버튼 즉시 반영)
+    if (!searchQuery) {
+      params.delete("q");
+      const newSearch = params.toString();
+      const newUrl = window.location.pathname + (newSearch ? `?${newSearch}` : "") + window.location.hash;
+      // replaceState: 닫을 때는 새 히스토리 만들지 않고 현재 항목 대체
+      window.history.replaceState({}, "", newUrl);
+      return;
+    }
+
+    // 타이핑 중에는 500ms 디바운스 후 history 누적
+    const timer = setTimeout(() => {
+      params.set("q", searchQuery);
+      const newSearch = params.toString();
+      const newUrl = window.location.pathname + (newSearch ? `?${newSearch}` : "") + window.location.hash;
+      // 첫 검색 진입은 pushState, 같은 키워드 수정은 replaceState
+      const wasSearching = !!currentQ;
+      if (wasSearching) {
+        window.history.replaceState({}, "", newUrl);
+      } else {
+        window.history.pushState({}, "", newUrl);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (u) => {
@@ -346,7 +386,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900">
-      <Navbar onSearch={setSearchQuery} onNavigate={handleNavigate} />
+      <Navbar onSearch={setSearchQuery} onNavigate={handleNavigate} searchQuery={searchQuery} />
 
       <main className="pt-20">
         <AnimatePresence mode="wait">
@@ -1017,20 +1057,38 @@ export default function App() {
                   {(() => {
                     const categoryName = currentPage === 'home' ? '' : currentPage.replace('category-', '');
                     const isCategory = currentPage.startsWith('category-');
-                    const title = isCategory ? `${categoryName} 카테고리` : '최근 게시물';
-                    const desc = isCategory
-                      ? ({
-                          "청약-분양": "청약 가점, 특별공급, 분양권 세금, 공공분양과 민간분양 등 청약-분양 전 과정에서 필요한 실무 정보를 정리했습니다.",
-                          "전월세": "전세 사기 예방, 임대차 3법, 보증금 반환, 전월세 신고제 등 임차인과 임대인 모두에게 필요한 임대차 실무를 안내합니다.",
-                          "이사-인테리어": "이사 견적 비교, 입주청소, 원룸 인테리어, 관리비 절감 등 주거 생활을 편리하게 만드는 실용 가이드입니다.",
-                          "대출-금융": "디딤돌·보금자리·신생아 특례 등 정책 대출과 주택연금, 전세대출 한도 확대 전략, 양도세·취득세 등 주택 금융 정보를 다룹니다.",
-                        } as Record<string, string>)[categoryName] || '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.'
-                      : '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.';
+                    const isSearching = !!searchQuery;
+                    const title = isSearching
+                      ? `'${searchQuery}' 검색 결과`
+                      : (isCategory ? `${categoryName} 카테고리` : '최근 게시물');
+                    const desc = isSearching
+                      ? `총 ${filteredPosts.length}개의 글이 검색되었습니다.`
+                      : (isCategory
+                        ? ({
+                            "청약-분양": "청약 가점, 특별공급, 분양권 세금, 공공분양과 민간분양 등 청약-분양 전 과정에서 필요한 실무 정보를 정리했습니다.",
+                            "전월세": "전세 사기 예방, 임대차 3법, 보증금 반환, 전월세 신고제 등 임차인과 임대인 모두에게 필요한 임대차 실무를 안내합니다.",
+                            "이사-인테리어": "이사 견적 비교, 입주청소, 원룸 인테리어, 관리비 절감 등 주거 생활을 편리하게 만드는 실용 가이드입니다.",
+                            "대출-금융": "디딤돌·보금자리·신생아 특례 등 정책 대출과 주택연금, 전세대출 한도 확대 전략, 양도세·취득세 등 주택 금융 정보를 다룹니다.",
+                          } as Record<string, string>)[categoryName] || '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.'
+                        : '부동산 시장의 주요 변화와 계약 실무 등 확인이 필요한 주거 정보를 정리했습니다.');
                     return (
                       <>
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2 font-display">
-                          {title}
-                        </h2>
+                        <div className="flex items-start justify-between gap-3 mb-2">
+                          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 font-display break-keep">
+                            {title}
+                          </h2>
+                          {isSearching && (
+                            <button
+                              type="button"
+                              onClick={() => { setSearchQuery(""); handleNavigate("home"); }}
+                              className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700 px-3 py-1.5 rounded-full border border-indigo-200 hover:bg-indigo-50 transition-colors"
+                              aria-label="검색 닫기"
+                            >
+                              <ArrowRight className="w-3.5 h-3.5 rotate-180" />
+                              검색 닫기
+                            </button>
+                          )}
+                        </div>
                         <p className="text-gray-500 font-medium leading-normal">
                           {desc}
                         </p>

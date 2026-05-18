@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from "motion/react";
 interface NavbarProps {
   onSearch: (query: string) => void;
   onNavigate: (page: string) => void;
+  searchQuery?: string;
 }
 
-export function Navbar({ onSearch, onNavigate }: NavbarProps) {
+export function Navbar({ onSearch, onNavigate, searchQuery = "" }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -22,6 +23,12 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const goHome = () => {
+    onSearch("");  // 검색어 초기화
+    onNavigate("home");
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,7 +39,7 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
         <div className="flex justify-between items-center">
           <div 
             className="flex items-center gap-2 cursor-pointer" 
-            onClick={() => onNavigate("home")}
+            onClick={goHome}
             id="site-logo"
           >
             <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
@@ -54,10 +61,21 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
             <div className="relative group hidden sm:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-indigo-600" />
               <Input 
-                className="pl-9 bg-gray-100 border-none focus-visible:ring-1 focus-visible:ring-indigo-600 w-40 md:w-64" 
+                className="pl-9 pr-9 bg-gray-100 border-none focus-visible:ring-1 focus-visible:ring-indigo-600 w-40 md:w-64" 
                 placeholder="검색어를 입력하세요..."
+                value={searchQuery}
                 onChange={(e) => onSearch(e.target.value)}
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => onSearch("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-200 transition-colors"
+                  aria-label="검색어 지우기"
+                >
+                  <X className="w-3.5 h-3.5 text-gray-500" />
+                </button>
+              )}
             </div>
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X /> : <Menu />}
@@ -81,11 +99,25 @@ export function Navbar({ onSearch, onNavigate }: NavbarProps) {
               <button onClick={() => { onNavigate("category-이사-인테리어"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">이사-인테리어</button>
               <button onClick={() => { onNavigate("category-대출-금융"); setIsMobileMenuOpen(false); }} className="text-lg font-medium text-left">대출-금융</button>
               <div className="pt-4 border-t">
-                <Input 
-                  className="bg-gray-100" 
-                  placeholder="검색..."
-                  onChange={(e) => onSearch(e.target.value)}
-                />
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <Input 
+                    className="pl-9 pr-9 bg-gray-100" 
+                    placeholder="검색..."
+                    value={searchQuery}
+                    onChange={(e) => onSearch(e.target.value)}
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => onSearch("")}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-200 transition-colors"
+                      aria-label="검색어 지우기"
+                    >
+                      <X className="w-3.5 h-3.5 text-gray-500" />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>
