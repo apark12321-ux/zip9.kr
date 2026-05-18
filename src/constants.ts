@@ -1,6 +1,23 @@
 
 export const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"] as const;
 
+/**
+ * 새 글 추가 시 이미지 선택 규칙
+ * ─────────────────────────────────────────────────────────
+ * 1. 같은 사이트 내 다른 글과 절대 동일한 이미지를 사용하지 말 것
+ * 2. 카테고리별 이미지 톤 일관성 유지:
+ *    - 청약-분양: 아파트 외관, 도시 빌딩, 모던 건물
+ *    - 전월세: 거실, 침실, 인테리어, 거주 공간
+ *    - 이사-인테리어: 박스, 청소도구, 식물, 페인트 등
+ *    - 대출-금융: 차트, 노트북, 계산기, 분석 자료
+ * 3. Unsplash photo ID는 URL의 photo-XXXXXXXXX-XXXXXX 부분으로 확인
+ *    예) https://images.unsplash.com/photo-1560518883-ce09059eeffa
+ * 4. 새 이미지 추가 전 이 파일 전체 검색해 중복 여부 확인 필수
+ *    검색 패턴: photo-XXXXXXXX (이미지 ID 앞부분)
+ * 5. 이미지 URL 표준 포맷:
+ *    https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&q=80&w=800
+ */
+
 export const MOCK_POSTS = [
   {
     id: "sub-1",
@@ -1103,7 +1120,7 @@ export const MOCK_POSTS = [
     category: "전월세",
     author: "하우징허브 편집팀",
     date: "2026-05-02",
-    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb512?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["임대차3법", "계약갱신청구권", "전월세상한제", "전월세신고제", "주택임대차보호법", "임대차분쟁", "임대인권리", "임차인보호", "5%인상제한", "확정일자"]
   },
@@ -1235,7 +1252,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-04-29",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["포장이사", "이사견적", "이사비용", "사다리차요금", "이사업체비교", "보관이사", "반포장이사", "이사분쟁", "이사화물보험", "이사꿀팁"]
   },
@@ -1301,7 +1318,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-05",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["임차권등기명령", "보증금미반환", "안전한이사", "대항력", "우선변제권", "전세보증금", "임대차종료", "이사대처법", "법원신청", "주거권리보호"]
   },
@@ -1369,7 +1386,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-09",
-    image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["원룸인테리어", "오피스텔인테리어", "셀프인테리어", "가성비인테리어", "도배시트지", "조명인테리어", "소형평수꾸미기", "1인가구", "공간활용", "인테리어팁"]
   },
@@ -1447,7 +1464,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-04",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1583906471900-aa6a3a293c08?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["전입신고", "확정일자", "대항력", "우선변제권", "보증금보호", "정부24", "전월세신고제", "잔금일체크", "주민등록", "임차인권리"]
   }  ,
@@ -1919,7 +1936,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-02",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1493663284031-b7eb5d1c0a3b?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["관리비절감", "전기요금절약", "난방비절감", "공용관리비", "에너지절약", "공동주택관리", "절수기", "고효율가전", "K-apt", "생활비줄이기"]
   }
@@ -1984,7 +2001,7 @@ export const MOCK_POSTS = [
     category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-13",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["토지거래허가구역", "실거주유예", "무주택자", "토허구역", "부동산거래신고법", "갭투자", "세입자있는집", "내집마련", "2026부동산정책", "국토교통부"]
   },
@@ -2266,7 +2283,7 @@ export const MOCK_POSTS = [
     category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-14",
-    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["9.7공급대책", "도심공공주택복합사업", "주택공급추진본부", "LH개혁", "용산공급", "과천공급", "태릉CC", "공공분양", "청약기회", "주택공급"]
   },
@@ -2498,7 +2515,7 @@ export const MOCK_POSTS = [
     category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-17",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["스트레스DSR", "DSR3단계", "대출한도", "주택담보대출", "10.15대책", "가산금리", "변동금리", "고정금리", "가계부채관리", "대출규제"]
   },
@@ -2582,7 +2599,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-17",
-    image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["등기부등본", "인터넷등기소", "임차인보호", "셀프점검", "주거생활", "근저당확인", "명의도용예방", "부동산안전", "전세사기예방", "주말체크"]
   }
@@ -2665,7 +2682,7 @@ export const MOCK_POSTS = [
     category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-18",
-    image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["다주택자대출", "주담대만기연장", "가계부채관리", "수도권규제지역", "세낀매물", "무주택자우대", "임대사업자", "2026부동산정책", "토지거래허가", "이재명정부"]
   },
@@ -2752,7 +2769,7 @@ export const MOCK_POSTS = [
     category: "전월세",
     author: "하우징허브 편집팀",
     date: "2026-05-18",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1493663284031-b7eb5d1c0a3a?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["청년월세지원", "청년주거지원", "월20만원", "복지로신청", "무주택청년", "주거복지", "월세세액공제", "청년정책", "마이홈포털", "주거안정"]
   },
@@ -2846,7 +2863,7 @@ export const MOCK_POSTS = [
     category: "청약-분양",
     author: "하우징허브 편집팀",
     date: "2026-05-18",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1448630360428-65456885c651?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["공인중개사", "매매신고", "증빙자료", "자전거래차단", "실거래가띄우기", "부동산투명성", "시장교란행위", "2026부동산제도", "부동산감독원", "거래신고법"]
   }
