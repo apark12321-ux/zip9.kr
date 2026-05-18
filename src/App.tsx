@@ -535,32 +535,34 @@ export default function App() {
               <h2>2. 처리하는 개인정보의 항목 및 수집 방법</h2>
               <p>① 회사는 회원가입 절차 없이 콘텐츠를 제공하므로 식별 가능한 개인정보를 직접 수집하지 않습니다. 다만 다음의 정보가 자동으로 수집되거나, 사용자가 직접 제공하는 경우에 한해 수집됩니다.</p>
 
-              <table>
-                <thead>
-                  <tr>
-                    <th>구분</th>
-                    <th>수집 항목</th>
-                    <th>수집 시점</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>자동 수집</td>
-                    <td>IP 주소, 브라우저 종류 및 버전, OS 정보, 방문 일시, 방문 페이지, 접속 경로(referrer), 쿠키</td>
-                    <td>웹사이트 접속 시</td>
-                  </tr>
-                  <tr>
-                    <td>이용자 제공</td>
-                    <td>이메일 주소(문의자가 직접 기재한 경우), 문의 내용</td>
-                    <td>이메일 문의 시</td>
-                  </tr>
-                  <tr>
-                    <td>제3자 도구</td>
-                    <td>Google Analytics 통계 데이터, Google AdSense 광고 식별자</td>
-                    <td>웹사이트 접속 시</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="overflow-x-auto my-6 not-prose">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-indigo-50 border-b-2 border-indigo-200">
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200 w-32">구분</th>
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200">수집 항목</th>
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200 w-40">수집 시점</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-100">
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">자동 수집</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">IP 주소, 브라우저 종류 및 버전, OS 정보, 방문 일시, 방문 페이지, 접속 경로(referrer), 쿠키</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">웹사이트 접속 시</td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">이용자 제공</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">이메일 주소(문의자가 직접 기재한 경우), 문의 내용</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">이메일 문의 시</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">제3자 도구</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">Google Analytics 통계 데이터, Google AdSense 광고 식별자</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">웹사이트 접속 시</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <p>② 수집 방법: 웹사이트 접속 시 자동 수집, 사용자가 이메일로 직접 발송, Google이 제공하는 분석·광고 도구를 통한 수집</p>
 
@@ -576,32 +578,34 @@ export default function App() {
 
               <h2>4. 개인정보 처리의 위탁에 관한 사항</h2>
               <p>회사는 원활한 서비스 운영을 위하여 다음과 같이 일부 업무를 외부 전문업체에 위탁하고 있습니다. 위탁 계약 시 「개인정보 보호법」 제26조에 따라 개인정보의 안전한 처리에 관한 사항을 명시하고 있습니다.</p>
-              <table>
-                <thead>
-                  <tr>
-                    <th>수탁자</th>
-                    <th>위탁 업무 내용</th>
-                    <th>개인정보 보유·이용 기간</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Vercel Inc.</td>
-                    <td>웹사이트 호스팅 및 콘텐츠 전송망(CDN) 운영</td>
-                    <td>위탁계약 종료 시까지</td>
-                  </tr>
-                  <tr>
-                    <td>Google LLC</td>
-                    <td>웹 분석(Google Analytics), 광고 게재(Google AdSense)</td>
-                    <td>Google 정책에 따름</td>
-                  </tr>
-                  <tr>
-                    <td>Google Firebase</td>
-                    <td>데이터베이스 및 인증 서비스</td>
-                    <td>위탁계약 종료 시까지</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="overflow-x-auto my-6 not-prose">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-indigo-50 border-b-2 border-indigo-200">
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200 w-40">수탁자</th>
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200">위탁 업무 내용</th>
+                      <th className="p-3 text-left font-semibold text-gray-900 border border-gray-200 w-44">개인정보 보유·이용 기간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-100">
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">Vercel Inc.</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">웹사이트 호스팅 및 콘텐츠 전송망(CDN) 운영</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">위탁계약 종료 시까지</td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">Google LLC</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">웹 분석(Google Analytics), 광고 게재(Google AdSense)</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">Google 정책에 따름</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">Google Firebase</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">데이터베이스 및 인증 서비스</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">위탁계약 종료 시까지</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <h2>5. 개인정보의 제3자 제공에 관한 사항</h2>
               <p>① 회사는 정보주체의 개인정보를 원칙적으로 제3자에게 제공하지 않습니다. 다만 다음의 경우에 한해 예외적으로 제공할 수 있습니다.</p>
