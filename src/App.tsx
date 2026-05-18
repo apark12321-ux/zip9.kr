@@ -699,8 +699,8 @@ export default function App() {
               <p className="text-sm text-gray-500"><strong>사업자등록번호:</strong> 450-07-03104</p>
               <p className="text-sm text-gray-500"><strong>주소:</strong> 인천광역시 서구 청라커낼로 270</p>
               <p className="text-sm text-gray-500"><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></p>
-              <p className="text-sm text-gray-500"><strong>공고일자:</strong> 2026년 5월 18일</p>
-              <p className="text-sm text-gray-500"><strong>시행일자:</strong> 2026년 5월 18일</p>
+              <p className="text-sm text-gray-500"><strong>공고일자:</strong> 2026년 4월 28일</p>
+              <p className="text-sm text-gray-500"><strong>시행일자:</strong> 2026년 4월 28일</p>
             </motion.div>
           )}
 
@@ -764,7 +764,7 @@ export default function App() {
                 <li><strong>사이트:</strong> https://zip9.kr</li>
               </ul>
 
-              <p className="text-sm text-gray-500 mt-12">공고일자: 2026년 5월 18일 · 시행일자: 2026년 5월 18일</p>
+              <p className="text-sm text-gray-500 mt-12">공고일자: 2026년 4월 28일 · 시행일자: 2026년 4월 28일</p>
             </motion.div>
           )}
 
