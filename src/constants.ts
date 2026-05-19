@@ -1953,7 +1953,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-02",
-    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1493663284031-b7eb5d1c0a3a?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["관리비절감", "전기요금절약", "난방비절감", "공용관리비", "에너지절약", "공동주택관리", "절수기", "고효율가전", "K-apt", "생활비줄이기"]
   }
@@ -2706,7 +2706,7 @@ export const MOCK_POSTS = [
     category: "대출-금융",
     author: "하우징허브 편집팀",
     date: "2026-05-18",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["다주택자대출", "주담대만기연장", "가계부채관리", "수도권규제지역", "세낀매물", "무주택자우대", "임대사업자", "2026부동산정책", "토지거래허가", "이재명정부"]
   },
@@ -3037,7 +3037,7 @@ export const MOCK_POSTS = [
     category: "전월세",
     author: "하우징허브 편집팀",
     date: "2026-05-19",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffd?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["전세시장", "월세화", "청년전세대출", "스트레스DSR", "5월전세", "반전세", "보증보험", "근저당빌라", "임차인", "2026임대차"]
   },
@@ -3194,7 +3194,7 @@ export const MOCK_POSTS = [
     category: "이사-인테리어",
     author: "하우징허브 편집팀",
     date: "2026-05-19",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a04?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["5월이사", "이사성수기", "이사체크리스트", "이사견적", "이사업체비교", "이사비용절약", "평일이사", "반포장이사", "이사후기", "이사D-30"]
   }
