@@ -43,6 +43,35 @@ function stripHtml(html) {
     .trim();
 }
 
+/**
+ * 본문 콘텐츠에서 렌더링되지 않는 마크다운 잔재를 정리.
+ * 글에 실수로 ** 같은 마크다운 패턴이 들어가도 정적 HTML 출력 시
+ * 그대로 노출되지 않도록 안전한 HTML로 자동 변환한다.
+ * (utils.ts의 sanitizeContent와 동일 로직)
+ */
+function sanitizeContent(content) {
+  if (!content) return "";
+  let html = content;
+  // **굵게** → <strong>굵게</strong>
+  html = html.replace(/\*\*([^\*\n]+?)\*\*/g, "<strong>$1</strong>");
+  // __굵게__ → <strong>굵게</strong>
+  html = html.replace(/__([^_\n]+?)__/g, "<strong>$1</strong>");
+  // *기울임* → <em>기울임</em> (앞뒤가 공백/문장부호일 때만)
+  html = html.replace(/(?:^|[\s\(])\*([^\*\n]+?)\*(?=[\s\.,;:\)\!\?]|$)/g, (match, text) => {
+    const prefix = match.charAt(0) === "*" ? "" : match.charAt(0);
+    return `${prefix}<em>${text}</em>`;
+  });
+  // _기울임_ → <em>기울임</em>
+  html = html.replace(/(?:^|[\s\(])_([^_\n]+?)_(?=[\s\.,;:\)\!\?]|$)/g, (match, text) => {
+    const prefix = match.charAt(0) === "_" ? "" : match.charAt(0);
+    return `${prefix}<em>${text}</em>`;
+  });
+  // 짝 안 맞는 잔여 ** 또는 __ 제거 (안전망)
+  html = html.replace(/\*\*/g, "");
+  html = html.replace(/__/g, "");
+  return html;
+}
+
 function htmlEscape(s) {
   return String(s)
     .replace(/&/g, "&amp;")
@@ -176,7 +205,7 @@ function renderPage(template, meta, bodyContent, jsonLd) {
  * 사용자에겐 보이지 않지만 크롤러가 읽을 수 있도록 head/main 구조로 작성.
  */
 function buildPostBody(post) {
-  const plainContent = post.content; // 이미 HTML이므로 그대로 사용 가능
+  const plainContent = sanitizeContent(post.content); // 마크다운 잔재 정리 후 사용
   const slug = slugify(post.title) || post.id;
 
   return `
@@ -406,7 +435,7 @@ function main() {
       template,
       {
         title: `${post.title} | ${SITE_NAME}`,
-        description: post.excerpt || stripHtml(post.content).slice(0, 155),
+        description: post.excerpt || stripHtml(sanitizeContent(post.content)).slice(0, 155),
         canonical: `${SITE_URL}/post/${slug}`,
         ogType: "article",
         ogImage: post.image,

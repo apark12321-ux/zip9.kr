@@ -14,7 +14,7 @@ import { Badge } from "./components/ui/badge";
 import { auth, db } from "./lib/firebase";
 import { collection, onSnapshot, query, orderBy, addDoc, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged, User, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { calculateReadTime, slugify, stripHtml } from "./lib/utils";
+import { calculateReadTime, slugify, stripHtml, sanitizeContent } from "./lib/utils";
 
 type Page = "home" | "about" | "privacy" | "partnership" | "announcement" | "terms" | `category-${string}` | `post-${string}`;
 
@@ -310,7 +310,7 @@ export default function App() {
     if (currentPost) {
       const slug = slugify(currentPost.title) || currentPost.id;
       title = `${currentPost.title} | ${SITE_NAME}`;
-      description = currentPost.excerpt || stripHtml(currentPost.content).slice(0, 155);
+      description = currentPost.excerpt || stripHtml(sanitizeContent(currentPost.content)).slice(0, 155);
       canonical = `${SITE_URL}/post/${slug}`;
       ogType = "article";
       ogImage = currentPost.image;
@@ -989,7 +989,7 @@ export default function App() {
 
               <div 
                 className="prose prose-indigo prose-lg max-w-none text-gray-700 leading-relaxed space-y-6"
-                dangerouslySetInnerHTML={{ __html: currentPost.content }}
+                dangerouslySetInnerHTML={{ __html: sanitizeContent(currentPost.content) }}
               />
 
               {currentPost.hashtags && currentPost.hashtags.length > 0 && (
