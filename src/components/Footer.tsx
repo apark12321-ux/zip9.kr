@@ -78,13 +78,11 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="text-center md:text-left">
               <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mb-1">
-                <span className="text-[11px] text-gray-500 font-medium">알고파트너스</span>
-                <span className="text-[11px] text-gray-400">대표: 박예준</span>
-                <span className="text-[11px] text-gray-400">사업자등록번호: 450-07-03104</span>
-                <span className="text-[11px] text-gray-400">통신판매업신고: 제2025-인천서구-3321호</span>
+                <span className="text-[11px] text-gray-500 font-medium">상상아트</span>
+                <span className="text-[11px] text-gray-400">사업자등록번호: 272-14-01256</span>
+                <span className="text-[11px] text-gray-400">통신판매업신고: 제2023-화성동탄-1098호</span>
               </div>
               <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mb-2">
-                <span className="text-[11px] text-gray-400">인천광역시 서구 청라커낼로 270</span>
                 <span className="text-[11px] text-gray-400">이메일: apark12321@gmail.com</span>
               </div>
               <p className="text-[10px] text-gray-400 tracking-tight">

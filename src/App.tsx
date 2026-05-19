@@ -110,12 +110,11 @@ function setArticleJsonLd(post: Post | null) {
     "author": { "@type": "Person", "name": post.author || "하우징허브 편집팀" },
     "publisher": {
       "@type": "Organization",
-      "name": "알고파트너스",
+      "name": "상상아트",
       "alternateName": SITE_NAME,
       "url": SITE_URL,
       "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` },
-      "taxID": "450-07-03104",
-      "foundingDate": "2025-03-01"
+      "taxID": "272-14-01256"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -522,17 +521,14 @@ export default function App() {
 
               <h2>운영 정보</h2>
               <ul>
-                <li><strong>운영 주체:</strong> 알고파트너스</li>
-                <li><strong>대표자:</strong> 박예준</li>
-                <li><strong>사업자등록번호:</strong> 450-07-03104</li>
-                <li><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</li>
-                <li><strong>개업일:</strong> 2025년 3월 1일</li>
-                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업, 전자상거래 소매 중개업</li>
-                <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
+                <li><strong>운영 주체:</strong> 상상아트</li>
+                <li><strong>사업자등록번호:</strong> 272-14-01256</li>
+                <li><strong>통신판매업 신고번호:</strong> 제2023-화성동탄-1098호</li>
+                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 1인미디어콘텐츠창작자), 광고 대행업, 시각 디자인업, 영상·미디어 제작업</li>
                 <li><strong>문의 이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>사이트 URL:</strong> <a href="https://zip9.kr" target="_blank" rel="noopener noreferrer">https://zip9.kr</a></li>
               </ul>
-              <p>하우징허브는 알고파트너스(서인천세무서 사업자등록번호 450-07-03104)가 운영하는 디지털 미디어입니다. 제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
+              <p>하우징허브는 상상아트가 운영하는 디지털 미디어입니다. 제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
             </motion.div>
           )}
 
@@ -545,7 +541,7 @@ export default function App() {
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">개인정보 처리방침</h1>
-              <p>알고파트너스(이하 '회사')는 「개인정보 보호법」 등 관련 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다. 이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 본 처리방침을 수립·공개합니다.</p>
+              <p>상상아트(이하 '회사')는 「개인정보 보호법」 등 관련 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다. 이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 본 처리방침을 수립·공개합니다.</p>
 
               <p className="text-sm text-gray-500">본 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.</p>
               <ol className="text-sm text-gray-600">
@@ -708,7 +704,7 @@ export default function App() {
               <h2>10. 개인정보 보호책임자 및 담당자</h2>
               <p>회사는 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
               <ul>
-                <li><strong>개인정보 보호책임자:</strong> 박예준 (알고파트너스 대표)</li>
+                <li><strong>개인정보 보호책임자:</strong> 박예준 (운영 실무 책임자)</li>
                 <li><strong>연락처:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>접수 시간:</strong> 평일 오전 9시 ~ 오후 6시 (주말·공휴일 제외)</li>
               </ul>
@@ -717,8 +713,7 @@ export default function App() {
               <h2>11. 개인정보 열람 청구</h2>
               <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. 회사는 정보주체의 개인정보 열람 청구가 신속하게 처리되도록 노력하겠습니다.</p>
               <ul>
-                <li><strong>부서명:</strong> 알고파트너스 고객 응대팀</li>
-                <li><strong>담당자:</strong> 박예준</li>
+                <li><strong>부서명:</strong> 상상아트 고객 응대팀</li>
                 <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
               </ul>
 
@@ -736,10 +731,9 @@ export default function App() {
               <p>다만, 이용자 권리에 중대한 변경이 발생할 때에는 최소 30일 전에 공지합니다.</p>
 
               <hr />
-              <p className="text-sm text-gray-500"><strong>운영 주체:</strong> 알고파트너스 (대표: 박예준)</p>
-              <p className="text-sm text-gray-500"><strong>사업자등록번호:</strong> 450-07-03104</p>
-              <p className="text-sm text-gray-500"><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</p>
-              <p className="text-sm text-gray-500"><strong>주소:</strong> 인천광역시 서구 청라커낼로 270</p>
+              <p className="text-sm text-gray-500"><strong>운영 주체:</strong> 상상아트</p>
+              <p className="text-sm text-gray-500"><strong>사업자등록번호:</strong> 272-14-01256</p>
+              <p className="text-sm text-gray-500"><strong>통신판매업 신고번호:</strong> 제2023-화성동탄-1098호</p>
               <p className="text-sm text-gray-500"><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></p>
               <p className="text-sm text-gray-500"><strong>공고일자:</strong> 2026년 4월 28일</p>
               <p className="text-sm text-gray-500"><strong>시행일자:</strong> 2026년 4월 28일</p>
@@ -762,8 +756,8 @@ export default function App() {
 
               <h2>제2조 (용어의 정의)</h2>
               <ul>
-                <li><strong>"사이트"</strong>란 알고파트너스(대표 박예준)가 운영하는 하우징허브(https://zip9.kr)를 의미합니다.</li>
-                <li><strong>"운영자"</strong>란 본 사이트를 운영하는 알고파트너스를 의미합니다.</li>
+                <li><strong>"사이트"</strong>란 상상아트가 운영하는 하우징허브(https://zip9.kr)를 의미합니다.</li>
+                <li><strong>"운영자"</strong>란 본 사이트를 운영하는 상상아트를 의미합니다.</li>
                 <li><strong>"이용자"</strong>란 사이트에 접속하여 서비스를 이용하는 모든 자를 말합니다.</li>
                 <li><strong>"콘텐츠"</strong>란 사이트가 게재하는 모든 텍스트, 이미지, 데이터, 영상 등을 의미합니다.</li>
               </ul>
@@ -784,7 +778,7 @@ export default function App() {
               </ul>
 
               <h2>제6조 (콘텐츠의 저작권)</h2>
-              <p>사이트가 작성한 모든 콘텐츠의 저작권은 운영자인 알고파트너스에 귀속됩니다. 이용자는 운영자의 사전 서면 동의 없이 콘텐츠를 영리 목적으로 이용하거나 제3자에게 이용하게 할 수 없습니다. 단, 출처를 명시한 비영리적·개인적 인용은 허용됩니다.</p>
+              <p>사이트가 작성한 모든 콘텐츠의 저작권은 운영자인 상상아트에 귀속됩니다. 이용자는 운영자의 사전 서면 동의 없이 콘텐츠를 영리 목적으로 이용하거나 제3자에게 이용하게 할 수 없습니다. 단, 출처를 명시한 비영리적·개인적 인용은 허용됩니다.</p>
 
               <h2>제7조 (책임의 제한)</h2>
               <p>사이트가 제공하는 정보는 일반적인 안내를 목적으로 하며, 특정 개인의 의사 결정에 대한 법률·세무·금융 자문이 아닙니다. 이용자가 사이트의 정보를 활용하여 내린 결정으로 인해 발생한 손실에 대해 사이트는 법적 책임을 지지 않으며, 중요한 의사 결정 시에는 반드시 해당 분야의 전문가 및 공공기관의 공식 자료를 함께 확인하실 것을 권장합니다.</p>
@@ -797,12 +791,10 @@ export default function App() {
 
               <h2>제10조 (운영자 정보)</h2>
               <ul>
-                <li><strong>운영 주체:</strong> 알고파트너스</li>
-                <li><strong>대표자:</strong> 박예준</li>
-                <li><strong>사업자등록번호:</strong> 450-07-03104</li>
-                <li><strong>통신판매업 신고번호:</strong> 제2025-인천서구-3321호</li>
-                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 응용 소프트웨어 개발 및 공급업), 광고 대행업</li>
-                <li><strong>사업장 주소:</strong> 인천광역시 서구 청라커낼로 270</li>
+                <li><strong>운영 주체:</strong> 상상아트</li>
+                <li><strong>사업자등록번호:</strong> 272-14-01256</li>
+                <li><strong>통신판매업 신고번호:</strong> 제2023-화성동탄-1098호</li>
+                <li><strong>업태/종목:</strong> 정보통신업(미디어콘텐츠창작업, 1인미디어콘텐츠창작자), 광고 대행업, 시각 디자인업</li>
                 <li><strong>이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>사이트:</strong> https://zip9.kr</li>
               </ul>
@@ -824,7 +816,7 @@ export default function App() {
 
               <h2>2026년 5월 18일</h2>
               <h3>운영 주체 정보 명시화 및 개인정보처리방침 개정</h3>
-              <p>독자 여러분께 더 투명한 정보를 제공하고자 운영 주체인 알고파트너스의 사업자 정보(사업자등록번호 450-07-03104, 대표자 박예준)를 사이트 전반에 명시하였습니다. 또한 「개인정보 보호법」 제30조에 따른 개인정보처리방침을 13개 섹션으로 전면 개정하여 공개하였습니다. 새 처리방침은 동일자로 시행됩니다.</p>
+              <p>독자 여러분께 더 투명한 정보를 제공하고자 운영 주체인 상상아트의 사업자 정보(사업자등록번호 272-14-01256)를 사이트 전반에 명시하였습니다. 또한 「개인정보 보호법」 제30조에 따른 개인정보처리방침을 13개 섹션으로 전면 개정하여 공개하였습니다. 새 처리방침은 동일자로 시행됩니다.</p>
 
               <h2>2026년 5월 12일</h2>
               <h3>토지거래허가구역 실거주 유예 확대 등 신규 정책 안내 강화</h3>
@@ -881,11 +873,9 @@ export default function App() {
 
               <h2>운영 정보</h2>
               <ul>
-                <li>운영 주체: 알고파트너스</li>
-                <li>대표자: 박예준</li>
-                <li>사업자등록번호: 450-07-03104</li>
-                <li>통신판매업 신고번호: 제2025-인천서구-3321호</li>
-                <li>사업장 주소: 인천광역시 서구 청라커낼로 270</li>
+                <li>운영 주체: 상상아트</li>
+                <li>사업자등록번호: 272-14-01256</li>
+                <li>통신판매업 신고번호: 제2023-화성동탄-1098호</li>
                 <li>이메일: <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
               </ul>
             </motion.div>
