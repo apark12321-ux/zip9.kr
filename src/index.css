@@ -89,6 +89,74 @@
   @apply text-indigo-600 hover:text-indigo-800 transition-colors text-base font-medium no-underline;
 }
 
+/* 변형 1: 왼쪽 강조선 미니멀 스타일 */
+.prose .toc-minimal {
+  @apply border-l-4 border-indigo-500 pl-5 py-2 mb-10 bg-transparent;
+}
+.prose .toc-minimal p {
+  @apply mb-2 font-bold text-gray-900 text-sm uppercase tracking-wider;
+}
+.prose .toc-minimal ul {
+  @apply list-none pl-0 mb-0 space-y-1.5;
+}
+.prose .toc-minimal li a {
+  @apply text-gray-700 hover:text-indigo-600 transition-colors text-base no-underline;
+}
+
+/* 변형 2: 번호 매김 스타일 */
+.prose .toc-numbered {
+  @apply bg-indigo-50/50 rounded-lg p-6 mb-10 border border-indigo-100;
+}
+.prose .toc-numbered p {
+  @apply mb-4 font-bold text-indigo-900 text-lg;
+}
+.prose .toc-numbered ul {
+  @apply list-none pl-0 mb-0 space-y-2;
+  counter-reset: toc-counter;
+}
+.prose .toc-numbered li {
+  @apply flex items-start gap-3;
+  counter-increment: toc-counter;
+}
+.prose .toc-numbered li::before {
+  content: counter(toc-counter);
+  @apply flex-shrink-0 w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center mt-0.5;
+}
+.prose .toc-numbered li a {
+  @apply text-gray-700 hover:text-indigo-700 transition-colors text-base no-underline;
+}
+
+/* 변형 3: 카드 그림자 스타일 */
+.prose .toc-card {
+  @apply bg-white rounded-2xl p-7 mb-10 shadow-md border border-gray-100;
+}
+.prose .toc-card p {
+  @apply mb-4 font-extrabold text-gray-900 text-lg flex items-center gap-2;
+}
+.prose .toc-card p::before {
+  content: "📖";
+}
+.prose .toc-card ul {
+  @apply list-none pl-0 mb-0 grid gap-2;
+}
+.prose .toc-card li a {
+  @apply text-gray-600 hover:text-indigo-600 hover:translate-x-1 inline-block transition-all text-base no-underline;
+}
+
+/* 변형 4: 컴팩트 가로 구분 스타일 */
+.prose .toc-compact {
+  @apply border-y-2 border-gray-900 py-4 mb-10 bg-transparent;
+}
+.prose .toc-compact p {
+  @apply mb-2 font-bold text-gray-900 text-base;
+}
+.prose .toc-compact ul {
+  @apply list-none pl-0 mb-0 space-y-1;
+}
+.prose .toc-compact li a {
+  @apply text-gray-700 hover:text-indigo-600 transition-colors text-[15px] no-underline;
+}
+
 .prose h2 {
   @apply text-3xl font-bold mt-12 mb-6 text-gray-900 font-display tracking-tight leading-tight;
 }
