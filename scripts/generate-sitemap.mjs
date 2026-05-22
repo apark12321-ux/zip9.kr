@@ -121,6 +121,7 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/rss.xml
 `;
 }
 
