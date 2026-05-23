@@ -75,7 +75,7 @@ export const MOCK_POSTS = [
       <h3>마치며: 준비된 자에게만 기회는 찾아옵니다</h3>
       <p>부동산 시장은 냉정합니다. 정책이 바뀌고 제도가 개편될 때마다 누군가는 기회를 잡고 누군가는 뒤처집니다. 이번 청약 통장 납입 한도 상향은 지난 40년 중 가장 큰 기회의 창이 열린 것과 같습니다. 월 25만 원이라는 금액이 당장은 부담스럽게 느껴질 수 있지만, 10년 뒤 그 자리에 들어선 아파트의 가치를 생각한다면 이는 세상에서 가장 수익률 높은 투자입니다. 오늘 바로 본인의 통장 계좌를 열어보십시오. 하우징허브는 여러분이 청약 당첨이라는 인생의 큰 성취를 이루는 그날까지 가장 정확하고 깊이 있는 정보로 함께하겠습니다.</p>
       <p>더 정확하고 최신 정보는 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a> 등 공식 출처를 함께 확인하시기 바랍니다.</p>
-      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(applyhome.co.kr) 공고를 반드시 다시 확인하라.</p>
+      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-11</p>
     `,
     category: "청약-분양",
@@ -668,7 +668,7 @@ export const MOCK_POSTS = [
       <p>특별공급 신청 시 가장 흔한 실수는 <strong>소득 산정 오류</strong>와 <strong>주택 소유 이력 누락</strong>입니다. 소득은 전년도 기준 가구원 전원의 소득 합산이며, 비정기 수입(보너스, 인센티브)도 모두 포함됩니다. 본인 소득만 생각하고 신청했다가 배우자 소득까지 합산하면 기준 초과로 당첨 취소되는 사례가 빈번합니다.</p>
       <p>또한 결혼 전 잠시 보유했다 처분한 주택, 부모 명의로 단독 등기되어 있던 시기의 동거 주택 등도 무주택 요건에 영향을 줄 수 있으므로 등기 이력을 꼼꼼히 확인해야 합니다. 위장 이혼이나 위장 분가 등 자격을 부정하게 취득하는 행위는 적발 시 당첨 취소뿐 아니라 향후 10년간 청약 자격이 박탈되며 형사처벌까지 받을 수 있는 중대한 사안입니다. 합법적인 범위 내에서 본인에게 가장 유리한 트랙을 선택하는 지혜가 필요합니다.</p>
       <p>더 정확하고 최신 정보는 <a href="https://apply.lh.or.kr" target="_blank" rel="noopener noreferrer">LH 청약센터</a> 등 공식 출처를 함께 확인하시기 바랍니다.</p>
-      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(applyhome.co.kr) 공고를 반드시 다시 확인하라.</p>
+      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-06</p>
     `,
     category: "청약-분양",
@@ -1251,7 +1251,7 @@ export const MOCK_POSTS = [
 
       <h3 id="section5">5. 필요 서류와 비용, 소요 시간</h3>
       <p>임차권등기명령 신청에 필요한 서류는 이렇게 보시면 돼요., 임대차계약서 사본, 부동산등기사항전부증명서(등기부등본), 임차인 주민등록등본, 신청서(법원 양식), 보증금 미반환 사실을 입증할 수 있는 자료(내용증명, 카톡 대화 등) 등이 필요합니다. <strong>모든 서류는 최근 3개월 이내 발급분</strong>이어야 합니다.</p>
-      <p>비용은 등록면허세, 송달료, 인지대 등 합계 <strong>약 5~10만 원 수준</strong>으로 매우 저렴합니다. 변호사 선임 시 수임료가 추가되지만 단순 사건의 경우 본인이 직접 진행해도 충분히 가능합니다. 대법원 전자소송 사이트(ecfs.scourt.go.kr)에서 온라인 신청하면 법원 방문 없이 처리할 수 있어 편리합니다.</p>
+      <p>비용은 등록면허세, 송달료, 인지대 등 합계 <strong>약 5~10만 원 수준</strong>으로 매우 저렴합니다. 변호사 선임 시 수임료가 추가되지만 단순 사건의 경우 본인이 직접 진행해도 충분히 가능합니다. 대법원 전자소송 사이트(<a href="https://ecfs.scourt.go.kr" target="_blank" rel="noopener noreferrer">ecfs.scourt.go.kr</a>)에서 온라인 신청하면 법원 방문 없이 처리할 수 있어 편리합니다.</p>
 
       <h3 id="section6">6. 임차권등기 후 이사 진행 순서</h3>
       <p>임차권등기명령이 결정되고 등기부등본에 등기가 완료된 사실을 확인한 후 이사를 진행해야 합니다. <strong>등기 완료 전에 이사를 가면 대항력이 일시적으로 깨질 수 있으므로 반드시 등기 완료 후 이사</strong>하시기 바랍니다. 등기부등본을 발급받아 "임차권" 항목이 기재되었는지 직접 확인 후 이사 일정을 잡으십시오.</p>
@@ -2810,7 +2810,7 @@ export const MOCK_POSTS = [
         <li><strong>공인중개사 관리감독 강화:</strong> 부적격 중개사 시장 퇴출 절차 정비</li>
       </ul>
       <p>박프로님 같은 무주택 실수요자에게는 이런 변화가 좋은 신호다. 시세가 정직해지고, 정보 비대칭이 줄어들면 매수 의사결정이 한결 수월해진다. 단기적으로는 거래 절차가 복잡해 보일 수 있지만, 장기적으로는 시장의 안정성과 신뢰가 회복되는 방향이다. 본인의 거래 시점에 변화된 절차를 정확히 이해하고 대응하는 것이 중요하다.</p>
-      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(applyhome.co.kr) 공고를 반드시 다시 확인하라.</p>
+      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-18</p>
     `,
     category: "청약-분양",
@@ -3525,7 +3525,7 @@ export const MOCK_POSTS = [
         <li><strong>정책 발표 주시:</strong> 하반기 세제·공급 대책 발표 이후 시장 방향을 보고 결정하는 것도 방법</li>
       </ul>
       <p>시장이 오를 때는 조급함이 생기기 쉬워요. 하지만 집은 한 번 결정하면 되돌리기 어려운 큰 선택이에요. 분위기에 휩쓸리기보다 본인의 자금 여력과 실거주 계획을 차분히 따져보시고, 충분히 알아본 뒤 결정하시는 게 안전해요.</p>
-      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(applyhome.co.kr) 공고를 반드시 다시 확인하라.</p>
+      <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
     `,
     category: "청약-분양",
     author: "하우징허브 편집팀",
