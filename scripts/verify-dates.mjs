@@ -17,9 +17,10 @@ import { dirname, resolve } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-// 오늘 날짜 (KST 기준)
+// 오늘 날짜 (KST 기준 — 운영자가 한국에 있으므로 한국시간으로 판단)
 const now = new Date();
-const TODAY = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // UTC+9
+const TODAY = new Date(Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate()));
 
 function parseDate(s) {
   const [y, m, d] = s.split("-").map(Number);
