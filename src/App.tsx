@@ -176,6 +176,44 @@ export default function App() {
   });
   const [realPosts, setRealPosts] = useState<Post[]>([]);
   const [user, setUser] = useState<User | null>(null);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  // 히어로 롤링 카피 (4가지 가치 메시지 순환)
+  const heroSlides = [
+    {
+      badge: "청약·전세·대출·이사 한 곳에서",
+      titleTop: "모르면 손해 보는",
+      titleHighlight: "부동산의 모든 것",
+      sub: "청약 당첨 전략부터 전세사기 예방, 대출 한도, 이사 노하우까지. 몰라서 손해 보는 일이 없도록, 꼭 필요한 정보를 쉽게 정리해 드립니다.",
+    },
+    {
+      badge: "내 보증금을 지키는 첫걸음",
+      titleTop: "전세사기 걱정 없는",
+      titleHighlight: "안전한 계약의 기술",
+      sub: "등기부등본 확인부터 전세보증보험, 확정일자까지. 소중한 보증금을 지키는 방법을 사례 중심으로 알려드립니다.",
+    },
+    {
+      badge: "복잡한 청약, 한 번에 정리",
+      titleTop: "당첨 확률을 높이는",
+      titleHighlight: "청약 완벽 가이드",
+      sub: "가점 계산, 특별공급, 신청 자격까지. 복잡한 청약 제도를 내 상황에 맞게 풀어드립니다.",
+    },
+    {
+      badge: "이자 한 푼이라도 아끼는 법",
+      titleTop: "아는 만큼 아끼는",
+      titleHighlight: "대출과 절세 전략",
+      sub: "대출 한도 계산부터 금리 비교, 보유세 절세 타이밍까지. 한 푼이라도 더 아끼는 실전 정보를 담았습니다.",
+    },
+  ];
+
+  // 히어로 카피 자동 롤링 (5초 간격)
+  useEffect(() => {
+    if (currentPage !== "home") return;
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentPage, heroSlides.length]);
 
   // 브라우저 뒤로/앞으로 가기 처리 (검색어도 함께 복원)
   useEffect(() => {
@@ -404,16 +442,38 @@ export default function App() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <Badge variant="outline" className="mb-4 border-indigo-200 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase">
-                    부동산 기초 정보 가이드
-                  </Badge>
-                  <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-6 font-display break-keep">
-                    나에게 맞는 <br />
-                    <span className="text-indigo-600">안전한 주거 생활</span>
-                  </h1>
-                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
-                    청약 제도부터 임대차 계약 시 주의 사항까지, 실생활에 필요한 주거 관련 정보를 정리해 드립니다. 복잡한 용어를 사례 중심으로 풀이합니다.
-                  </p>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={heroIndex}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -12 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Badge variant="outline" className="mb-4 border-indigo-200 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
+                        {heroSlides[heroIndex].badge}
+                      </Badge>
+                      <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-6 font-display break-keep">
+                        {heroSlides[heroIndex].titleTop} <br />
+                        <span className="text-indigo-600">{heroSlides[heroIndex].titleHighlight}</span>
+                      </h1>
+                      <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed break-keep">
+                        {heroSlides[heroIndex].sub}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                  {/* 롤링 인디케이터 */}
+                  <div className="flex gap-2 mb-8" role="tablist" aria-label="히어로 슬라이드">
+                    {heroSlides.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setHeroIndex(i)}
+                        aria-label={`슬라이드 ${i + 1}`}
+                        aria-selected={i === heroIndex}
+                        className={`h-2 rounded-full transition-all ${i === heroIndex ? "w-8 bg-indigo-600" : "w-2 bg-indigo-200 hover:bg-indigo-300"}`}
+                      />
+                    ))}
+                  </div>
                   <div className="flex flex-wrap gap-4">
                     <Button 
                       size="lg" 
