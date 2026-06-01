@@ -163,12 +163,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "GitHub config missing (GITHUB_TOKEN/OWNER/REPO)" });
   }
 
-  const { title, body, seoDescription } = req.body || {};
+  // BlogStudio 템플릿: { title, content, status, seoDescription }
+  // body/content 둘 다 허용 (BlogStudio는 content로 보냄)
+  const payload = req.body || {};
+  const title = payload.title;
+  const body = payload.content ?? payload.body;
+  const seoDescription = payload.seoDescription;
+  const status = payload.status; // "draft" | "publish" 등 (선택)
   if (!title || !body) {
-    return res.status(400).json({ error: "Missing required fields: title, body" });
+    return res.status(400).json({ error: "Missing required fields: title, content" });
   }
 
   try {
+    // status가 draft/임시저장 류면 게시하지 않고 접수만 (즉시발행 외 상태 존중)
+    if (status && /draft|임시|보류|pending/i.test(String(status))) {
+      return res.status(202).json({
+        success: false,
+        skipped: true,
+        reason: `status='${status}' (비발행 상태) — 게시하지 않고 접수만 했습니다.`,
+      });
+    }
+
     const { content: src, sha } = await getConstantsFile(owner, repo, branch, token);
 
     const category = classifyCategory(title, body);
