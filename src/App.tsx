@@ -19,9 +19,9 @@ import { calculateReadTime, slugify, stripHtml, sanitizeContent } from "./lib/ut
 type Page = "home" | "about" | "privacy" | "partnership" | "announcement" | "terms" | `category-${string}` | `post-${string}`;
 
 const SITE_URL = "https://zip9.kr";
-const SITE_NAME = "하우징허브";
-const DEFAULT_TITLE = "하우징허브 - 대한민국 최고의 부동산 & 주거 정보 가이드";
-const DEFAULT_DESCRIPTION = "청약 정보, 전월세 계약 팁, 담보대출 가이드 등 실용적인 주거 정보를 제공하는 하우징허브입니다.";
+const SITE_NAME = "하우징허브 인천";
+const DEFAULT_TITLE = "하우징허브 인천 - 인천 부동산·청약·전세 정보 가이드";
+const DEFAULT_DESCRIPTION = "인천 청약 단지, 전세 시세, 부동산 정책을 인천 거주자 관점에서 정리하는 인천 부동산 정보 사이트, 하우징허브 인천입니다.";
 
 // URL → Page 상태
 function pageFromUrl(): Page {
@@ -181,28 +181,28 @@ export default function App() {
   // 히어로 롤링 카피 (4가지 가치 메시지 순환)
   const heroSlides = [
     {
-      badge: "청약·전세·대출·이사 한 곳에서",
-      titleTop: "모르면 손해 보는",
-      titleHighlight: "부동산의 모든 것",
-      sub: "청약 당첨 전략부터 전세사기 예방, 대출 한도, 이사 노하우까지. 몰라서 손해 보는 일이 없도록, 꼭 필요한 정보를 쉽게 정리해 드립니다.",
+      badge: "인천 청약·전세·부동산 한 곳에서",
+      titleTop: "인천에서 집 구할 때",
+      titleHighlight: "꼭 봐야 할 정보",
+      sub: "인천 청약 단지부터 전세사기 위험지역, 대출, 이사까지. 인천에서 집을 구하고 살아가는 데 꼭 필요한 정보를 인천 거주자 눈높이로 정리해 드립니다.",
     },
     {
-      badge: "내 보증금을 지키는 첫걸음",
-      titleTop: "전세사기 걱정 없는",
+      badge: "인천 전세, 안전하게",
+      titleTop: "인천 전세사기 걱정 없는",
       titleHighlight: "안전한 계약의 기술",
-      sub: "등기부등본 확인부터 전세보증보험, 확정일자까지. 소중한 보증금을 지키는 방법을 사례 중심으로 알려드립니다.",
+      sub: "인천 지역 깡통전세 위험 신호부터 등기부등본 확인, 전세보증보험까지. 인천에서 소중한 보증금을 지키는 방법을 정리했습니다.",
     },
     {
-      badge: "복잡한 청약, 한 번에 정리",
-      titleTop: "당첨 확률을 높이는",
+      badge: "인천 청약, 한 번에 정리",
+      titleTop: "인천 분양 단지",
       titleHighlight: "청약 완벽 가이드",
-      sub: "가점 계산, 특별공급, 신청 자격까지. 복잡한 청약 제도를 내 상황에 맞게 풀어드립니다.",
+      sub: "송도·청라·영종 등 인천 주요 분양 단지와 청약 가점, 특별공급 전략까지. 인천 청약을 준비하는 분께 필요한 정보를 담았습니다.",
     },
     {
-      badge: "이자 한 푼이라도 아끼는 법",
+      badge: "인천 부동산 자금 계획",
       titleTop: "아는 만큼 아끼는",
       titleHighlight: "대출과 절세 전략",
-      sub: "대출 한도 계산부터 금리 비교, 보유세 절세 타이밍까지. 한 푼이라도 더 아끼는 실전 정보를 담았습니다.",
+      sub: "대출 한도 계산부터 금리 비교, 인천 지역 보유세까지. 인천에서 집을 마련할 때 한 푼이라도 더 아끼는 실전 정보를 담았습니다.",
     },
   ];
 
@@ -502,7 +502,7 @@ export default function App() {
                   <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-indigo-100 border-8 border-white bg-gray-100">
                     <img 
                       src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Modern House" 
+                      alt="인천 아파트 단지 전경 - 하우징허브 인천 부동산 정보" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -544,12 +544,12 @@ export default function App() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "청약 가점", cat: "청약-분양" },
-                    { label: "전세 사기 예방", cat: "전월세" },
-                    { label: "디딤돌 대출", cat: "대출-금융" },
-                    { label: "보유세 계산", cat: "대출-금융" },
-                    { label: "이사 체크리스트", cat: "이사-인테리어" },
-                    { label: "임대차 3법", cat: "전월세" },
+                    { label: "송도 청약", cat: "청약-분양" },
+                    { label: "인천 전세사기 예방", cat: "전월세" },
+                    { label: "청라 분양", cat: "청약-분양" },
+                    { label: "인천 디딤돌 대출", cat: "대출-금융" },
+                    { label: "영종도 부동산", cat: "청약-분양" },
+                    { label: "인천 이사 정보", cat: "이사-인테리어" },
                   ].map((chip, i) => (
                     <button
                       key={chip.label}
@@ -565,13 +565,13 @@ export default function App() {
 
               {/* 카테고리 그리드 (글 개수 표시) */}
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-5 font-display">카테고리별 정보</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-5 font-display">카테고리별 인천 부동산 정보</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                   {[
-                    { cat: "청약-분양", icon: "🏢", desc: "청약 가점·특별공급·분양권" },
-                    { cat: "전월세", icon: "🏠", desc: "전세사기·임대차3법·보증금" },
-                    { cat: "이사-인테리어", icon: "📦", desc: "이사·입주청소·인테리어" },
-                    { cat: "대출-금융", icon: "💰", desc: "대출 한도·금리·세금" },
+                    { cat: "청약-분양", icon: "🏢", desc: "송도·청라·영종 청약·분양 정보" },
+                    { cat: "전월세", icon: "🏠", desc: "인천 전세사기·임대차·보증금" },
+                    { cat: "이사-인테리어", icon: "📦", desc: "인천 이사·입주청소·인테리어" },
+                    { cat: "대출-금융", icon: "💰", desc: "대출 한도·금리·인천 부동산 세금" },
                   ].map((c) => {
                     const count = allPosts.filter(p => p.category === c.cat).length;
                     return (
@@ -634,24 +634,24 @@ export default function App() {
               exit={{ opacity: 0 }}
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
-              <h1 className="font-display">하우징허브(HousingHub) 소개</h1>
-              <p className="lead">하우징허브는 복잡하고 어려운 부동산 및 주거 정보를 누구나 쉽게 이해하고 실생활에 적용할 수 있도록 돕는 디지털 가이드입니다.</p>
+              <h1 className="font-display">하우징허브 인천(HousingHub Incheon) 소개</h1>
+              <p className="lead">하우징허브 인천은 인천 지역의 부동산·주거 정보를 인천 거주자가 실생활에 바로 활용할 수 있도록 정리하는 지역 밀착 정보 가이드입니다.</p>
               
               <h2>우리의 목표</h2>
-              <p>대한민국의 주거 환경은 급격히 변화하고 있으며, 관련 정책과 법률은 날로 복잡해지고 있습니다. 하우징허브는 단순한 시세 나열이 아닌, 사용자가 실제로 집을 구하고, 계약하고, 거주하는 전 과정에서 부딪히는 문제들을 해결할 수 있는 '신뢰할 수 있는 정보'를 제공하는 것을 최우선 가치로 삼습니다.</p>
+              <p>인천은 송도·청라·영종 등 신도시 개발과 구도심이 공존하는, 부동산 환경이 빠르게 변하는 지역입니다. 하우징허브 인천은 전국 단위의 일반론이 아니라, 인천에서 실제로 집을 구하고 계약하고 거주하는 분들이 부딪히는 문제를 해결할 수 있는 '인천에 특화된 신뢰할 수 있는 정보'를 제공하는 것을 최우선 가치로 삼습니다.</p>
 
               <h3>주요 제공 콘텐츠</h3>
               <ul>
-                <li><strong>청약-분양:</strong> 최신 청약 가점제 분석, 신규 분양 단지 정보 및 청약 전략 가이드</li>
-                <li><strong>전월세:</strong> 안전한 임대차 계약을 위한 권리 분석 방법, 전세 사기 예방 수칙, 임대차 보호법 해설</li>
-                <li><strong>대출-금융:</strong> 정부 지원 저금리 대출 상품(버팀목, 디딤돌 등) 정보 및 자격 요건 안내</li>
-                <li><strong>이사-인테리어:</strong> 효율적인 이사 준비 체크리스트와 합리적인 홈 스타일링 팁</li>
+                <li><strong>청약-분양:</strong> 송도·청라·영종 등 인천 주요 분양 단지 정보, 청약 가점 분석, 인천 청약 전략 가이드</li>
+                <li><strong>전월세:</strong> 인천 지역 전세사기 위험 신호, 안전한 임대차 계약 방법, 임대차 보호법 해설</li>
+                <li><strong>대출-금융:</strong> 정부 지원 저금리 대출 상품(버팀목, 디딤돌 등) 정보 및 자격 요건, 인천 부동산 관련 세금 안내</li>
+                <li><strong>이사-인테리어:</strong> 인천 이사 준비 체크리스트와 합리적인 홈 스타일링 팁</li>
               </ul>
 
-              <p>하우징허브는 항상 사용자의 관점에서 가장 필요하고 유익한 정보를 전달하기 위해 끊임없이 연구하고 소통하겠습니다.</p>
+              <p>하우징허브 인천은 인천 거주자의 관점에서 가장 필요하고 유익한 정보를 전달하기 위해 끊임없이 연구하고 소통하겠습니다.</p>
 
               <h2>콘텐츠 제작 원칙</h2>
-              <p>하우징허브는 단순히 검색 결과를 모아 정리하는 사이트가 아닙니다. 모든 콘텐츠는 다음 네 가지 원칙을 따라 제작·검증됩니다.</p>
+              <p>하우징허브 인천은 단순히 검색 결과를 모아 정리하는 사이트가 아닙니다. 모든 콘텐츠는 다음 네 가지 원칙을 따라 제작·검증됩니다.</p>
               <ul>
                 <li><strong>① 1차 자료 우선:</strong> 국토교통부, 한국주택금융공사(HF), 한국부동산원, 주택도시기금, 청약홈 등 정부·공공기관의 공식 발표 자료를 우선 인용합니다.</li>
                 <li><strong>② 법령 정확성:</strong> 주택임대차보호법, 부동산 거래신고법, 소득세법 등 관련 법령의 최신 개정 사항을 반영하며, 변동 시 본문을 신속히 업데이트합니다.</li>
@@ -669,7 +669,7 @@ export default function App() {
               <p>법령이나 정책이 변경되면 해당 글의 본문을 수정하고, 글 하단에 '최종 업데이트' 일자를 갱신합니다. 독자가 부정확하다고 판단되는 부분을 발견한 경우 <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a>으로 알려주시면 신속히 검토 후 반영합니다.</p>
 
               <h2>다루는 주제의 범위와 한계</h2>
-              <p>하우징허브는 주거 생활에 직접 관련된 정보를 중심으로 다룹니다. 즉 청약-분양, 전월세, 이사-인테리어, 주택 관련 대출과 금융이 주된 영역입니다.</p>
+              <p>하우징허브 인천은 인천 지역의 주거 생활에 직접 관련된 정보를 중심으로 다룹니다. 즉 인천의 청약-분양, 전월세, 이사-인테리어, 주택 관련 대출과 금융이 주된 영역입니다.</p>
               <p>다음 영역은 본 사이트의 다루는 범위에 포함되지 않으며, 별도의 전문 채널을 통해 정보를 얻으시기를 권합니다.</p>
               <ul>
                 <li>부동산 투자 종목 추천, 특정 단지의 향후 가격 예측</li>
@@ -687,7 +687,7 @@ export default function App() {
                 <li><strong>문의 이메일:</strong> <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
                 <li><strong>사이트 URL:</strong> <a href="https://zip9.kr" target="_blank" rel="noopener noreferrer">https://zip9.kr</a></li>
               </ul>
-              <p>하우징허브는 상상아트가 운영하는 디지털 미디어입니다. 제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
+              <p>하우징허브 인천은 상상아트가 운영하는 디지털 미디어입니다. 제휴, 콘텐츠 제보, 정정 요청, 그 외 사이트 운영과 관련된 모든 문의는 위 이메일로 보내주시면 영업일 기준 3일 이내 회신드립니다.</p>
             </motion.div>
           )}
 
@@ -908,14 +908,14 @@ export default function App() {
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">이용약관</h1>
-              <p>본 약관은 하우징허브(이하 "사이트")가 제공하는 콘텐츠 및 부가 서비스(이하 "서비스")의 이용과 관련하여 사이트와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+              <p>본 약관은 하우징허브 인천(이하 "사이트")가 제공하는 콘텐츠 및 부가 서비스(이하 "서비스")의 이용과 관련하여 사이트와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
 
               <h2>제1조 (목적)</h2>
               <p>이 약관은 이용자가 사이트에서 제공하는 서비스를 이용함에 있어 필요한 사항을 규정합니다.</p>
 
               <h2>제2조 (용어의 정의)</h2>
               <ul>
-                <li><strong>"사이트"</strong>란 상상아트가 운영하는 하우징허브(https://zip9.kr)를 의미합니다.</li>
+                <li><strong>"사이트"</strong>란 상상아트가 운영하는 하우징허브 인천(https://zip9.kr)를 의미합니다.</li>
                 <li><strong>"운영자"</strong>란 본 사이트를 운영하는 상상아트를 의미합니다.</li>
                 <li><strong>"이용자"</strong>란 사이트에 접속하여 서비스를 이용하는 모든 자를 말합니다.</li>
                 <li><strong>"콘텐츠"</strong>란 사이트가 게재하는 모든 텍스트, 이미지, 데이터, 영상 등을 의미합니다.</li>
@@ -971,7 +971,7 @@ export default function App() {
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">공지사항</h1>
-              <p>하우징허브 운영에 관한 안내 사항을 공지합니다.</p>
+              <p>하우징허브 인천 운영에 관한 안내 사항을 공지합니다.</p>
 
               <h2>2026년 5월 18일</h2>
               <h3>운영 주체 정보 명시화 및 개인정보처리방침 개정</h3>
@@ -982,8 +982,8 @@ export default function App() {
               <p>국토교통부의 토지거래허가구역 실거주 의무 유예 확대 발표에 맞춰 관련 안내 콘텐츠를 신속히 보강하였습니다. 무주택 실수요자가 알아야 할 핵심 변화를 청약-분양 카테고리에서 확인하실 수 있습니다.</p>
 
               <h2>2026년 4월 28일</h2>
-              <h3>하우징허브 정식 오픈</h3>
-              <p>대한민국 1인 가구·청년·실수요자를 위한 주거 정보 가이드 사이트 '하우징허브'(zip9.kr)를 정식 오픈하였습니다. 청약-분양, 전월세, 이사-인테리어, 대출-금융 4개 카테고리에 걸쳐 실용적인 정보를 차근차근 쌓아갈 계획입니다.</p>
+              <h3>하우징허브 인천 정식 오픈</h3>
+              <p>대한민국 1인 가구·청년·실수요자를 위한 인천 부동산 정보 가이드 사이트 '하우징허브 인천'(zip9.kr)을 정식 오픈하였습니다. 인천의 청약-분양, 전월세, 이사-인테리어, 대출-금융 4개 카테고리에 걸쳐 인천 거주자에게 필요한 정보를 차근차근 쌓아갈 계획입니다.</p>
 
               <hr />
               <h2>운영 안내</h2>
@@ -1001,7 +1001,7 @@ export default function App() {
               className="max-w-4xl mx-auto px-4 py-20 prose prose-indigo"
             >
               <h1 className="font-display">제휴 및 비즈니스 문의</h1>
-              <p>하우징허브는 부동산·주거 분야의 양질의 정보 콘텐츠를 제공하는 미디어입니다. 독자 여러분과 업계 파트너 여러분의 다양한 제안을 환영합니다.</p>
+              <p>하우징허브 인천은 인천 부동산·주거 분야의 양질의 정보 콘텐츠를 제공하는 미디어입니다. 독자 여러분과 업계 파트너 여러분의 다양한 제안을 환영합니다.</p>
 
               <h2>제휴 가능 영역</h2>
               <ul>
@@ -1012,7 +1012,7 @@ export default function App() {
               </ul>
 
               <h2>제휴 검토 기준</h2>
-              <p>하우징허브는 독자에게 정확하고 유용한 정보를 제공한다는 원칙을 최우선으로 합니다. 따라서 다음 기준에 부합하는 제휴만 검토합니다.</p>
+              <p>하우징허브 인천은 독자에게 정확하고 유용한 정보를 제공한다는 원칙을 최우선으로 합니다. 따라서 다음 기준에 부합하는 제휴만 검토합니다.</p>
               <ul>
                 <li>법령을 준수하는 적법한 서비스·상품일 것</li>
                 <li>독자의 권익을 침해하지 않을 것</li>

@@ -48,6 +48,9 @@ export function Navbar({ onSearch, onNavigate, searchQuery = "" }: NavbarProps) 
             <span className="text-lg sm:text-xl font-bold tracking-tight text-gray-900">
               하우징허브
             </span>
+            <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">
+              인천
+            </span>
           </div>
 
           <div className="hidden md:flex items-center gap-6">

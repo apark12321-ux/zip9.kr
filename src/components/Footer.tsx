@@ -19,14 +19,14 @@ export function Footer({ onNavigate }: FooterProps) {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-gray-900 font-display leading-none">
-                  하우징허브
+                  하우징허브 <span className="text-indigo-600">인천</span>
                 </span>
-                <span className="text-[10px] text-indigo-600 font-bold tracking-widest uppercase mt-0.5">Housing Hub</span>
+                <span className="text-[10px] text-indigo-600 font-bold tracking-widest uppercase mt-0.5">Housing Hub Incheon</span>
               </div>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-6 font-normal">
-              하우징허브는 복잡한 대한민국 부동산 정책과 금융 정보를 누구나 쉽게 이해할 수 있도록 돕는 디지털 가이드입니다. 
-              올바른 정보가 주거 안정을 만든다는 믿음으로, 검증된 데이터 기반의 콘텐츠를 제작합니다.
+              하우징허브 인천은 인천 지역의 청약, 전세, 부동산 정책 정보를 인천 거주자 눈높이에 맞춰 정리하는 지역 밀착 부동산 정보 사이트입니다.
+              올바른 정보가 주거 안정을 만든다는 믿음으로, 인천 실거주자에게 필요한 콘텐츠를 제작합니다.
             </p>
             <div className="space-y-3 text-xs text-gray-400">
               <div className="flex items-center gap-2.5">
@@ -55,7 +55,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <span className="absolute -bottom-1 left-0 w-4 h-0.5 bg-indigo-600 rounded-full"></span>
             </h4>
             <ul className="space-y-2.5">
-              <li><button onClick={() => onNavigate("about")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">하우징허브 소개</button></li>
+              <li><button onClick={() => onNavigate("about")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">하우징허브 인천 소개</button></li>
               <li><button onClick={() => onNavigate("announcement")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">공지사항</button></li>
               <li><button onClick={() => onNavigate("partnership")} className="text-sm text-gray-500 hover:text-indigo-600 transition-all hover:pl-1">제휴 및 비즈니스 문의</button></li>
             </ul>
@@ -68,7 +68,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 면책 공고 (Legal Disclaimer)
               </h4>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                하우징허브의 모든 콘텐츠는 일반 정보 제공을 목적으로 합니다. 청약, 임대차, 세무, 금융 관련 의사 결정 시에는 반드시 해당 분야 전문가 또는 공공기관의 공식 자료를 함께 확인하시기 바랍니다.
+                하우징허브 인천의 모든 콘텐츠는 일반 정보 제공을 목적으로 합니다. 청약, 임대차, 세무, 금융 관련 의사 결정 시에는 반드시 해당 분야 전문가 또는 공공기관의 공식 자료를 함께 확인하시기 바랍니다.
               </p>
             </div>
           </div>
