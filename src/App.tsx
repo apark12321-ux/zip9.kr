@@ -548,7 +548,7 @@ export default function App() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "청약", cat: "청약-분양" },
+                    { label: "송도 청약", cat: "청약-분양" },
                     { label: "전세 사기", cat: "전월세" },
                     { label: "분양", cat: "청약-분양" },
                     { label: "디딤돌 대출", cat: "대출-금융" },
