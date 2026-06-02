@@ -305,10 +305,14 @@ export default function App() {
     }
 
     if (searchQuery) {
-      posts = posts.filter(p => 
-        p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        p.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      const q = searchQuery.toLowerCase().trim();
+      const words = q.split(/\s+/).filter(Boolean);
+      posts = posts.filter(p => {
+        const haystack = `${p.title} ${p.excerpt} ${p.category}`.toLowerCase();
+        // 전체 구문이 포함되거나, 분리된 단어 중 하나라도 포함되면 매칭
+        if (haystack.includes(q)) return true;
+        return words.some(w => haystack.includes(w));
+      });
     }
     return posts;
   }, [currentPage, searchQuery, allPosts]);
@@ -544,12 +548,12 @@ export default function App() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "송도 청약", cat: "청약-분양" },
-                    { label: "인천 전세사기 예방", cat: "전월세" },
-                    { label: "청라 분양", cat: "청약-분양" },
-                    { label: "인천 디딤돌 대출", cat: "대출-금융" },
-                    { label: "영종도 부동산", cat: "청약-분양" },
-                    { label: "인천 이사 정보", cat: "이사-인테리어" },
+                    { label: "청약", cat: "청약-분양" },
+                    { label: "전세 사기", cat: "전월세" },
+                    { label: "분양", cat: "청약-분양" },
+                    { label: "디딤돌 대출", cat: "대출-금융" },
+                    { label: "보유세", cat: "대출-금융" },
+                    { label: "이사", cat: "이사-인테리어" },
                   ].map((chip, i) => (
                     <button
                       key={chip.label}
