@@ -527,6 +527,105 @@ export default function App() {
             </motion.section>
           )}
 
+          {/* === 홈 전용: 인기 검색 주제 칩 + 카테고리 그리드 (kunja 스타일 구조) === */}
+          {currentPage === "home" && !searchQuery && (
+            <motion.section
+              key="home-quicklinks"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8"
+            >
+              {/* 지금 많이 찾는 주제 */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-lg">🔥</span>
+                  <h3 className="text-base font-bold text-gray-900">지금 많이 찾는 주제</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: "청약 가점", cat: "청약-분양" },
+                    { label: "전세 사기 예방", cat: "전월세" },
+                    { label: "디딤돌 대출", cat: "대출-금융" },
+                    { label: "보유세 계산", cat: "대출-금융" },
+                    { label: "이사 체크리스트", cat: "이사-인테리어" },
+                    { label: "임대차 3법", cat: "전월세" },
+                  ].map((chip, i) => (
+                    <button
+                      key={chip.label}
+                      onClick={() => { setSearchQuery(chip.label); }}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold hover:bg-indigo-100 transition-colors"
+                    >
+                      <span className="text-indigo-400 text-xs font-bold">{i + 1}</span>
+                      {chip.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 카테고리 그리드 (글 개수 표시) */}
+              <div>
+                <h2 className="text-xl font-bold text-gray-900 mb-5 font-display">카테고리별 정보</h2>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { cat: "청약-분양", icon: "🏢", desc: "청약 가점·특별공급·분양권" },
+                    { cat: "전월세", icon: "🏠", desc: "전세사기·임대차3법·보증금" },
+                    { cat: "이사-인테리어", icon: "📦", desc: "이사·입주청소·인테리어" },
+                    { cat: "대출-금융", icon: "💰", desc: "대출 한도·금리·세금" },
+                  ].map((c) => {
+                    const count = allPosts.filter(p => p.category === c.cat).length;
+                    return (
+                      <button
+                        key={c.cat}
+                        onClick={() => handleNavigate(`category-${c.cat}`)}
+                        className="text-left bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:shadow-md hover:border-indigo-200 transition-all group"
+                      >
+                        <div className="text-3xl mb-3">{c.icon}</div>
+                        <div className="flex items-center justify-between mb-1">
+                          <h3 className="font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">{c.cat}</h3>
+                          <span className="text-xs font-semibold text-gray-400">{count}개</span>
+                        </div>
+                        <p className="text-xs text-gray-500 leading-relaxed break-keep">{c.desc}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.section>
+          )}
+
+          {/* === 홈 전용: 인기 글 TOP (kunja 스타일) === */}
+          {currentPage === "home" && !searchQuery && (
+            <motion.section
+              key="home-popular"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+            >
+              <div className="flex items-center justify-between mb-5">
+                <h2 className="text-xl font-bold text-gray-900 font-display">인기 글</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {allPosts.slice(0, 6).map((post, idx) => (
+                  <button
+                    key={post.id}
+                    onClick={() => handleNavigate(`post-${post.id}`)}
+                    className="flex items-center gap-4 text-left bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-indigo-200 transition-all group"
+                  >
+                    <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${idx < 3 ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-500'}`}>
+                      {idx + 1}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-xs text-indigo-600 font-semibold mb-0.5">{post.category}</p>
+                      <p className="font-semibold text-gray-900 text-sm truncate group-hover:text-indigo-600 transition-colors">{post.title}</p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </motion.section>
+          )}
+
           {currentPage === "about" && (
             <motion.div 
               key="about-page"
