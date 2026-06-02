@@ -5,7 +5,7 @@ import { Footer } from "./components/Footer";
 import { PostCard } from "./components/PostCard";
 import { MOCK_POSTS, CATEGORIES } from "./constants";
 import { Post } from "./types";
-import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard, Settings, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard, Settings, ShieldCheck, Clock } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
@@ -1077,18 +1077,23 @@ export default function App() {
                   {currentPost.title}
                 </h1>
                 <div className="flex items-center justify-between py-6 border-y border-gray-100">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                      <ShieldCheck className="w-6 h-6 text-indigo-600" />
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-5 h-5 text-indigo-600" />
                     </div>
-                    <div>
-                      <p className="font-bold text-gray-900">{currentPost.author}</p>
-                      <p className="text-sm text-gray-500">
-                        {currentPost.date.replace(/-/g, ". ")} · {calculateReadTime(currentPost.content)} 읽기
-                      </p>
+                    <div className="min-w-0">
+                      <p className="font-bold text-gray-900 text-sm truncate">{currentPost.author}</p>
+                      <div className="flex items-center gap-2 text-xs text-gray-500 mt-0.5 flex-wrap">
+                        <span>{currentPost.date.replace(/-/g, ". ")}</span>
+                        <span className="text-gray-300">·</span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {calculateReadTime(currentPost.content)} 읽기
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 shrink-0">
                     <Button
                       variant="outline"
                       size="icon"
