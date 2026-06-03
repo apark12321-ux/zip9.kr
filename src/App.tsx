@@ -5,7 +5,7 @@ import { Footer } from "./components/Footer";
 import { PostCard } from "./components/PostCard";
 import { MOCK_POSTS, CATEGORIES } from "./constants";
 import { Post } from "./types";
-import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard, Settings, ShieldCheck, Clock } from "lucide-react";
+import { ArrowRight, ChevronRight, Share2, Printer, Bookmark, LayoutDashboard, Settings, ShieldCheck, Clock, Eye } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
@@ -329,6 +329,27 @@ export default function App() {
     }
     return null;
   }, [currentPage, allPosts]);
+
+  // 조회수: localStorage에 저장되는 실제 누적 조회 기록 (방문 시 1 증가)
+  const [viewCount, setViewCount] = useState<number | null>(null);
+  useEffect(() => {
+    if (!currentPost) { setViewCount(null); return; }
+    try {
+      const STORAGE_KEY = "zip9_views";
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const views: Record<string, number> = raw ? JSON.parse(raw) : {};
+      // 글마다 세션 중복 카운트를 막기 위해 sessionStorage로 1회만 증가
+      const seenKey = `zip9_seen_${currentPost.id}`;
+      if (!sessionStorage.getItem(seenKey)) {
+        views[currentPost.id] = (views[currentPost.id] || 0) + 1;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(views));
+        sessionStorage.setItem(seenKey, "1");
+      }
+      setViewCount(views[currentPost.id] || 1);
+    } catch {
+      setViewCount(null);
+    }
+  }, [currentPost]);
 
   // 게시물을 찾은 경우, URL이 id로 되어 있다면 slug 형태로 정리(replaceState).
   // 검색엔진/공유 시 깔끔한 URL 유지를 위함.
@@ -1094,6 +1115,15 @@ export default function App() {
                           <Clock className="w-3 h-3" />
                           {calculateReadTime(currentPost.content)} 읽기
                         </span>
+                        {viewCount !== null && (
+                          <>
+                            <span className="text-gray-300">·</span>
+                            <span className="inline-flex items-center gap-1">
+                              <Eye className="w-3 h-3" />
+                              조회 {viewCount.toLocaleString()}
+                            </span>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>

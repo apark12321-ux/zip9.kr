@@ -79,7 +79,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-11</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-11",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800",
     readTime: "15분",
@@ -145,7 +145,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-08</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-08",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -244,7 +244,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-01</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -306,7 +306,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-05</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-05",
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
     readTime: "18분",
@@ -400,7 +400,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-01</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-05",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
     readTime: "20분",
@@ -511,7 +511,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-31</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-07",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
     readTime: "16분",
@@ -557,7 +557,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-09</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
     readTime: "25분",
@@ -622,7 +622,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 이 글은 참고 정보입니다. 본인 소득·자산에 따른 정확한 계산은 금융기관 상담 또는 세무 전문가와 진행하시기 바랍니다.</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "21분",
@@ -719,7 +719,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-01</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-08",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
     readTime: "19분",
@@ -785,7 +785,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-06</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -849,7 +849,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-02</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -912,7 +912,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 청약·분양 정보 안내다. 본인 케이스의 정확한 가점·자격은 청약홈에서 직접 조회하기 바란다.</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-30",
     image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -968,7 +968,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-17</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-07",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1034,7 +1034,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-08</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1101,7 +1101,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-04-30</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-30",
     image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1179,7 +1179,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-02</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1244,7 +1244,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 임대차 관련 법령과 제도는 자주 바뀌어요. 계약 전 최신 정보를 꼭 확인하시고, 분쟁이 생기면 <a href="https://www.hldcc.or.kr" target="_blank" rel="noopener noreferrer">주택임대차분쟁조정위원회</a>에 문의하세요.</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1311,7 +1311,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-07</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-29",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1378,7 +1378,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-05</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-05",
     image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1447,7 +1447,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-14</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1525,7 +1525,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-04</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-04",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1609,7 +1609,7 @@ export const MOCK_POSTS = [
       <p>본인 소득이 낮고 무주택 기간이 길다면 디딤돌이 소득이 약간 높지만 안정적 상품을 원한다면 보금자리론이 신생아가 있다면 신생아 특례대출이 가장 유리합니다. <strong>여러 상품을 동시에 검토해 가장 좋은 조건을 비교 선택하는 것이 합리적</strong>입니다. 각 상품의 자세한 자격은 주택도시기금과 <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer">한국주택금융공사</a> 사이트에서 직접 확인 가능합니다. ※ 본 글은 일반 정보 제공 목적이며 실제 대출 신청은 반드시 금융기관 상담을 통해 진행하시는 게 좋습니다.</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-03",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1694,7 +1694,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1769,7 +1769,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-04</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-04",
     image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1855,7 +1855,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-15</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-06",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1932,7 +1932,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1995,7 +1995,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 안내예요. 업체별로 서비스 차이가 크니까 견적 비교와 후기 확인은 꼭 직접 해보세요.</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-02",
     image: "https://images.unsplash.com/photo-1493663284031-b7eb5d1c0a3a?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2061,7 +2061,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-13</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-13",
     image: "https://images.unsplash.com/photo-1467533003447-e295ff1b0435?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -2133,7 +2133,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-13</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-13",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -2199,7 +2199,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-13</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-13",
     image: "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2276,7 +2276,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2345,7 +2345,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 청약·분양 정보 안내다. 본인 케이스의 정확한 가점·자격은 청약홈에서 직접 조회하기 바란다.</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2416,7 +2416,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-15</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-04-28",
     image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -2488,7 +2488,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-15</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-15",
     image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2579,7 +2579,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-17</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-17",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -2663,7 +2663,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-17</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-17",
     image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2746,7 +2746,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 대출 조건과 세제는 수시로 변경됩니다. 신청 전 반드시 해당 금융기관과 <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer">홈택스</a> 등 공식 채널에서 최신 정보를 확인하십시오.</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-18",
     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -2833,7 +2833,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-18</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-18",
     image: "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -2927,7 +2927,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-18</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-18",
     image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -2999,7 +2999,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-19</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-19",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -3077,7 +3077,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-19</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-19",
     image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -3151,7 +3151,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-19",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -3233,7 +3233,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-19</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-19",
     image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
@@ -3321,7 +3321,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-20</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-20",
     image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -3405,7 +3405,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-20</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-20",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -3492,7 +3492,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용이에요. 공공임대주택 자격과 기준은 매년·유형별로 달라지니, 신청 전 LH 청약센터(1600-1004)나 마이홈포털에서 본인 케이스를 꼭 확인하세요.</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-21",
     image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -3582,7 +3582,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 안내예요. 전입신고·확정일자·보증금 보호 관련 구체적인 사항은 정부24 또는 거주지 주민센터, 필요 시 법률 전문가에게 문의하시는 게 정확해요.</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-21",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
@@ -3673,7 +3673,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 정보 안내예요. 양도세·비과세·특례 요건은 개정될 수 있고 본인 상황에 따라 적용이 달라지니, 매매 전 국세청이나 세무 전문가와 꼭 확인하세요.</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-22",
     image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -3765,7 +3765,7 @@ export const MOCK_POSTS = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반 정보 제공 목적이며 실제 매수 결정은 본인 책임하에 신중히 진행하시기 바랍니다. 단지별 시세와 시장 상황은 수시로 변동되며, 본문의 지역별 흐름은 작성 시점의 시장 동향입니다.</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-22",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -3835,7 +3835,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-22</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-22",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
@@ -3912,7 +3912,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-23</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-23",
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -3991,7 +3991,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-26</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-26",
     image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -4075,7 +4075,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-28</p>
     `,
     category: "전월세",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-28",
     image: "https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -4168,7 +4168,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-05-29</p>
     `,
     category: "이사-인테리어",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-05-29",
     image: "https://images.unsplash.com/photo-1591129841117-3adfd313e34f?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
@@ -4266,7 +4266,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-01</p>
     `,
     category: "대출-금융",
-    author: "하우징허브 편집팀",
+    author: "편집팀",
     date: "2026-06-01",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -4403,7 +4403,7 @@ export const MOCK_POSTS = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-02</p>
     `,
     category: "청약-분양",
-    author: "하우징허브 인천 편집팀",
+    author: "편집팀",
     date: "2026-06-02",
     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
