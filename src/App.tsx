@@ -549,11 +549,11 @@ export default function App() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     { label: "송도 청약", cat: "청약-분양" },
-                    { label: "전세 사기", cat: "전월세" },
-                    { label: "분양", cat: "청약-분양" },
-                    { label: "디딤돌 대출", cat: "대출-금융" },
-                    { label: "보유세", cat: "대출-금융" },
-                    { label: "이사", cat: "이사-인테리어" },
+                    { label: "인천 전세 사기", cat: "전월세" },
+                    { label: "인천 분양", cat: "청약-분양" },
+                    { label: "인천 디딤돌 대출", cat: "대출-금융" },
+                    { label: "인천 보유세", cat: "대출-금융" },
+                    { label: "인천 이사", cat: "이사-인테리어" },
                   ].map((chip, i) => (
                     <button
                       key={chip.label}
