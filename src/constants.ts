@@ -4214,42 +4214,61 @@ export const MOCK_POSTS = [
   },
   {
     id: "sub-14",
-    title: "송도 청약 도전 전 꼭 알아야 할 것: 국제업무지구 분양 흐름과 자금 계획",
-    excerpt: "송도국제도시 청약을 준비한다면 분양가 수준과 전매 조건, 자금 계획을 먼저 따져야 합니다. 국제업무지구 마지막 단지부터 11공구 신규 물량까지, 송도 청약을 고민하는 인천 실수요자를 위해 흐름과 체크포인트를 정리했습니다.",
+    title: "송도 청약, 12억 분양가 시대… 당첨돼도 웃지 못하는 이유와 자금 전략",
+    excerpt: "송도 분양가가 전용 84㎡ 기준 12억 원대를 넘어서며 '당첨이 곧 차익'이라는 공식이 흔들리고 있습니다. 송도 국제업무지구 분양 흐름, 전매·실거주 조건, 자금 계획까지 인천 실수요자가 청약 전 반드시 확인할 점을 표와 체크리스트로 정리했습니다.",
     content: `
       <div class="toc-card">
         <p><strong>이 글의 순서</strong></p>
         <ul>
           <li><a href="#section1">송도 청약, 왜 이렇게 경쟁이 치열한가</a></li>
-          <li><a href="#section2">분양가가 올라간 배경</a></li>
-          <li><a href="#section3">송도 분양 단지 흐름 살펴보기</a></li>
+          <li><a href="#section2">분양가가 12억을 넘어선 배경</a></li>
+          <li><a href="#section3">송도 분양 단지 흐름 한눈에</a></li>
           <li><a href="#section4">전매제한과 실거주, 꼭 확인하세요</a></li>
           <li><a href="#section5">송도 청약 자금 계획 세우는 법</a></li>
           <li><a href="#section6">청약 전 체크리스트</a></li>
         </ul>
       </div>
-      <h2>송도 청약, 막연히 넣었다간 낭패 봅니다</h2>
-      <p>인천에서 내 집 마련을 고민하는 분들에게 송도국제도시는 늘 1순위 관심 지역이에요. 깔끔한 도시 계획, 교육·교통 인프라, 국제업무지구의 상징성까지 갖춰 선호도가 높죠. 그만큼 청약 경쟁도 치열하고, 최근에는 분양가도 크게 올라 "막연히 넣어보자"는 식으로 접근하면 당첨돼도 자금 계획에 차질이 생길 수 있어요. 송도 청약을 진지하게 고민한다면, 분양가 수준과 전매·실거주 조건, 그리고 본인 자금 계획부터 냉정하게 따져봐야 합니다.</p>
+      <h2>"당첨됐는데 잔금이 없어요"</h2>
+      <p>얼마 전 송도 한 단지 청약에 당첨된 30대 직장인이 부동산 커뮤니티에 올린 고민이 화제가 됐어요. 어렵게 당첨됐는데, 막상 분양가가 12억 원을 넘다 보니 중도금과 잔금을 감당할 자신이 없어 계약을 포기할지 고민이라는 내용이었죠. 송도국제도시는 인천에서 가장 선호도 높은 청약 지역이지만, 분양가가 가파르게 오르면서 "당첨 = 시세 차익"이라는 공식이 더는 단순하지 않게 됐어요. 막연한 기대로 청약했다간 당첨되고도 웃지 못하는 상황이 생길 수 있습니다. 송도 청약을 진지하게 고민한다면, 분양가·전매·실거주 조건과 자금 계획부터 냉정하게 따져봐야 해요.</p>
 
       <h3 id="section1">송도 청약, 왜 이렇게 경쟁이 치열한가</h3>
       <p>송도는 인천 안에서도 주거 선호도가 높은 지역으로 꼽혀요. 청약 경쟁이 몰리는 이유는 분명합니다.</p>
       <ul>
-        <li><strong>계획도시 인프라:</strong> 격자형 도시 계획, 공원·국제학교·업무지구가 함께 조성됨</li>
-        <li><strong>교통 호재 기대:</strong> 광역 교통망 확충 논의가 이어지며 미래 가치 기대가 큼</li>
-        <li><strong>신축 선호:</strong> 새 아파트 수요가 꾸준해 신규 분양마다 관심이 집중됨</li>
+        <li><strong>① 계획도시 인프라:</strong> 격자형 도시 계획, 공원·국제학교·업무지구가 함께 조성됨</li>
+        <li><strong>② 교통 호재 기대:</strong> 광역 교통망 확충 논의가 이어지며 미래 가치 기대가 큼</li>
+        <li><strong>③ 신축 선호:</strong> 새 아파트 수요가 꾸준해 신규 분양마다 관심이 집중됨</li>
       </ul>
       <p>특히 국제업무지구(IBD)는 송도 안에서도 주거 선호도가 높은 구역이라, 이 일대 분양 단지는 실수요와 투자수요가 함께 몰리는 경향이 있어요. 경쟁이 치열한 만큼 당첨 가점도 높아져, 가점이 낮은 분은 일반공급으로 당첨되기가 쉽지 않은 게 현실이에요.</p>
 
-      <h3 id="section2">분양가가 올라간 배경</h3>
-      <p>최근 송도 분양가는 과거보다 상당히 높아졌어요. 국제업무지구의 한 신규 단지는 전용 84㎡(34평형) 기준 분양가가 12억~13억 원대로 책정되며 인천 역대 최고 수준으로 화제가 됐을 정도예요.</p>
-      <ul>
-        <li><strong>공사비 상승:</strong> 원자재값·인건비 상승으로 건축비 자체가 올라감</li>
-        <li><strong>택지 가치:</strong> 선호 입지일수록 택지비가 높게 반영됨</li>
-        <li><strong>마감·옵션:</strong> 유상 옵션을 더하면 체감 분양가는 더 올라감</li>
-      </ul>
+      <h3 id="section2">분양가가 12억을 넘어선 배경</h3>
+      <p>최근 송도 분양가는 과거보다 크게 올랐어요. 국제업무지구의 한 신규 단지는 전용 84㎡(34평형) 기준 분양가가 12억~13억 원대로 책정되며 인천 역대 최고 수준으로 화제가 됐을 정도예요. 왜 이렇게 올랐을까요?</p>
+      <div class="not-prose my-6 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-indigo-50">
+              <th class="border border-gray-200 px-4 py-2 text-left font-bold text-gray-700">요인</th>
+              <th class="border border-gray-200 px-4 py-2 text-left font-bold text-gray-700">분양가에 미치는 영향</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2 font-semibold">공사비 상승</td>
+              <td class="border border-gray-200 px-4 py-2">원자재값·인건비 상승으로 건축비 자체가 올라감</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border border-gray-200 px-4 py-2 font-semibold">택지 가치</td>
+              <td class="border border-gray-200 px-4 py-2">선호 입지일수록 택지비가 높게 반영됨</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2 font-semibold">유상 옵션</td>
+              <td class="border border-gray-200 px-4 py-2">시스템에어컨·마감 옵션 추가 시 체감 분양가 상승</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>분양가가 높아졌다는 건, "당첨 = 무조건 시세 차익"이라는 공식이 예전만큼 단순하지 않다는 의미예요. 주변 시세와 분양가 차이를 직접 비교해보고, 차익 여력이 실제로 있는지 따져봐야 해요. 분양가가 시세에 근접하면 기대했던 차익이 크지 않을 수 있거든요.</p>
 
-      <h3 id="section3">송도 분양 단지 흐름 살펴보기</h3>
+      <h3 id="section3">송도 분양 단지 흐름 한눈에</h3>
       <p>송도는 공구별로 개발이 진행되며 분양이 이어지고 있어요. 2026년에도 여러 단지가 분양을 진행하거나 예정하고 있습니다.</p>
       <ul>
         <li><strong>국제업무지구 단지:</strong> 업무지구 내 주거단지 분양이 진행됐고, 대단지 규모로 관심을 모음</li>
@@ -4268,25 +4287,58 @@ export const MOCK_POSTS = [
       <p>전매제한 기간이 짧은 단지는 투자수요가 더 몰리기도 하지만, 그만큼 경쟁도 치열해져요. 본인이 실거주 목적인지 투자 목적인지에 따라 단지 선택과 전략이 달라지니, 공고문의 전매·실거주 조건을 꼼꼼히 읽어야 해요.</p>
 
       <h3 id="section5">송도 청약 자금 계획 세우는 법</h3>
-      <p>분양가가 높아진 만큼, 자금 계획이 청약 성패를 좌우해요. 다음 순서로 점검해보세요.</p>
-      <ul>
-        <li><strong>1단계 - 분양가 확인:</strong> 관심 단지·주택형의 분양가를 공고문에서 확인 (옵션 포함 체감가까지)</li>
-        <li><strong>2단계 - 계약금 준비:</strong> 보통 분양가의 10~20% 수준의 계약금을 먼저 마련해야 함</li>
-        <li><strong>3단계 - 중도금 대출 가능 여부:</strong> 분양가·규제에 따라 중도금 대출 한도가 달라짐</li>
-        <li><strong>4단계 - 잔금 계획:</strong> 입주 시점의 잔금 마련 방안 (주담대 한도·실거주 여부 고려)</li>
-      </ul>
+      <p>분양가가 높아진 만큼, 자금 계획이 청약 성패를 좌우해요. 분양가 12억 원 단지를 예로, 단계별로 점검해보세요. (실제 금액·비율은 단지와 규제에 따라 다르니 참고용이에요.)</p>
+      <div class="not-prose my-6 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-indigo-50">
+              <th class="border border-gray-200 px-4 py-2 text-left font-bold text-gray-700">단계</th>
+              <th class="border border-gray-200 px-4 py-2 text-left font-bold text-gray-700">대략 비중</th>
+              <th class="border border-gray-200 px-4 py-2 text-left font-bold text-gray-700">확인할 점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2 font-semibold">계약금</td>
+              <td class="border border-gray-200 px-4 py-2">분양가의 10~20%</td>
+              <td class="border border-gray-200 px-4 py-2">당첨 직후 현금으로 마련해야 함</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border border-gray-200 px-4 py-2 font-semibold">중도금</td>
+              <td class="border border-gray-200 px-4 py-2">분양가의 약 60%</td>
+              <td class="border border-gray-200 px-4 py-2">중도금 대출 한도·자부담 비율 확인</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2 font-semibold">잔금</td>
+              <td class="border border-gray-200 px-4 py-2">나머지</td>
+              <td class="border border-gray-200 px-4 py-2">입주 시점 주담대 한도·실거주 여부 고려</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>특히 분양가가 높은 단지는 중도금 대출에서 본인이 부담해야 하는 비율이 커질 수 있어요. 대출 한도는 본인 소득·기존 대출에 따라 달라지니, 청약 전에 거래 은행이나 <a href="https://www.hf.go.kr" target="_blank" rel="noopener noreferrer">한국주택금융공사</a>에서 본인 대출 가능 범위를 미리 확인하는 게 안전해요.</p>
 
       <h3 id="section6">청약 전 체크리스트</h3>
       <p>송도 청약 전에 다음을 꼭 점검하세요.</p>
       <ul>
-        <li><strong>청약 자격·가점 확인:</strong> 청약홈에서 본인 가점과 청약 자격을 정확히 조회</li>
-        <li><strong>분양가 vs 주변 시세:</strong> 실제 차익 여력이 있는지 직접 비교</li>
-        <li><strong>전매·실거주 조건:</strong> 입주자 모집공고에서 반드시 확인</li>
-        <li><strong>자금 계획:</strong> 계약금·중도금·잔금 단계별 마련 방안</li>
-        <li><strong>특별공급 해당 여부:</strong> 신혼·생애최초·다자녀·신생아 등 본인 유형 확인</li>
+        <li><strong>✅ 청약 자격·가점 확인:</strong> 청약홈에서 본인 가점과 청약 자격을 정확히 조회</li>
+        <li><strong>✅ 분양가 vs 주변 시세:</strong> 실제 차익 여력이 있는지 직접 비교</li>
+        <li><strong>✅ 전매·실거주 조건:</strong> 입주자 모집공고에서 반드시 확인</li>
+        <li><strong>✅ 자금 계획:</strong> 계약금·중도금·잔금 단계별 마련 방안</li>
+        <li><strong>✅ 특별공급 해당 여부:</strong> 신혼·생애최초·다자녀·신생아 등 본인 유형 확인</li>
       </ul>
-      <p>송도는 인천에서 매력적인 청약 지역이지만, 분양가가 높아진 지금은 더 신중한 접근이 필요해요. "송도니까 무조건 된다"가 아니라, 본인의 가점·자금·거주 계획을 냉정하게 점검한 뒤 도전하시는 게 안전합니다. 정확한 청약 자격과 단지별 조건은 청약홈과 입주자 모집공고에서 직접 확인하세요.</p>
+      <p>송도는 인천에서 매력적인 청약 지역이지만, 분양가가 높아진 지금은 더 신중한 접근이 필요해요. "송도니까 무조건 된다"가 아니라, 본인의 가점·자금·거주 계획을 냉정하게 점검한 뒤 도전하시는 게 안전합니다.</p>
+
+      <div class="not-prose my-8 p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
+        <p class="font-bold text-indigo-900 mb-3">💡 오늘의 핵심 정리</p>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li>· 송도 국제업무지구 분양가는 전용 84㎡ 기준 <strong>12억~13억 원대</strong>로 인천 최고 수준</li>
+          <li>· 분양가가 높아져 <strong>"당첨 = 차익" 공식이 약화</strong> — 주변 시세와 꼭 비교</li>
+          <li>· <strong>전매제한·실거주 의무</strong>는 단지마다 다르니 입주자 모집공고 필독</li>
+          <li>· 계약금·중도금·잔금 <strong>단계별 자금 계획</strong>을 청약 전에 미리 세울 것</li>
+          <li>· 정확한 자격·가점은 <strong>청약홈</strong>, 대출 한도는 <strong>거래 은행</strong>에서 사전 확인</li>
+        </ul>
+      </div>
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 정보 안내입니다. 분양가·청약 일정·전매 조건은 단지와 시기에 따라 다르며 변동될 수 있으니, 청약 전 청약홈 공고와 각 단지 분양 정보를 반드시 다시 확인하세요.</p>
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-02</p>
     `,
