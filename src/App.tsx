@@ -330,25 +330,41 @@ export default function App() {
     return null;
   }, [currentPage, allPosts]);
 
-  // 조회수: localStorage에 저장되는 실제 누적 조회 기록 (방문 시 1 증가)
+  // 조회수: 백엔드 카운터(전체 방문자 합산). 글 진입 시 1 증가 후 합산값 표시.
   const [viewCount, setViewCount] = useState<number | null>(null);
   useEffect(() => {
     if (!currentPost) { setViewCount(null); return; }
-    try {
-      const STORAGE_KEY = "zip9_views";
-      const raw = localStorage.getItem(STORAGE_KEY);
-      const views: Record<string, number> = raw ? JSON.parse(raw) : {};
-      // 글마다 세션 중복 카운트를 막기 위해 sessionStorage로 1회만 증가
-      const seenKey = `zip9_seen_${currentPost.id}`;
-      if (!sessionStorage.getItem(seenKey)) {
-        views[currentPost.id] = (views[currentPost.id] || 0) + 1;
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(views));
-        sessionStorage.setItem(seenKey, "1");
+    let cancelled = false;
+    const postId = currentPost.id;
+    // 같은 세션 중복 증가 방지: 이미 본 글이면 읽기만, 처음이면 증가
+    const seenKey = `zip9_seen_${postId}`;
+    const alreadySeen = (() => {
+      try { return !!sessionStorage.getItem(seenKey); } catch { return false; }
+    })();
+
+    async function run() {
+      try {
+        let res;
+        if (alreadySeen) {
+          res = await fetch(`/api/views?id=${encodeURIComponent(postId)}`);
+        } else {
+          res = await fetch(`/api/views`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: postId }),
+          });
+          try { sessionStorage.setItem(seenKey, "1"); } catch {}
+        }
+        if (!res.ok) throw new Error("counter unavailable");
+        const data = await res.json();
+        if (!cancelled) setViewCount(typeof data.views === "number" ? data.views : null);
+      } catch {
+        // 카운터 미설정·오류 시 조회수 숨김 (가짜 숫자 표시 안 함)
+        if (!cancelled) setViewCount(null);
       }
-      setViewCount(views[currentPost.id] || 1);
-    } catch {
-      setViewCount(null);
     }
+    run();
+    return () => { cancelled = true; };
   }, [currentPost]);
 
   // 게시물을 찾은 경우, URL이 id로 되어 있다면 slug 형태로 정리(replaceState).
