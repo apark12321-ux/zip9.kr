@@ -1,5 +1,6 @@
 
 import { useState, useMemo, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { PostCard } from "./components/PostCard";
@@ -504,7 +505,7 @@ export default function App() {
                     </motion.div>
                   </AnimatePresence>
                   {/* 롤링 인디케이터 */}
-                  <div className="flex gap-2 mb-8" role="tablist" aria-label="히어로 슬라이드">
+                  <div className="flex gap-2 mb-8" role="tablist" aria-label="히어로 ���라이드">
                     {heroSlides.map((_, i) => (
                       <button
                         key={i}
@@ -581,7 +582,7 @@ export default function App() {
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-lg">🔥</span>
-                  <h3 className="text-base font-bold text-gray-900">지금 많이 찾는 주제</h3>
+                  <h3 className="text-base font-bold text-gray-900">지금 많��� 찾는 주제</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
@@ -700,12 +701,12 @@ export default function App() {
                 <li><strong>④ 면책 고지:</strong> 세무·법률·금융 등 전문 분야의 정보는 일반 안내 목적임을 명시하고, 중요한 의사결정에는 전문가 상담을 권장합니다.</li>
               </ul>
 
-              <h2>편집 검증 프로세스</h2>
+              <h2>편�� 검증 프로세스</h2>
               <p>발행되는 모든 글은 다음 3단계 검토를 거쳐 게재됩니다.</p>
               <ol>
                 <li><strong>초안 작성:</strong> 주제별 가이드라인에 따라 1차 자료를 수집하고 본문을 구성합니다.</li>
                 <li><strong>팩트 체크:</strong> 본문에 등장하는 수치(금리, 한도, 세율, 시행일 등)와 법령 조문을 공공기관 공식 자료와 대조해 검증합니다.</li>
-                <li><strong>편집팀 검토:</strong> 표현의 정확성과 이해 용이성, 면책 고지의 적절성을 종합적으로 점검한 뒤 발행합니다.</li>
+                <li><strong>편집팀 검토:</strong> 표현의 정��성과 이해 용이성, 면책 고지의 적절성을 종합적으로 점검한 뒤 발행합니다.</li>
               </ol>
               <p>법령이나 정책이 변경되면 해당 글의 본문을 수정하고, 글 하단에 '최종 업데이트' 일자를 갱신합니다. 독자가 부정확하다고 판단되는 부분을 발견한 경우 <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a>으로 알려주시면 신속히 검토 후 반영합니다.</p>
 
@@ -789,7 +790,7 @@ export default function App() {
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="p-3 align-top text-gray-700 border border-gray-200 font-medium">이용자 제공</td>
-                      <td className="p-3 align-top text-gray-700 border border-gray-200">이메일 주소(문의자가 직접 기재한 경우), 문의 내용</td>
+                      <td className="p-3 align-top text-gray-700 border border-gray-200">이메일 주소(문의자가 직접 기재��� 경우), 문의 내용</td>
                       <td className="p-3 align-top text-gray-700 border border-gray-200">이메일 문의 시</td>
                     </tr>
                     <tr>
@@ -876,15 +877,15 @@ export default function App() {
                   <ul>
                     <li>Chrome: 설정 → 개인정보 보호 및 보안 → 쿠키 및 기타 사이트 데이터</li>
                     <li>Safari: 환경설정 → 개인정보 보호 → 쿠키 및 웹 사이트 데이터</li>
-                    <li>Edge: 설정 → 쿠키 및 사이트 권한 → 쿠키 및 사이트 데이터</li>
+                    <li>Edge: 설정 → 쿠키 및 사이트 권한 → 쿠키 및 사이트 데이���</li>
                   </ul>
                 </li>
                 <li><strong>쿠키 거부 시 영향:</strong> 쿠키 저장을 거부할 경우 일부 맞춤 서비스 이용에 어려움이 있을 수 있습니다.</li>
               </ol>
 
               <h2>8. 광고 게재 및 제3자 광고 서비스</h2>
-              <p>① 본 사이트는 Google LLC의 광고 서비스인 Google AdSense를 통해 광고를 게재합니다.</p>
-              <p>② Google AdSense는 사용자의 이전 사이트 방문 정보를 토대로 사용자의 관심에 맞는 광고를 게재하기 위해 쿠키 및 광고 식별자를 사용합니다. 이 과정에서 수집되는 정보는 Google의 개인정보처리방침에 따라 관리됩니다.</p>
+              <p>① 본 사이트는 Google LLC의 광고 서비스인 Google AdSense를 통해 ��고를 게재합니다.</p>
+              <p>② Google AdSense는 사용��의 이전 사이트 방문 정보를 토대로 사용자의 관심에 맞는 광고를 게재하기 위해 쿠키 및 광고 식별자를 사용합니다. 이 과정에서 수집되는 정보는 Google의 개인정보처리방침에 따라 관리됩니다.</p>
               <p>③ 사용자는 다음 경로를 통해 맞춤 광고를 거부하실 수 있습니다.</p>
               <ul>
                 <li><a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google 광고 설정 페이지</a>에서 맞춤 광고 비활성화</li>
@@ -921,7 +922,7 @@ export default function App() {
               <p>정보주체는 개인정보 침해로 인한 신고, 상담이 필요한 경우 아래 기관에 도움을 요청하실 수 있습니다.</p>
               <ul>
                 <li><strong>개인정보분쟁조정위원회:</strong> (국번 없이) 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener noreferrer">www.kopico.go.kr</a></li>
-                <li><strong>개인정보침해 신고센터:</strong> (국번 없이) 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener noreferrer">privacy.kisa.or.kr</a></li>
+                <li><strong>개인���보침해 신고센터:</strong> (국번 없이) 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener noreferrer">privacy.kisa.or.kr</a></li>
                 <li><strong>대검찰청 사이버수사과:</strong> (국번 없이) 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener noreferrer">www.spo.go.kr</a></li>
                 <li><strong>경찰청 사이버수사국:</strong> (국번 없이) 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener noreferrer">ecrm.cyber.go.kr</a></li>
               </ul>
@@ -1028,7 +1029,7 @@ export default function App() {
 
               <hr />
               <h2>운영 안내</h2>
-              <p>본 공지사항은 사이트 운영 정책, 콘텐츠 정책, 법령 준수와 관련된 주요 변경 사항을 안내합니다. 중요 사항이 발생할 때마다 본 페이지를 통해 우선 안내드리며, 개인정보 처리에 관한 변경은 별도로 <button onClick={() => handleNavigate("privacy")} className="text-indigo-600 hover:underline">개인정보처리방침</button>을 통해 고지합니다.</p>
+              <p>본 공지사항은 사이트 운영 정책, 콘텐츠 정책, 법령 준수와 관련된 주요 변경 사항을 안내합니다. 중요 사항이 발생할 때마다 본 페이지를 통해 우선 ��내드리며, 개인정보 처리에 관한 변경은 별도로 <button onClick={() => handleNavigate("privacy")} className="text-indigo-600 hover:underline">개인정보처리방침</button>을 통해 고지합니다.</p>
               <p>사이트 운영 관련 의견이나 제보는 언제든 <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a>으로 보내주세요.</p>
             </motion.div>
           )}
@@ -1073,7 +1074,7 @@ export default function App() {
 
               <h2>운영 정보</h2>
               <ul>
-                <li>운영 주체: 상상아트</li>
+                <li>��영 주체: 상상아트</li>
                 <li>사업자등록번호: 272-14-01256</li>
                 <li>통신판매업 신고번호: 제2023-화성동탄-1098호</li>
                 <li>이메일: <a href="mailto:apark12321@gmail.com">apark12321@gmail.com</a></li>
@@ -1352,6 +1353,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <Analytics />
     </div>
   );
 }
