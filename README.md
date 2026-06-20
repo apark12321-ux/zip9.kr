@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ZIP9 생활정보
 
-# Run and deploy your AI Studio app
+검색 수요 기반 애드센스 정보형 사이트입니다. 전월세, 청약, 대출, 생활 계산형 주제를 표·체크리스트·FAQ 구조로 정리합니다.
 
-This contains everything you need to run your app locally.
+## 핵심 구조
 
-View your app in AI Studio: https://ai.studio/apps/9ae01718-7459-4ac4-90d0-d2a27c2a0cc1
+- Vite + React + TypeScript
+- AdSense 메타/스크립트 삽입
+- 게시글 기반 sitemap.xml, robots.txt, rss.xml 자동 생성
+- 빌드 후 주요 페이지 프리렌더링
+- 전월세 / 청약-분양 / 대출-금융 / 생활도구 토픽 클러스터
+- 키워드 점수 계산기와 승인 체크리스트 포함
 
-## Run Locally
+## 실행
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+## 빌드
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+```
+
+빌드 순서:
+
+1. 글 날짜 검증
+2. Vite 빌드
+3. sitemap.xml 생성
+4. rss.xml 생성
+5. 주요 URL 프리렌더링
+
+## 운영 원칙
+
+1. 검색 수요가 있는 키워드만 발행합니다.
+2. 신청, 가격, 조건, 비교, 계산처럼 행동 의도가 있는 글을 우선합니다.
+3. AI 초안은 사용하되 최신 정보와 공식 확인 경로를 사람이 보강합니다.
+4. 광고 클릭 유도 문구를 사용하지 않습니다.
+5. 사이트 신뢰 페이지(소개, 개인정보처리방침, 이용약관, 제휴문의)를 유지합니다.
