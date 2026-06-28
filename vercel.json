@@ -1,6 +1,33 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/ads.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/rss.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/category/청약/분양", "destination": "/category/청약-분양", "permanent": true },
     { "source": "/category/이사/인테리어", "destination": "/category/이사-인테리어", "permanent": true },
@@ -52,6 +79,6 @@
     { "source": "/terms", "destination": "/terms/index.html" },
     { "source": "/partnership", "destination": "/partnership/index.html" },
     { "source": "/announcement", "destination": "/announcement/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/|assets/|sitemap\\.xml|rss\\.xml|robots\\.txt|ads\\.txt|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
   ]
 }
